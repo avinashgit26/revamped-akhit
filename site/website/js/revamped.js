@@ -1,6 +1,6 @@
 (() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealTargets = document.querySelectorAll('.impact-head,.industry-carousel,.ai-panel,.section-head,.work-card,.clients-head,.team-head,.team-card,.testimonial-copy,.testimonial-stage,.footer-cta');
+  const revealTargets = document.querySelectorAll('.impact-head,.industry-carousel,.section-head,.work-card,.clients-head,.team-head,.team-card,.testimonial-copy,.testimonial-stage,.footer-cta');
   if (!reduced && 'IntersectionObserver' in window) {
     revealTargets.forEach((node, index) => { node.dataset.reveal = ''; node.style.transitionDelay = `${(index % 3) * 90}ms`; });
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -15,7 +15,8 @@
     node.textContent = `${node.dataset.prefix || ''}${number}${node.dataset.suffix || ''}`;
   };
   const animateCounter = node => {
-    const target = Number(node.dataset.count), duration = 1200, start = performance.now();
+    const target = Number(node.dataset.count), duration = 3000, start = performance.now();
+    paintCounter(node, 0);
     const frame = now => { const t = Math.min(1, (now - start) / duration); paintCounter(node, target * (1 - Math.pow(1 - t, 3))); if (t < 1) requestAnimationFrame(frame); };
     requestAnimationFrame(frame);
   };
@@ -28,4 +29,5 @@
   }
   const menu = document.querySelector('.mobile-menu');
   if (menu) menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
+
 })();
