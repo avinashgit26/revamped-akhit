@@ -1,6 +1,6 @@
 (() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealTargets = document.querySelectorAll('.impact-head,.industry-carousel,.ai-panel,.section-head,.work-card,.clients-head,.testimonial-copy,.testimonial-stage,.footer-cta');
+  const revealTargets = document.querySelectorAll('.impact-head,.industry-carousel,.ai-panel,.section-head,.work-card,.clients-head,.team-head,.team-card,.testimonial-copy,.testimonial-stage,.footer-cta');
   if (!reduced && 'IntersectionObserver' in window) {
     revealTargets.forEach((node, index) => { node.dataset.reveal = ''; node.style.transitionDelay = `${(index % 3) * 90}ms`; });
     const revealObserver = new IntersectionObserver((entries, observer) => {
