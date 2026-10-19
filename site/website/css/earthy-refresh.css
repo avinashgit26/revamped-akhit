@@ -179,8 +179,8 @@ textarea:focus-visible, summary:focus-visible { outline: 3px solid var(--accent)
 .team-head .eyebrow { margin-bottom: 12px; }
 .team-note { max-width: 250px; margin: 0; font-size: 12px; }
 .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 2vw, 24px); }
-.team-card { display: block !important; margin: 0; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: var(--paper); }
-.team-portrait { display: block; width: 100%; height: auto; aspect-ratio: 6 / 7; object-fit: cover; }
+.team-card { display: block !important; grid-template-columns: none !important; margin: 0; padding: 0 !important; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: var(--paper); }
+.team-card > .team-portrait { display: block !important; grid-row: auto !important; width: 100% !important; max-width: none !important; height: auto !important; aspect-ratio: 6 / 7; object-fit: cover; }
 
 .footer { background: var(--ink) !important; }
 .footer-cta h2, .footer-grid h3, .footer-about .brand { color: var(--paper) !important; }
