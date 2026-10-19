@@ -179,7 +179,7 @@ textarea:focus-visible, summary:focus-visible { outline: 3px solid var(--accent)
 .team-head .eyebrow { margin-bottom: 12px; }
 .team-note { max-width: 250px; margin: 0; font-size: 12px; }
 .team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 2vw, 24px); }
-.team-card { margin: 0; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: var(--paper); }
+.team-card { display: block !important; margin: 0; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: var(--paper); }
 .team-portrait { display: block; width: 100%; height: auto; aspect-ratio: 6 / 7; object-fit: cover; }
 
 .footer { background: var(--ink) !important; }
