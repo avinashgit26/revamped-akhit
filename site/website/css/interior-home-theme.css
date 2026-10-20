@@ -1,0 +1,195 @@
+/* Shared visual tokens for the interior pages. Loaded only by AI Hub, Learn with us and Careers. */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --akh-home-blue: #0251B0;
+  --akh-home-lime: #D1FF42;
+  --akh-home-ground: #E6EDEF;
+  --akh-home-surface: #F5F8F9;
+  --akh-home-ink: #17212B;
+  --akh-home-muted: #526777;
+  --akh-home-line: #C7D3D9;
+  --akh-home-font: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+/* AI Hub */
+body.ai-hub-page {
+  --ai-paper: var(--akh-home-ground);
+  --ai-card: var(--akh-home-surface);
+  --ai-ink: var(--akh-home-ink);
+  --ai-muted: var(--akh-home-muted);
+  --ai-line: var(--akh-home-line);
+  --ai-blue: var(--akh-home-blue);
+  --ai-cyan: var(--akh-home-lime);
+  --ai-violet: var(--akh-home-blue);
+  --ai-dark: var(--akh-home-ground);
+  --ai-dark-2: var(--akh-home-surface);
+  --ai-sans: var(--akh-home-font);
+  color: var(--akh-home-ink);
+  background: var(--akh-home-ground);
+  font-family: var(--akh-home-font);
+}
+
+body.ai-hub-page .ai-announcement { color: #fff; background: var(--akh-home-blue); }
+body.ai-hub-page .ai-announcement-copy strong { color: var(--akh-home-lime); }
+body.ai-hub-page .ai-announcement-link { border-color: var(--akh-home-lime); color: var(--akh-home-ink); background: var(--akh-home-lime); }
+body.ai-hub-page .ai-announcement-link:hover { background: #e0ff78; }
+body.ai-hub-page .ai-header { border-color: var(--akh-home-line); background: rgb(230 237 239 / 96%); }
+body.ai-hub-page .ai-header-cta, body.ai-hub-page .ai-button { color: #fff; background: var(--akh-home-blue); }
+body.ai-hub-page .ai-header-cta:hover, body.ai-hub-page .ai-button:hover { background: #003f8d; box-shadow: none; }
+body.ai-hub-page .ai-links .ai-current { color: var(--akh-home-blue); text-shadow: none; }
+body.ai-hub-page .ai-menu summary { color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.ai-hub-page .ai-menu nav { background: var(--akh-home-surface); }
+body.ai-hub-page .ai-menu nav a:hover { background: var(--akh-home-ground); }
+body.ai-hub-page .ai-hero { min-height: 610px; color: var(--akh-home-ink); background: var(--akh-home-ground); }
+body.ai-hub-page .ai-hero::before { background: var(--akh-home-ground); }
+body.ai-hub-page .ai-nebula-canvas { opacity: .07; }
+body.ai-hub-page .ai-kicker { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-hero h1 em { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-hero-copy > p:not(.ai-kicker) { color: var(--akh-home-muted); }
+body.ai-hub-page .ai-hero .ai-button { background: var(--akh-home-blue); box-shadow: none; }
+body.ai-hub-page .ai-hero .ai-button:hover { background: #003f8d; box-shadow: none; }
+body.ai-hub-page .ai-hero-secondary { border-color: var(--akh-home-line); color: var(--akh-home-ink); }
+body.ai-hub-page .ai-hero-secondary:hover { border-color: var(--akh-home-blue); color: var(--akh-home-blue); }
+body.ai-hub-page .ai-hero-note, body.ai-hub-page .ai-scroll-cue { color: var(--akh-home-muted) !important; }
+body.ai-hub-page .ai-taxonomy { border: 0; border-radius: 4px; background: var(--akh-home-blue); box-shadow: none; color: #fff; }
+body.ai-hub-page .ai-taxonomy > .ai-kicker { color: var(--akh-home-lime); }
+body.ai-hub-page .ai-taxonomy a { border-color: rgb(255 255 255 / 22%); color: #fff; }
+body.ai-hub-page .ai-taxonomy a:hover, body.ai-hub-page .ai-taxonomy a:focus-visible { background: rgb(255 255 255 / 10%); }
+body.ai-hub-page .ai-taxonomy a > span, body.ai-hub-page .ai-taxonomy a b { color: var(--akh-home-lime); }
+body.ai-hub-page .ai-taxonomy a small { color: #e5edf7; }
+body.ai-hub-page .ai-section { color: var(--akh-home-ink); }
+body.ai-hub-page .ai-promise, body.ai-hub-page .ai-control, body.ai-hub-page .ai-story { background: var(--akh-home-ground); }
+body.ai-hub-page .ai-promise-card, body.ai-hub-page .ai-story-card { border-color: var(--akh-home-line); border-radius: 4px; background: var(--akh-home-surface); box-shadow: none; }
+body.ai-hub-page .ai-card-index { border-radius: 3px; color: #fff; background: var(--akh-home-blue); }
+body.ai-hub-page .ai-capabilities { color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.ai-hub-page .ai-capabilities .ai-eyebrow, body.ai-hub-page .ai-taxonomy-detail-heading .ai-eyebrow { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-capabilities .ai-section-heading > p:last-of-type { color: var(--akh-home-muted); }
+body.ai-hub-page .ai-motion-toggle { border-color: var(--akh-home-line); color: var(--akh-home-ink); background: transparent; }
+body.ai-hub-page .ai-motion-toggle:hover { border-color: var(--akh-home-blue); color: var(--akh-home-blue); }
+body.ai-hub-page .ai-capability-card { border: 1px solid var(--akh-home-line); border-radius: 4px; background: var(--akh-home-ground); box-shadow: none; }
+body.ai-hub-page .ai-capability-card::after { border-color: rgb(2 81 176 / 14%); box-shadow: 0 0 0 20px rgb(2 81 176 / 5%), 0 0 0 42px rgb(2 81 176 / 3%); }
+body.ai-hub-page .ai-capability-card h3 { color: var(--akh-home-ink); }
+body.ai-hub-page .ai-capability-card p { color: var(--akh-home-muted); }
+body.ai-hub-page .ai-chip { border-color: var(--akh-home-line); border-radius: 3px; color: var(--akh-home-blue); background: var(--akh-home-surface); }
+body.ai-hub-page .ai-taxonomy-detail-heading h2, body.ai-hub-page .ai-taxonomy-details h3 { color: var(--akh-home-ink); }
+body.ai-hub-page .ai-taxonomy-details article { border-color: var(--akh-home-blue); background: var(--akh-home-ground); }
+body.ai-hub-page .ai-taxonomy-details article > span { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-taxonomy-details p { color: var(--akh-home-muted); }
+body.ai-hub-page .ai-process { color: var(--akh-home-ink); background: var(--akh-home-ground); }
+body.ai-hub-page .ai-process .ai-eyebrow, body.ai-hub-page .ai-step-number { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-process .ai-section-heading > p:last-child, body.ai-hub-page .ai-step p { color: var(--akh-home-muted); }
+body.ai-hub-page .ai-step { border-color: var(--akh-home-line); }
+body.ai-hub-page .ai-control-list::before { background: var(--akh-home-blue); }
+body.ai-hub-page .ai-control-item > span { border-color: var(--akh-home-blue); color: var(--akh-home-blue); background: var(--akh-home-surface); }
+body.ai-hub-page .ai-final-cta { color: #fff; background: var(--akh-home-blue); }
+body.ai-hub-page .ai-final-cta .ai-eyebrow { color: var(--akh-home-lime); }
+body.ai-hub-page .ai-final-cta .ai-section-heading > p:last-child { color: #e5edf7; }
+body.ai-hub-page .ai-final-cta .ai-button { color: var(--akh-home-ink); background: var(--akh-home-lime); }
+body.ai-hub-page .ai-session-hero { background: var(--akh-home-ground); }
+body.ai-hub-page .ai-session-copy .ai-kicker { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-session-benefits li::before { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-session-form-card, body.ai-hub-page .ai-session-next article { border-color: var(--akh-home-line); border-radius: 4px; background: var(--akh-home-surface); box-shadow: none; }
+body.ai-hub-page .ai-session-next { border-color: var(--akh-home-line); background: var(--akh-home-ground); }
+body.ai-hub-page .ai-footer { color: #fff; background: var(--akh-home-blue); }
+body.ai-hub-page .ai-footer-top { border-color: rgb(255 255 255 / 24%); }
+body.ai-hub-page .ai-footer-top .ai-eyebrow, body.ai-hub-page .ai-footer-about p, body.ai-hub-page .ai-footer-contact, body.ai-hub-page .ai-newsletter p, body.ai-hub-page .ai-footer-nav, body.ai-hub-page .ai-footer-social, body.ai-hub-page .ai-footer-bottom { color: #e5edf7; }
+body.ai-hub-page .ai-footer-grid h3 { color: #fff; }
+body.ai-hub-page .ai-footer-brand b { color: var(--akh-home-lime); }
+body.ai-hub-page .ai-footer-bottom { border-color: rgb(255 255 255 / 24%); }
+body.ai-hub-page .ai-footer-contact a:hover, body.ai-hub-page .ai-footer-nav a:hover, body.ai-hub-page .ai-footer-social a:hover { color: var(--akh-home-lime); }
+body.ai-hub-page .ai-newsletter input { border-color: rgb(255 255 255 / 38%); color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.ai-hub-page .ai-newsletter button { color: var(--akh-home-ink); background: var(--akh-home-lime); }
+body.ai-hub-page .ai-newsletter-resource { color: var(--akh-home-lime); }
+body.ai-hub-page .ai-privacy { border-color: var(--akh-home-line); color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.ai-hub-page .ai-privacy a { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-privacy button { border-color: var(--akh-home-blue); color: #fff; background: var(--akh-home-blue); }
+body.ai-hub-page .ai-privacy button.decline { color: var(--akh-home-ink); background: transparent; }
+body.ai-hub-page .ai-assistant-launcher { background: var(--akh-home-blue); box-shadow: 0 8px 24px rgb(23 33 43 / 22%); }
+body.ai-hub-page .ai-assistant-launcher:hover { background: #003f8d; box-shadow: 0 10px 28px rgb(23 33 43 / 25%); }
+body.ai-hub-page .ai-assistant-panel { border-color: var(--akh-home-line); border-radius: 8px; color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.ai-hub-page .ai-assistant-head { border-color: var(--akh-home-line); background: var(--akh-home-ground); }
+body.ai-hub-page .ai-assistant-heading span, body.ai-hub-page .ai-assistant-intro, body.ai-hub-page .ai-assistant-capability, body.ai-hub-page .ai-assistant-disclosure { color: var(--akh-home-muted); }
+body.ai-hub-page .ai-assistant-close, body.ai-hub-page .ai-assistant-voice { border-color: var(--akh-home-line); color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.ai-hub-page .ai-assistant-message { color: var(--akh-home-ink); background: var(--akh-home-ground); }
+body.ai-hub-page .ai-assistant-message.user { color: #fff; background: var(--akh-home-blue); }
+body.ai-hub-page .ai-assistant-prompts button { border-color: var(--akh-home-line); color: var(--akh-home-ink); }
+body.ai-hub-page .ai-assistant-prompts button:hover, body.ai-hub-page .ai-assistant-status, body.ai-hub-page .ai-assistant-link { color: var(--akh-home-blue); }
+body.ai-hub-page .ai-assistant-send { background: var(--akh-home-blue); }
+body.ai-hub-page :focus-visible { outline-color: var(--akh-home-blue); }
+
+/* Learn with us and Careers */
+body.learn-with-us-page, body.careers-page {
+  --lc-paper: var(--akh-home-ground);
+  --lc-card: var(--akh-home-surface);
+  --lc-ink: var(--akh-home-ink);
+  --lc-muted: var(--akh-home-muted);
+  --lc-line: var(--akh-home-line);
+  --lc-blue: var(--akh-home-blue);
+  --lc-blue-dark: #003f8d;
+  --lc-sage: var(--akh-home-blue);
+  --lc-sage-soft: var(--akh-home-ground);
+  --lc-terra-soft: var(--akh-home-ground);
+  color: var(--akh-home-ink);
+  background: var(--akh-home-ground);
+  font-family: var(--akh-home-font);
+}
+body.learn-with-us-page *, body.careers-page * { font-family: var(--akh-home-font); }
+body.learn-with-us-page .lc-header, body.careers-page .lc-header { border-color: var(--akh-home-line); background: rgb(230 237 239 / 96%); }
+body.learn-with-us-page .lc-menu summary, body.careers-page .lc-menu summary { background: var(--akh-home-surface); }
+body.learn-with-us-page .lc-menu nav, body.careers-page .lc-menu nav { background: var(--akh-home-surface); }
+body.learn-with-us-page .lc-menu nav a:hover, body.careers-page .lc-menu nav a:hover { background: var(--akh-home-ground); }
+body.learn-with-us-page .lc-cta, body.careers-page .lc-cta { color: #fff; background: var(--akh-home-blue); }
+body.learn-with-us-page .lc-cta:hover, body.careers-page .lc-cta:hover { background: #003f8d; }
+body.learn-with-us-page .lc-eyebrow, body.careers-page .lc-eyebrow { color: var(--akh-home-blue); }
+body.learn-with-us-page .lc-hero, body.careers-page .lc-hero { background: var(--akh-home-ground); }
+body.learn-with-us-page .lc-hero-copy, body.careers-page .lc-hero-copy { color: var(--akh-home-muted); }
+body.learn-with-us-page .lc-secondary, body.careers-page .lc-secondary { border-color: var(--akh-home-line); color: var(--akh-home-ink); }
+body.learn-with-us-page .lc-secondary:hover, body.careers-page .lc-secondary:hover { border-color: var(--akh-home-blue); background: var(--akh-home-surface); }
+body.learn-with-us-page .lc-section, body.careers-page .lc-section { color: var(--akh-home-ink); }
+body.learn-with-us-page .lc-section-heading p:last-child, body.careers-page .lc-section-heading p:last-child { color: var(--akh-home-muted); }
+body.learn-with-us-page .lc-card, body.careers-page .lc-card { border-color: var(--akh-home-line); border-radius: 4px; background: var(--akh-home-surface); box-shadow: none; }
+body.learn-with-us-page .lc-card-mark, body.careers-page .lc-card-mark { border-radius: 3px; color: #fff; background: var(--akh-home-blue); }
+body.learn-with-us-page .lc-card p, body.careers-page .lc-card p { color: var(--akh-home-muted); }
+body.learn-with-us-page .lc-soft, body.careers-page .lc-soft, body.careers-page .lc-jobs, body.careers-page .lc-careers-culture { background: #DCE5E9; }
+body.learn-with-us-page .lc-process { border-color: var(--akh-home-line); }
+body.learn-with-us-page .lc-step { border-color: var(--akh-home-line); }
+body.learn-with-us-page .lc-step span { font-family: Georgia, "Times New Roman", serif; }
+body.learn-with-us-page .lc-partnership { color: #fff; background: var(--akh-home-blue); }
+body.learn-with-us-page .lc-partnership .lc-eyebrow { color: var(--akh-home-lime); }
+body.learn-with-us-page .lc-partnership .lc-section-heading p:last-child, body.learn-with-us-page .lc-partner-note { color: #e5edf7; }
+body.learn-with-us-page .lc-partner-list span { border-color: rgb(255 255 255 / 38%); color: #fff; }
+body.learn-with-us-page .lc-outcome { border-color: var(--akh-home-line); border-radius: 4px; background: var(--akh-home-surface); }
+body.learn-with-us-page .lc-outcome p:not(.lc-eyebrow) { color: var(--akh-home-muted); }
+body.careers-page .lc-filter { border-color: var(--akh-home-line); color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.careers-page .lc-filter:hover, body.careers-page .lc-filter[aria-pressed="true"] { border-color: var(--akh-home-blue); color: #fff; background: var(--akh-home-blue); }
+body.careers-page .lc-job-meta span { border-radius: 3px; color: var(--akh-home-blue); background: #DCE8F2; }
+body.careers-page .lc-no-jobs { border-color: var(--akh-home-line); }
+body.careers-page .lc-careers-metrics { color: #fff; background: var(--akh-home-blue); }
+body.careers-page .lc-careers-metric { border-color: rgb(255 255 255 / 30%); }
+body.careers-page .lc-careers-metric-value { color: var(--akh-home-lime); }
+body.careers-page .lc-careers-metric-value { font-family: Georgia, "Times New Roman", serif; }
+body.careers-page .lc-careers-metric-label { color: #fff; }
+body.careers-page .lc-careers-culture-inner > div:last-child p { color: var(--akh-home-muted); }
+body.learn-with-us-page .lc-footer, body.careers-page .lc-footer { color: #fff; background: var(--akh-home-blue); }
+body.learn-with-us-page .lc-footer-top, body.careers-page .lc-footer-top, body.learn-with-us-page .lc-footer-bottom, body.careers-page .lc-footer-bottom { border-color: rgb(255 255 255 / 28%); }
+body.learn-with-us-page .lc-footer-main p, body.careers-page .lc-footer-main p, body.learn-with-us-page .lc-footer-links, body.careers-page .lc-footer-links, body.learn-with-us-page .lc-footer-bottom, body.careers-page .lc-footer-bottom { color: #e5edf7; }
+body.learn-with-us-page .lc-footer-brand b, body.careers-page .lc-footer-brand b { color: var(--akh-home-lime); }
+body.learn-with-us-page .lc-footer-links a:hover, body.careers-page .lc-footer-links a:hover { color: var(--akh-home-lime); }
+body.learn-with-us-page .lc-assistant-launcher, body.careers-page .lc-assistant-launcher { border-color: rgb(255 255 255 / 65%); color: var(--akh-home-ink); background: var(--akh-home-lime); box-shadow: 0 8px 24px rgb(23 33 43 / 22%); }
+body.learn-with-us-page .lc-assistant-launcher:hover, body.careers-page .lc-assistant-launcher:hover { background: #e0ff78; box-shadow: 0 10px 28px rgb(23 33 43 / 25%); }
+body.learn-with-us-page .lc-assistant-panel, body.careers-page .lc-assistant-panel { border-color: var(--akh-home-line); border-radius: 8px; color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.learn-with-us-page .lc-assistant-head, body.careers-page .lc-assistant-head { border-color: var(--akh-home-line); background: var(--akh-home-ground); }
+body.learn-with-us-page .lc-assistant-heading span, body.careers-page .lc-assistant-heading span, body.learn-with-us-page .lc-assistant-intro, body.careers-page .lc-assistant-intro, body.learn-with-us-page .lc-assistant-capability, body.careers-page .lc-assistant-capability, body.learn-with-us-page .lc-assistant-disclosure, body.careers-page .lc-assistant-disclosure { color: var(--akh-home-muted); }
+body.learn-with-us-page .lc-assistant-close, body.careers-page .lc-assistant-close, body.learn-with-us-page .lc-assistant-voice, body.careers-page .lc-assistant-voice { border-color: var(--akh-home-line); color: var(--akh-home-ink); background: var(--akh-home-surface); }
+body.learn-with-us-page .lc-assistant-message, body.careers-page .lc-assistant-message { color: var(--akh-home-ink); background: var(--akh-home-ground); }
+body.learn-with-us-page .lc-assistant-message.user, body.careers-page .lc-assistant-message.user { color: #fff; background: var(--akh-home-blue); }
+body.learn-with-us-page .lc-assistant-prompts button, body.careers-page .lc-assistant-prompts button { border-color: var(--akh-home-line); color: var(--akh-home-ink); }
+body.learn-with-us-page .lc-assistant-prompts button:hover, body.careers-page .lc-assistant-prompts button:hover, body.learn-with-us-page .lc-assistant-status, body.careers-page .lc-assistant-status, body.learn-with-us-page .lc-assistant-link, body.careers-page .lc-assistant-link { color: var(--akh-home-blue); }
+body.learn-with-us-page .lc-assistant-send, body.careers-page .lc-assistant-send { background: var(--akh-home-blue); }
+body.learn-with-us-page :focus-visible, body.careers-page :focus-visible { outline-color: var(--akh-home-blue); }
+
+@media (max-width: 650px) {
+  body.ai-hub-page .ai-announcement-copy { color: #fff; }
+  body.ai-hub-page .ai-hero { min-height: 0; }
+}
