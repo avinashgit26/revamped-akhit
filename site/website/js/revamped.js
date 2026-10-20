@@ -31,18 +31,3 @@
   if (menu) menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
 
 })();
-
-(() => {
-  const ribbon = document.querySelector('.launch-bar');
-  const header = document.querySelector('header.header');
-  if (!ribbon || !header) return;
-  const setRibbonState = visible => header.classList.toggle('is-ribbon-gone', !visible);
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(([entry]) => setRibbonState(entry.isIntersecting), { threshold: 0 });
-    observer.observe(ribbon);
-  } else {
-    const update = () => setRibbonState(ribbon.getBoundingClientRect().bottom > 0);
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  }
-})();

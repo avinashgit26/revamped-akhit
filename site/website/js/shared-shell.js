@@ -1,4 +1,17 @@
 (() => {
+  const ribbon = document.querySelector('.launch-bar');
+  const header = document.querySelector('header.header');
+  if (ribbon && header) {
+    const syncHeader = visible => header.classList.toggle('is-ribbon-gone', !visible);
+    syncHeader(ribbon.getBoundingClientRect().bottom > 0);
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(([entry]) => syncHeader(entry.isIntersecting), { threshold: 0 });
+      observer.observe(ribbon);
+    } else {
+      window.addEventListener('scroll', () => syncHeader(ribbon.getBoundingClientRect().bottom > 0), { passive: true });
+    }
+  }
+
   const dialog = document.getElementById('waitlist-dialog');
   if (!dialog) return;
   const open = document.getElementById('open-waitlist');

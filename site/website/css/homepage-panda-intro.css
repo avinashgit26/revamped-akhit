@@ -1,0 +1,129 @@
+#video-dialog.panda-intro { overscroll-behavior: contain; }
+body.has-panda-intro { overflow: hidden; }
+
+#video-dialog.panda-intro {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  align-content: center;
+  justify-items: center;
+  gap: clamp(12px, 2.4vh, 24px);
+  overflow: hidden;
+  margin: 0;
+  padding: max(72px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+  border: 0;
+  background: transparent;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 320ms ease;
+}
+
+#video-dialog.panda-intro[open] { display: grid; }
+#video-dialog.panda-intro:not([open]) { display: none; }
+#video-dialog.panda-intro::backdrop {
+  background: rgb(10 24 37 / 76%);
+  -webkit-backdrop-filter: blur(13px) brightness(.56) saturate(.76);
+  backdrop-filter: blur(13px) brightness(.56) saturate(.76);
+  transition: background-color 320ms ease, backdrop-filter 320ms ease;
+}
+#video-dialog.panda-intro.is-leaving { opacity: 0; }
+#video-dialog.panda-intro.is-leaving::backdrop {
+  background: rgb(10 24 37 / 0%);
+  -webkit-backdrop-filter: blur(0) brightness(1);
+  backdrop-filter: blur(0) brightness(1);
+}
+
+.panda-intro__scene {
+  position: relative;
+  display: grid;
+  width: min(94vw, 1120px);
+  max-height: 78svh;
+  aspect-ratio: 854 / 480;
+  place-items: center;
+  align-self: end;
+}
+.panda-intro__video,
+.panda-intro__poster {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.panda-intro__poster { opacity: 0; }
+.panda-intro.is-static .panda-intro__poster { opacity: 1; }
+.panda-intro.is-static .panda-intro__video { visibility: hidden; }
+.panda-intro__caption {
+  width: min(88vw, 720px);
+  margin: 0;
+  align-self: start;
+  color: #fff;
+  font-size: clamp(17px, 2.3vw, 24px);
+  font-weight: 650;
+  line-height: 1.4;
+  text-align: center;
+  text-wrap: pretty;
+  text-shadow: 0 2px 18px rgb(0 0 0 / 78%);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 360ms ease, transform 360ms ease;
+}
+.panda-intro__caption.is-visible { opacity: 1; transform: translateY(0); }
+.panda-intro__skip {
+  position: fixed;
+  z-index: 2;
+  top: max(18px, env(safe-area-inset-top));
+  right: max(18px, env(safe-area-inset-right));
+  min-height: 42px;
+  padding: 8px 15px;
+  border: 1px solid rgb(255 255 255 / 68%);
+  border-radius: 999px;
+  color: #fff;
+  background: rgb(22 33 42 / 74%);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+.panda-intro__skip:hover { border-color: #d1ff42; background: #0251b0; }
+.panda-intro__play {
+  align-self: start;
+  min-height: 46px;
+  padding: 10px 20px;
+  border: 1px solid #d1ff42;
+  border-radius: 999px;
+  color: #16212a;
+  background: #d1ff42;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.panda-intro__play[hidden] { display: none; }
+.panda-intro__skip:focus-visible,
+.panda-intro__play:focus-visible { outline: 3px solid #d1ff42; outline-offset: 4px; }
+
+@media (max-width: 600px) {
+  #video-dialog.panda-intro { gap: 14px; padding-inline: 8px; }
+  .panda-intro__scene { width: min(100vw, 1120px); }
+  .panda-intro__caption { width: min(90vw, 500px); font-size: 17px; }
+  .panda-intro__skip { top: max(12px, env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right)); min-height: 40px; font-size: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #video-dialog.panda-intro,
+  #video-dialog.panda-intro::backdrop,
+  .panda-intro__caption,
+  .panda-intro__skip { transition: none; }
+  .panda-intro__caption { transform: none; }
+  #video-dialog.panda-intro.is-leaving { opacity: 1; }
+  #video-dialog.panda-intro.is-leaving::backdrop { background: rgb(10 24 37 / 0%); }
+}
