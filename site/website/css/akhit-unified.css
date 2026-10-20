@@ -233,3 +233,168 @@ body.careers-page .lc-assistant-send { color: var(--akh-white); background: var(
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; }
 }
+
+/* Final cross-page alignment: keep shell geometry fixed while the ribbon scrolls away. */
+.launch-bar {
+  min-height: 65px !important;
+  border-bottom: 3px solid var(--akh-lime) !important;
+  background: var(--akh-navy) !important;
+  color: var(--akh-white) !important;
+}
+.launch-inner {
+  width: min(1380px, calc(100% - 9vw)) !important;
+  min-height: 62px !important;
+  margin-inline: auto !important;
+  padding-block: 8px !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 18px !important;
+}
+.launch-copy { color: var(--akh-white) !important; }
+.launch-copy strong { color: var(--akh-lime) !important; }
+.launch-button {
+  border-color: var(--akh-lime) !important;
+  background: var(--akh-lime) !important;
+  color: var(--akh-navy) !important;
+}
+.header {
+  box-sizing: border-box !important;
+  height: 77px !important;
+  min-height: 77px !important;
+  border-bottom: 1px solid var(--akh-line) !important;
+  background: rgb(246 247 250 / 97%) !important;
+  transition: background-color .2s ease, color .2s ease !important;
+}
+.header .nav {
+  box-sizing: border-box !important;
+  height: 76px !important;
+  min-height: 76px !important;
+}
+body header.header.is-ribbon-gone {
+  height: 77px !important;
+  min-height: 77px !important;
+  border-bottom: 1px solid #20395A !important;
+  background: var(--akh-navy) !important;
+  color: var(--akh-white) !important;
+}
+body header.header.is-ribbon-gone .brand,
+body header.header.is-ribbon-gone .links a { color: var(--akh-white) !important; }
+body header.header.is-ribbon-gone .brand b,
+body header.header.is-ribbon-gone .links a:hover,
+body header.header.is-ribbon-gone .links a[aria-current="page"] { color: var(--akh-lime) !important; }
+body header.header.is-ribbon-gone .mobile-menu summary {
+  border-color: #52708F !important;
+  color: var(--akh-white) !important;
+  background: #142B4A !important;
+}
+body header.header.is-ribbon-gone .mobile-menu nav {
+  border-color: #52708F !important;
+  background: var(--akh-navy) !important;
+}
+body header.header.is-ribbon-gone .mobile-menu nav a { color: var(--akh-white) !important; }
+body header.header.is-ribbon-gone .mobile-menu nav a:hover,
+body header.header.is-ribbon-gone .mobile-menu nav a[aria-current="page"] { color: var(--akh-lime) !important; }
+body header.header.is-ribbon-gone .cta { color: var(--akh-navy) !important; background: var(--akh-lime) !important; }
+body header.header.is-ribbon-gone .cta:hover { background: #D6F878 !important; }
+
+/* The homepage keeps three counters; use the Careers number treatment and dividers. */
+body:not(.careers-page) .proof-band {
+  background: var(--akh-navy) !important;
+  color: var(--akh-white) !important;
+}
+body:not(.careers-page) .proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+body:not(.careers-page) .proof-item {
+  display: flex !important;
+  min-width: 0 !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding-inline: clamp(6px, 1.6vw, 24px) !important;
+  border-right: 1px solid rgb(255 255 255 / 30%) !important;
+  text-align: center !important;
+}
+body:not(.careers-page) .proof-item:last-child { border-right: 0 !important; }
+body:not(.careers-page) .proof-value {
+  width: 100% !important;
+  color: var(--akh-lime) !important;
+  font: 750 clamp(28px, 3.6vw, 54px)/1.05 Georgia, "Times New Roman", serif !important;
+  font-variant-numeric: tabular-nums !important;
+  letter-spacing: -.06em !important;
+  white-space: nowrap !important;
+}
+body:not(.careers-page) .proof-label {
+  color: var(--akh-white) !important;
+  font-size: clamp(9px, 1vw, 12px) !important;
+  line-height: 1.35 !important;
+}
+
+/* Ask AKH uses cobalt everywhere; lime remains in the robot mark and focus cue. */
+body :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher) {
+  position: fixed !important;
+  right: max(22px, env(safe-area-inset-right)) !important;
+  bottom: max(22px, env(safe-area-inset-bottom)) !important;
+  min-height: 58px !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 7px 17px 7px 8px !important;
+  border: 2px solid var(--akh-white) !important;
+  border-radius: 8px !important;
+  color: var(--akh-white) !important;
+  background: var(--akh-cobalt) !important;
+  box-shadow: 0 12px 35px rgb(11 31 58 / 28%), 0 0 0 4px rgb(198 244 50 / 24%) !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease !important;
+}
+body :is(.assistant-avatar,.lc-assistant-avatar,.ai-assistant-avatar) {
+  width: 42px !important;
+  height: 42px !important;
+  flex: none !important;
+}
+body :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher):hover {
+  transform: translateY(-2px) !important;
+  color: var(--akh-white) !important;
+  background: #1740B0 !important;
+  box-shadow: 0 16px 40px rgb(11 31 58 / 34%), 0 0 0 5px rgb(198 244 50 / 34%) !important;
+}
+
+@media (max-width: 760px) {
+  .launch-inner {
+    display: grid !important;
+    width: calc(100% - 40px) !important;
+    min-height: 0 !important;
+    grid-template-columns: 32px minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 7px 10px !important;
+    padding-block: 10px !important;
+  }
+  .launch-mascot { grid-column: 1; grid-row: 1; }
+  .launch-copy { grid-column: 2; grid-row: 1; font-size: 11px !important; line-height: 1.35 !important; }
+  .launch-copy strong { display: block !important; margin: 0 0 2px !important; font-size: 10px !important; }
+  .launch-button { grid-column: 2; grid-row: 2; justify-self: start; min-height: 34px !important; }
+  .header { height: 73px !important; min-height: 73px !important; }
+  .header .nav { height: 72px !important; min-height: 72px !important; }
+  body header.header.is-ribbon-gone { height: 73px !important; min-height: 73px !important; }
+  body :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher) {
+    right: max(12px, env(safe-area-inset-right)) !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    min-height: 52px !important;
+    padding-right: 13px !important;
+    font-size: 12px !important;
+  }
+  body :is(.assistant-avatar,.lc-assistant-avatar,.ai-assistant-avatar) { width: 36px !important; height: 36px !important; }
+  body:not(.careers-page) .proof-band { padding-block: 22px !important; }
+  body:not(.careers-page) .proof-item { padding-inline: 4px !important; }
+  body:not(.careers-page) .proof-value { font-size: clamp(11px, 3.35vw, 24px) !important; }
+  body:not(.careers-page) .proof-label { font-size: clamp(7px, 1.65vw, 10px) !important; }
+}
+@media (max-width: 450px) {
+  .launch-inner { width: calc(100% - 28px) !important; }
+  .header .nav { width: calc(100% - 28px) !important; }
+  body:not(.careers-page) .proof-value { font-size: clamp(10px, 3.1vw, 14px) !important; letter-spacing: -.055em !important; }
+  body:not(.careers-page) .proof-label { font-size: 7px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  body :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher) { transition: none !important; }
+}
