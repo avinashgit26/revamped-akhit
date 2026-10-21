@@ -114,9 +114,10 @@
     const q = question.toLowerCase();
     const context = document.body.dataset.assistantContext || 'home';
     if (context === 'learn') {
-      if (/course|learn|learning|programme|program|skill|training/.test(q)) return ['AKH is shaping practical learning pathways in AI, full-stack development and digital foundations. The page explains the topics and planned learning approach; programmes are still in development.', 'Explore learning paths', 'learn-with-us.html#learning-paths'];
+      if (/certif|partner|accredit|microsoft|google|ibm|openai|provider/.test(q)) return ['Recognised provider learning and certification pathways are something AKH is exploring for the future. No provider partnerships, certificates or accreditations are confirmed today; updates will be shared when plans are confirmed.'];
+      if (/career|intern|job|role|placement|opportunit/.test(q)) return ['When internships or roles become available, learners may be considered for opportunities with AKH, sister companies or clients. Openings depend on business needs, and opportunities are not guaranteed. The Careers page lists current roles.', 'Explore Careers', 'careers.html'];
       if (/register|interest|contact|email/.test(q)) return ['You can register your interest by email while AKH develops its learning programmes.', 'Register your interest', 'mailto:info@akhitsolutions.com?subject=Learning%20programme%20interest'];
-      if (/career|intern|job|role/.test(q)) return ['The learning page describes a potential opportunity for a top-performing learner, and the Careers page lists current roles.', 'Explore Careers', 'careers.html'];
+      if (/course|learn|learning|programme|program|skill|training|topic|path/.test(q)) return ['AKH is shaping practical learning across AI and intelligent workflows, websites and apps, data science and analytics, and digital marketing and transformation. The programme is being developed for students, educators and working professionals.', 'Explore learning paths', 'learn-with-us.html#learning-paths'];
     }
     if (context === 'home') {
       if (/awrbb|marketplace|inventory|returns|seller|finance|product launch/.test(q)) return ['AWRBB is an upcoming in-house retail operations platform. The early-access form is a preview and does not save or send your email.'];
