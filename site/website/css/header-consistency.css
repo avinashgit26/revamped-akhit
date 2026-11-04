@@ -2,6 +2,7 @@
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-bar {
   position: relative !important;
   z-index: 12 !important;
+  box-sizing: border-box !important;
   min-height: 65px !important;
   border-bottom: 3px solid #C6F432 !important;
   background: #0B1F3A !important;
@@ -9,7 +10,9 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-inner {
   display: flex !important;
+  box-sizing: border-box !important;
   width: min(1380px, calc(100% - 9vw)) !important;
+  max-width: none !important;
   min-height: 62px !important;
   align-items: center !important;
   justify-content: space-between !important;
@@ -52,19 +55,27 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header {
   position: sticky !important;
-  z-index: 11 !important;
+  z-index: 20 !important;
   top: 0 !important;
   box-sizing: border-box !important;
+  display: block !important;
   height: 77px !important;
   min-height: 77px !important;
+  margin-block: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
   border-bottom: 1px solid #D7DEE8 !important;
+  border-bottom-width: 1px !important;
+  border-bottom-style: solid !important;
   background: rgb(246 247 250 / 96%) !important;
   color: #111827 !important;
   backdrop-filter: blur(10px) !important;
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .nav {
   display: flex !important;
+  box-sizing: border-box !important;
   width: min(1380px, calc(100% - 9vw)) !important;
+  max-width: none !important;
   height: 76px !important;
   min-height: 76px !important;
   align-items: center !important;
@@ -103,6 +114,8 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header.is-ribbon-gone {
   height: 77px !important;
   min-height: 77px !important;
+  border-bottom-width: 1px !important;
+  border-bottom-style: solid !important;
   border-color: #20395A !important;
   background: #0B1F3A !important;
   color: #F6F7FA !important;
@@ -161,7 +174,12 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .links { display: none !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .mobile-menu { display: block !important; position: relative !important; margin-left: auto !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .mobile-menu summary { width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid #D7DEE8; border-radius: 4px; color: #111827; background: #fff; cursor: pointer; list-style: none; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header.is-ribbon-gone { height: 73px !important; min-height: 73px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header.is-ribbon-gone {
+    height: 73px !important;
+    min-height: 73px !important;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid !important;
+  }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header.is-ribbon-gone .mobile-menu summary { border-color: #52708F; color: #F6F7FA; background: #142B4A; }
 }
 @media (max-width: 450px) {

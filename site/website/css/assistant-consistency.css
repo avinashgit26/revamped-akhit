@@ -87,6 +87,36 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-prompts,.lc-assistant-prompts,.ai-assistant-prompts) button:hover { border-color: #1F4FD8 !important; color: #1F4FD8 !important; }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-input,.lc-assistant-input,.ai-assistant-input) { border-color: #D7DEE8 !important; color: #111827 !important; background: #F6F7FA !important; }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-send,.assistant-voice,.lc-assistant-send,.lc-assistant-voice,.ai-assistant-send,.ai-assistant-voice) { border-color: #1F4FD8 !important; color: #fff !important; background: #1F4FD8 !important; }
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-voice,.lc-assistant-voice,.ai-assistant-voice) {
+  display: grid !important;
+  width: 42px !important;
+  min-width: 42px !important;
+  height: 40px !important;
+  flex: none !important;
+  place-items: center !important;
+  padding: 0 !important;
+  border: 1px solid #1F4FD8 !important;
+  border-radius: 7px !important;
+  color: #fff !important;
+  background: #1F4FD8 !important;
+  cursor: pointer !important;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease !important;
+}
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-mic-icon) {
+  display: block !important;
+  width: 19px !important;
+  height: 19px !important;
+  fill: none !important;
+  stroke: currentColor !important;
+  stroke-width: 1.8 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  pointer-events: none !important;
+}
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-voice,.lc-assistant-voice,.ai-assistant-voice):hover { border-color: #1740B0 !important; background: #1740B0 !important; }
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-voice,.lc-assistant-voice,.ai-assistant-voice)[aria-pressed="true"] { border-color: #C6F432 !important; color: #0B1F3A !important; background: #C6F432 !important; }
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-voice,.lc-assistant-voice,.ai-assistant-voice):focus-visible { outline: 3px solid #C6F432 !important; outline-offset: 2px !important; }
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-voice,.lc-assistant-voice,.ai-assistant-voice):disabled { opacity: .5 !important; cursor: not-allowed !important; }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-link,.lc-assistant-link,.ai-assistant-link) { color: #1F4FD8 !important; }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-launcher,.assistant-panel,.lc-assistant-launcher,.lc-assistant-panel,.ai-assistant-launcher,.ai-assistant-panel) :focus-visible { outline: 3px solid #C6F432 !important; outline-offset: 2px !important; }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-close,.lc-assistant-close,.ai-assistant-close):focus-visible { outline: 3px solid #C6F432 !important; outline-offset: 3px !important; }
@@ -99,7 +129,8 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
 }
 @media (prefers-reduced-motion: reduce) {
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher),
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-close,.lc-assistant-close,.ai-assistant-close) { transition: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-close,.lc-assistant-close,.ai-assistant-close),
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-voice,.lc-assistant-voice,.ai-assistant-voice) { transition: none !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher):hover,
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-close,.lc-assistant-close,.ai-assistant-close):hover { transform: none !important; }
 }

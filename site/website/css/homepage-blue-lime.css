@@ -487,26 +487,6 @@ html, body { background-color: #E6EDEF !important; }
   .industry-track, .industry-card,.team-socials { transition: none !important; }
 }
 
-/* Final homepage polish */
-header.header.is-ribbon-gone {
-  background: #0251B0 !important;
-  border-bottom: 2px solid #D1FF42 !important;
-  color: #E6EDEF !important;
-}
-header.header.is-ribbon-gone .brand,
-header.header.is-ribbon-gone .links a,
-header.header.is-ribbon-gone .mobile-menu summary { color: #E6EDEF !important; }
-header.header.is-ribbon-gone .brand b { color: #D1FF42 !important; }
-header.header.is-ribbon-gone .links a:hover { color: #D1FF42 !important; }
-header.header.is-ribbon-gone > .wrap > .nav > .cta,
-header.header.is-ribbon-gone .nav > .cta {
-  background: #D1FF42 !important;
-  color: #17212B !important;
-}
-header.header.is-ribbon-gone .mobile-menu summary { border-color: rgba(230,237,239,.52) !important; }
-header.header.is-ribbon-gone .mobile-menu nav { background: #0251B0 !important; border-color: #D1FF42 !important; }
-header.header.is-ribbon-gone .mobile-menu nav a { color: #E6EDEF !important; }
-
 .hero-answers { gap: 0 !important; }
 .hero-answers > p {
   min-width: 0;
