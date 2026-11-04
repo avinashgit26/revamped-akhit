@@ -334,29 +334,18 @@
     }
   }
 
-  const motionToggle = document.getElementById("ai-motion-toggle");
   const capabilitySection = document.getElementById("ai-capabilities");
   document.querySelectorAll(
     '.ai-capability-group:not([aria-hidden="true"]) .ai-capability-card, .ai-mobile-group:not([aria-hidden="true"]) .ai-capability-card'
   ).forEach(card => card.tabIndex = 0);
-  if (motionToggle && capabilitySection) {
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const syncMotionControl = () => {
-      motionToggle.hidden = reducedMotion.matches;
-      if (reducedMotion.matches) {
-        capabilitySection.classList.remove("is-paused");
-        motionToggle.setAttribute("aria-pressed", "false");
-        motionToggle.textContent = "Pause animation";
-      }
-    };
-    motionToggle.addEventListener("click", () => {
-      const paused = capabilitySection.classList.toggle("is-paused");
-      motionToggle.setAttribute("aria-pressed", String(paused));
-      motionToggle.textContent = paused ? "Resume animation" : "Pause animation";
+  const capabilitySurfaces = document.querySelectorAll(".ai-capability-streams, .ai-mobile-marquee");
+  capabilitySurfaces.forEach(surface => {
+    surface.title = "Hover to pause. Click to pause or resume.";
+    surface.addEventListener("click", event => {
+      if (event.detail === 0 || !capabilitySection) return;
+      capabilitySection.classList.toggle("is-click-paused");
     });
-    reducedMotion.addEventListener?.("change", syncMotionControl);
-    syncMotionControl();
-  }
+  });
 
   const safeguardItems = document.querySelectorAll(".ai-control-item");
   if ("IntersectionObserver" in window) {

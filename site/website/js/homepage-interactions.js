@@ -1,4 +1,10 @@
 (() => {
+  const clientTicker = document.querySelector('.ticker');
+  clientTicker?.addEventListener('click', event => {
+    if (event.detail === 0) return;
+    clientTicker.classList.toggle('is-click-paused');
+  });
+
   const launcher = document.getElementById('assistant-launcher');
   const panel = document.getElementById('assistant-panel');
   const input = document.getElementById('assistant-input');

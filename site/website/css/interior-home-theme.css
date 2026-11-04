@@ -65,8 +65,6 @@ body.ai-hub-page .ai-card-index { border-radius: 3px; color: #fff; background: v
 body.ai-hub-page .ai-capabilities { color: var(--akh-home-ink); background: var(--akh-home-surface); }
 body.ai-hub-page .ai-capabilities .ai-eyebrow, body.ai-hub-page .ai-taxonomy-detail-heading .ai-eyebrow { color: var(--akh-home-blue); }
 body.ai-hub-page .ai-capabilities .ai-section-heading > p:last-of-type { color: var(--akh-home-muted); }
-body.ai-hub-page .ai-motion-toggle { border-color: var(--akh-home-line); color: var(--akh-home-ink); background: transparent; }
-body.ai-hub-page .ai-motion-toggle:hover { border-color: var(--akh-home-blue); color: var(--akh-home-blue); }
 body.ai-hub-page .ai-capability-card { border: 1px solid var(--akh-home-line); border-radius: 4px; background: var(--akh-home-ground); box-shadow: none; }
 body.ai-hub-page .ai-capability-card::after { border-color: rgb(2 81 176 / 14%); box-shadow: 0 0 0 20px rgb(2 81 176 / 5%), 0 0 0 42px rgb(2 81 176 / 3%); }
 body.ai-hub-page .ai-capability-card h3 { color: var(--akh-home-ink); }
@@ -86,6 +84,9 @@ body.ai-hub-page .ai-final-cta { color: #fff; background: var(--akh-home-blue); 
 body.ai-hub-page .ai-final-cta .ai-eyebrow { color: var(--akh-home-lime); }
 body.ai-hub-page .ai-final-cta .ai-section-heading > p:last-child { color: #e5edf7; }
 body.ai-hub-page .ai-final-cta .ai-button { color: var(--akh-home-ink); background: var(--akh-home-lime); }
+body.ai-hub-page .ai-final-cta .ai-section-heading h2 { color: #F6F7FA; }
+body.ai-hub-page .ai-final-cta .ai-hero-secondary { border-color: rgb(246 247 250 / 72%); color: #F6F7FA; }
+body.ai-hub-page .ai-final-cta .ai-hero-secondary:hover { border-color: var(--akh-home-lime); color: var(--akh-home-ink); background: var(--akh-home-lime); }
 body.ai-hub-page .ai-session-hero { background: var(--akh-home-ground); }
 body.ai-hub-page .ai-session-copy .ai-kicker { color: var(--akh-home-blue); }
 body.ai-hub-page .ai-session-benefits li::before { color: var(--akh-home-blue); }

@@ -180,7 +180,10 @@ textarea:focus-visible, summary:focus-visible { outline: 3px solid var(--sage) !
 .clients { padding: 54px 0 !important; background: var(--ink) !important; color: var(--paper) !important; }
 .clients-head h2, .clients-head p { color: var(--paper) !important; }
 .ticker-track { animation-duration: 34s; animation-play-state: running !important; }
-.ticker:hover .ticker-track, .ticker:focus-within .ticker-track, .ticker.is-paused .ticker-track { animation-play-state: running !important; }
+@media (hover: hover) and (pointer: fine) {
+  .ticker:hover .ticker-track { animation-play-state: paused !important; }
+}
+.ticker.is-click-paused .ticker-track { animation-play-state: paused !important; }
 .client-name { border-color: rgba(240, 245, 247, .28) !important; border-radius: 2px !important; background: var(--paper) !important; }
 .ticker-controls { display: none !important; }
 .testimonials, .team { background: rgba(87, 120, 119, .08) !important; }
