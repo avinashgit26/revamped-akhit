@@ -134,7 +134,7 @@
   opacity: 1;
   transform: rotate(var(--land-rotate, 0deg));
   transform-origin: 50% 75%;
-  filter: drop-shadow(0 18px 22px rgb(0 0 0 / 23%));
+  filter: drop-shadow(0 12px 16px rgb(0 0 0 / 14%));
   will-change: transform, opacity;
 }
 
@@ -142,6 +142,8 @@
   display: block;
   width: 100%;
   height: auto;
+  opacity: .9;
+  filter: saturate(.66) brightness(.82);
 }
 
 .services-page .services-drop-item--ai {

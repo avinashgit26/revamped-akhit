@@ -50,9 +50,9 @@ button { font: inherit; }
 .ai-menu nav a:hover { color: var(--ai-blue); background: #e8eef8; }
 
 .ai-hero { position: relative; isolation: isolate; overflow: hidden; min-height: 670px; color: #f6f7ff; background: var(--ai-dark); }
-.ai-hero::before { position: absolute; z-index: -2; inset: 0; content: ""; background: radial-gradient(ellipse at 76% 48%, rgb(91 62 157 / 28%), transparent 44%), radial-gradient(ellipse at 28% 90%, rgb(21 125 155 / 20%), transparent 42%), linear-gradient(120deg, #070b18, #101329 58%, #080e1d); }
-.ai-nebula-canvas { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; opacity: .88; pointer-events: none; }
-.ai-hero-inner { display: grid; min-height: 670px; grid-template-columns: 1.02fr .98fr; align-items: center; gap: clamp(30px, 5vw, 76px); padding-block: 76px; }
+.ai-hero::before { position: absolute; z-index: -2; inset: 0; content: ""; background-image: linear-gradient(90deg, #070b18 0%, #0b1f3a 31%, rgb(11 31 58 / 94%) 47%, rgb(11 31 58 / 54%) 68%, rgb(11 31 58 / 32%) 100%), linear-gradient(180deg, rgb(7 11 24 / 20%), transparent 46%, rgb(7 11 24 / 54%)), url("../images/home/ai-hub-hero/workflow-automation.jpg"); background-position: center, center, 68% center; background-size: cover; background-repeat: no-repeat; }
+.ai-nebula-canvas { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; opacity: .4; pointer-events: none; }
+.ai-hero-inner { display: grid; min-height: 670px; grid-template-columns: minmax(0, 1fr); align-items: center; padding-block: 76px; }
 .ai-hero-copy { max-width: 690px; }
 .ai-kicker { margin: 0 0 16px; color: #9ceaf1; font-size: 11px; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
 .ai-hero h1 { max-width: 740px; margin: 0 0 22px; font-size: clamp(48px, 5.4vw, 76px); font-weight: 760; line-height: .99; letter-spacing: -.072em; }
@@ -64,14 +64,6 @@ button { font: inherit; }
 .ai-hero-secondary { display: inline-flex; min-height: 51px; align-items: center; padding: 0 19px; border: 1px solid #ffffff55; border-radius: 5px; color: #f5f4ff; font-size: 13px; font-weight: 700; }
 .ai-hero-secondary:hover { border-color: var(--ai-cyan); color: var(--ai-cyan); }
 .ai-hero-note { margin: 16px 0 0 !important; color: #aab5cf !important; font-size: 11px !important; }
-.ai-taxonomy { width: min(100%, 500px); justify-self: center; padding: 22px 24px 16px; border: 1px solid rgb(133 220 242 / 22%); border-radius: 12px; background: linear-gradient(145deg, rgb(18 31 62 / 78%), rgb(8 17 38 / 66%)); box-shadow: 0 22px 68px rgb(0 0 0 / 25%); }
-.ai-taxonomy > .ai-kicker { margin-bottom: 12px; font-size: 9px; }
-.ai-taxonomy a { position: relative; display: grid; grid-template-columns: 34px 1fr 18px; align-items: center; column-gap: 12px; min-height: 66px; padding: 10px 8px; border-top: 1px solid rgb(196 220 247 / 16%); color: #f1f5ff; transition: background .2s, transform .2s; }
-.ai-taxonomy a:hover, .ai-taxonomy a:focus-visible { background: rgb(121 230 241 / 8%); transform: translateX(4px); }
-.ai-taxonomy a > span { grid-row: span 2; color: #9ceaf1; font: 700 20px/1 Georgia,serif; }
-.ai-taxonomy a strong { align-self: end; font-size: 13px; }
-.ai-taxonomy a small { align-self: start; color: #b9c3db; font-size: 10px; }
-.ai-taxonomy a b { grid-column: 3; grid-row: 1 / 3; color: #9ceaf1; font-size: 15px; }
 .ai-scroll-cue { position: absolute; bottom: 18px; left: 50%; color: #abb9d4; font-size: 10px; letter-spacing: .15em; text-transform: uppercase; transform: translateX(-50%); }
 
 .ai-section { padding-block: clamp(62px, 8vw, 104px); }
@@ -256,8 +248,7 @@ body.ai-robot-modal-open { overflow: hidden; }
 
 @media (max-width: 1000px) {
   .ai-links { gap: 14px; }
-  .ai-hero-inner { grid-template-columns: 1fr .85fr; gap: 26px; }
-  .ai-taxonomy { padding-inline: 18px; }
+  .ai-hero-inner { grid-template-columns: minmax(0, 1fr); }
   .ai-capabilities-layout { grid-template-columns: 1fr; gap: 28px; }
   .ai-capabilities .ai-section-heading { max-width: 700px; }
   .ai-capability-streams { height: 440px; gap: 12px; }
@@ -279,11 +270,11 @@ body.ai-robot-modal-open { overflow: hidden; }
   .ai-announcement-copy strong { display: block; margin: 0 0 2px; font-size: 10px; }
   .ai-announcement-link { min-height: 32px; padding-block: 7px; }
   .ai-hero, .ai-hero-inner { min-height: 0; }
-  .ai-hero-inner { grid-template-columns: 1fr; gap: 18px; padding-block: 48px 52px; }
+  .ai-hero-inner { grid-template-columns: minmax(0, 1fr); padding-block: 48px 52px; }
+  .ai-hero::before { background-image: linear-gradient(180deg, rgb(7 11 24 / 18%) 0%, rgb(11 31 58 / 91%) 44%, #0b1f3a 100%), url("../images/home/ai-hub-hero/workflow-automation.jpg"); background-position: center, 72% top; background-size: cover, auto 76%; }
+  .ai-nebula-canvas { opacity: .28; }
   .ai-hero h1 { font-size: clamp(43px, 11vw, 62px); }
   .ai-hero-copy > p:not(.ai-kicker) { font-size: 16px; }
-  .ai-taxonomy { width: 100%; padding: 17px 15px 10px; }
-  .ai-taxonomy a { min-height: 59px; }
   .ai-scroll-cue { display: none; }
   .ai-section { padding-block: 58px; }
   .ai-section-heading { margin-bottom: 25px; }
@@ -337,6 +328,7 @@ body.ai-robot-modal-open { overflow: hidden; }
   .ai-robot-greeting p { font-size: 12px; }
   .ai-robot-skip { top: max(12px,env(safe-area-inset-top)); right: 12px; font-size: 10px; }
 }
+
 @media (max-width: 390px) {
   .ai-robot-intro { width: calc(100vw - 16px); }
   .ai-robot-figure { max-height: 34dvh; }
