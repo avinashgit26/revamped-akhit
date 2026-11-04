@@ -120,7 +120,7 @@
       if (/course|learn|learning|programme|program|skill|training|topic|path/.test(q)) return ['AKH is shaping practical learning across AI and intelligent workflows, websites and apps, data science and analytics, and digital marketing and transformation. The programme is being developed for students, educators and working professionals.', 'Explore learning paths', 'learn-with-us.html#learning-paths'];
     }
     if (context === 'home') {
-      if (/awrbb|marketplace|inventory|returns|seller|finance|product launch/.test(q)) return ['AWRBB is an upcoming in-house retail operations platform. The early-access form is a preview and does not save or send your email.'];
+      if (/retailweave|marketplace|inventory|returns|seller|finance|product launch/.test(q)) return ['RetailWeave is an upcoming in-house retail operations platform. The early-access form is a preview and does not save or send your email.'];
     }
     if (/price|pricing|cost|budget|quote/.test(q)) {
       return ['Project costs depend on the scope, integrations and delivery needs. AKH does not publish fixed prices, so the team will first understand what you need and then discuss an honest estimate.', 'Get a free consultation', 'https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html'];
@@ -128,16 +128,26 @@
     if (/book|call|meeting|consult|talk|contact|demo/.test(q)) {
       return ['You can share a few project details through the contact page and the AKH team can continue the conversation with you. This preview cannot book a time directly.', 'Go to the contact page', 'https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html'];
     }
+    if (context === 'services') {
+      if (/staff|developer|frontend|front-end|backend|back-end|cloud|specialist|talent|hire|team/.test(q)) return ['AKH can discuss technology staffing for AI solutions, frontend and backend development, cloud and platform work, and other IT roles shaped around your project needs. Share the capability you need and the team can discuss fit.', 'Explore Tech Staffing', 'services.html#tech-staffing'];
+      if (/seo|search|traffic|keyword|ranking|organic/.test(q)) return ['AKH SEO work can include market and competitor analysis, content and keyword planning, page content and metadata, landing page improvements, link profiles, speed and mobile experience.', 'Explore SEO services', 'services.html#seo-services'];
+      if (/graphic|brand|logo|visual|social|print|design/.test(q)) return ['AKH graphic design covers logos and visual identity, print and marketing materials, website graphics, and social media content shaped around your brand and audience.', 'Explore graphic design', 'services.html#graphic-design'];
+      if (/mobile|ios|android|cross.?platform|app/.test(q)) return ['AKH can plan native iOS and Android apps, cross-platform applications and enterprise mobility, with attention to user experience, security, performance and maintenance.', 'Explore mobile app development', 'services.html#mobile-app-development'];
+      if (/website|e.?commerce|storefront|cms|web site|site speed/.test(q)) return ['AKH website work can include responsive business sites, e-commerce storefronts and order flows, content management systems, and page-speed and organic-search improvements.', 'Explore website development', 'services.html#website-development'];
+      if (/web app|application|erp|crm|hrm|reservation|appointment|logistic|finance/.test(q)) return ['AKH builds web applications around business workflows, including ERP and finance tools, CRM systems, HR and workforce platforms, reservations, appointments and logistics.', 'Explore web application development', 'services.html#web-application-development'];
+      if (/ai|artificial intelligence|automation|assistant|knowledge|image recognition|text analysis/.test(q)) return ['AKH explores applied AI around real processes, including assistants, knowledge search, workflow automation and AI-enabled product features. Image recognition and language or text analysis are also part of the service range; use cases are evaluated with safeguards and human review.', 'Explore Artificial Intelligence', 'services.html#artificial-intelligence'];
+      if (/service|build|develop|what can you|where|start/.test(q)) return ['AKH brings together software development, applied AI, SEO, graphic design and technology staffing. You can browse the service areas or share the challenge you want to solve so the team can help identify a useful next step.', 'Browse all services', 'services.html#what-we-build'];
+    }
     if (/ai|rag|evaluation|automation|artificial intelligence/.test(q)) {
       return ['AKH offers AI solutions and can explore retrieval-augmented generation, evaluation and workflow automation as part of a practical product need. The right approach depends on your use case.', 'Explore AI services', 'service/artificial-intelligence.html'];
     }
     if (/service|website|web app|application|mobile|seo|design|build|develop/.test(q)) {
       return ['AKH works on web applications, websites, mobile apps, AI solutions, SEO services and graphic design. If you are unsure where to start, describe the problem and the team can help shape the next step.', 'Explore services', 'https://avinashgit26.github.io/akhit-solutions-redesign/service/web-app-development.html'];
     }
-    if (/awrbb|marketplace|inventory|returns|seller|finance|product launch/.test(q)) {
-      return ['AWRBB is an upcoming in-house retail operations product. The preview describes connected support for products, orders, inventory, returns, shipping, sellers, payments, finance and reporting. Join the waitlist on this page for special access.'];
+    if (/retailweave|marketplace|inventory|returns|seller|finance|product launch/.test(q)) {
+      return ['RetailWeave is an upcoming in-house retail operations product. The preview describes connected support for products, orders, inventory, returns, shipping, sellers, payments, finance and reporting. Join the waitlist on this page for special access.'];
     }
-    return ['I can help with AKH services, AI capabilities, project costs, AWRBB or how to contact the team. I cannot provide a live quote or book a meeting in this preview.'];
+    return ['I can help with AKH services, AI capabilities, project costs, RetailWeave or how to contact the team. I cannot provide a live quote or book a meeting in this preview.'];
   };
 
   const send = text => {
