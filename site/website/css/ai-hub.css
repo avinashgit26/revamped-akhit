@@ -353,3 +353,28 @@ body.ai-robot-modal-open { overflow: hidden; }
   .ai-control-list::before { animation: none; }
   .ai-js-enabled .ai-control-item { opacity: 1; transform: none; transition: none; }
 }
+
+/* Keep the AI Hub hero image and contrast above the shared light-page theme. */
+body.ai-hub-page .ai-hero {
+  min-height: 610px !important;
+  color: #f6f7ff !important;
+  background-color: #0b1f3a !important;
+  background-image: linear-gradient(90deg, #0b1f3a 0%, #0b1f3a 29%, rgb(11 31 58 / 95%) 44%, rgb(11 31 58 / 58%) 65%, rgb(11 31 58 / 18%) 100%), linear-gradient(180deg, rgb(7 11 24 / 12%), rgb(7 11 24 / 34%)), url("../images/home/ai-hub-hero/workflow-automation.jpg") !important;
+  background-position: center, center, 68% center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body.ai-hub-page .ai-hero::before { display: none !important; }
+body.ai-hub-page .ai-nebula-canvas { z-index: 0; opacity: .2 !important; }
+body.ai-hub-page .ai-hero-inner { position: relative; z-index: 1; min-height: 610px !important; grid-template-columns: minmax(0, 1fr); }
+body.ai-hub-page .ai-hero h1 { color: #f6f7ff !important; }
+body.ai-hub-page .ai-hero h1 em, body.ai-hub-page .ai-hero .ai-kicker { color: #c6f432 !important; }
+body.ai-hub-page .ai-hero-copy > p:not(.ai-kicker) { color: #e0e8f2 !important; }
+body.ai-hub-page .ai-hero-secondary { border-color: rgb(246 247 255 / 62%) !important; color: #f6f7ff !important; }
+body.ai-hub-page .ai-hero-note, body.ai-hub-page .ai-scroll-cue { color: #d0dbea !important; }
+body.ai-hub-page .ai-scroll-cue { z-index: 1; }
+
+@media (max-width: 760px) {
+  body.ai-hub-page .ai-hero { min-height: 0 !important; background-image: linear-gradient(180deg, rgb(11 31 58 / 28%) 0%, rgb(11 31 58 / 78%) 47%, #0b1f3a 86%), url("../images/home/ai-hub-hero/workflow-automation.jpg") !important; background-position: center, 72% top; background-size: cover, cover; }
+  body.ai-hub-page .ai-hero-inner { min-height: 0 !important; padding-block: 48px 52px; }
+}
