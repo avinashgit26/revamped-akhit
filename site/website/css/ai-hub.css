@@ -360,8 +360,8 @@ body.ai-hub-page .ai-hero {
   color: #f6f7ff !important;
   background-color: #0b1f3a !important;
   background-image: linear-gradient(90deg, #0b1f3a 0%, #0b1f3a 29%, rgb(11 31 58 / 95%) 44%, rgb(11 31 58 / 58%) 65%, rgb(11 31 58 / 18%) 100%), linear-gradient(180deg, rgb(7 11 24 / 12%), rgb(7 11 24 / 34%)), url("../images/home/ai-hub-hero/workflow-automation.jpg") !important;
-  background-position: center, center, 68% center;
-  background-size: cover;
+  background-position: center, center, right center;
+  background-size: cover, cover, 52% auto;
   background-repeat: no-repeat;
 }
 body.ai-hub-page .ai-hero::before { display: none !important; }
@@ -375,6 +375,86 @@ body.ai-hub-page .ai-hero-note, body.ai-hub-page .ai-scroll-cue { color: #d0dbea
 body.ai-hub-page .ai-scroll-cue { z-index: 1; }
 
 @media (max-width: 760px) {
-  body.ai-hub-page .ai-hero { min-height: 0 !important; background-image: linear-gradient(180deg, rgb(11 31 58 / 28%) 0%, rgb(11 31 58 / 78%) 47%, #0b1f3a 86%), url("../images/home/ai-hub-hero/workflow-automation.jpg") !important; background-position: center, 72% top; background-size: cover, cover; }
+  body.ai-hub-page .ai-hero { min-height: 0 !important; background-image: linear-gradient(180deg, rgb(11 31 58 / 28%) 0%, rgb(11 31 58 / 78%) 47%, #0b1f3a 86%), url("../images/home/ai-hub-hero/workflow-automation.jpg") !important; background-position: center, right 10% top; background-size: cover, 78% auto; }
   body.ai-hub-page .ai-hero-inner { min-height: 0 !important; padding-block: 48px 52px; }
+}
+
+/* Applied AI capability constellation in the hero. */
+body.ai-hub-page .ai-hero-inner {
+  grid-template-columns: minmax(0, .95fr) minmax(500px, 1.05fr) !important;
+  gap: clamp(24px, 3vw, 52px) !important;
+}
+body.ai-hub-page .ai-hero-copy { max-width: 690px; }
+.ai-hero-taxonomy {
+  position: relative;
+  z-index: 2;
+  justify-self: end;
+  width: min(100%, 610px);
+  height: 490px;
+  color: #F6F7FA;
+  isolation: isolate;
+}
+.ai-hero-taxonomy-lines { position: absolute; z-index: -1; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.ai-hero-taxonomy-lines path { fill: none; stroke: rgb(135 181 255 / 58%); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.ai-hero-taxonomy-lines circle { fill: #C6F432; filter: drop-shadow(0 0 5px rgb(198 244 50 / 65%)); }
+.ai-hero-taxonomy-core,
+.ai-hero-taxonomy-node {
+  position: absolute;
+  display: flex;
+  min-height: 68px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 11px 14px;
+  border: 1px solid rgb(214 230 255 / 42%);
+  border-radius: 13px;
+  background: rgb(8 26 54 / 88%);
+  box-shadow: 0 12px 26px rgb(0 8 24 / 22%);
+  backdrop-filter: blur(8px);
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.ai-hero-taxonomy-core { top: 50%; left: 50%; width: 218px; min-height: 100px; align-items: center; border-color: #C6F432; border-radius: 18px; background: #C6F432; color: #0B1F3A; text-align: center; transform: translate(-50%, -50%); }
+.ai-hero-taxonomy-core strong { font-size: 22px; line-height: 1.2; }
+.ai-hero-taxonomy-core span { max-width: 184px; margin-top: 6px; font-size: 13px; font-weight: 650; line-height: 1.4; }
+.ai-hero-taxonomy-node { width: 204px; min-height: 84px; color: #F6F7FA; text-decoration: none; }
+.ai-hero-taxonomy-node strong { color: #fff; font-size: 16px; line-height: 1.3; }
+.ai-hero-taxonomy-node span { margin-top: 6px; color: #C8D7E8; font-size: 13px; line-height: 1.4; }
+.ai-hero-taxonomy-node:hover,
+.ai-hero-taxonomy-node:focus-visible { z-index: 3; border-color: #C6F432; background: rgb(15 45 86 / 96%); box-shadow: 0 0 0 3px rgb(198 244 50 / 15%), 0 16px 32px rgb(0 8 24 / 34%); transform: translateY(-3px); }
+.ai-hero-taxonomy-node--assistants { top: 0; left: 50%; transform: translateX(-50%); }
+.ai-hero-taxonomy-node--knowledge { top: 20%; right: 0; }
+.ai-hero-taxonomy-node--workflows { right: 0; bottom: 11%; }
+.ai-hero-taxonomy-node--products { bottom: 11%; left: 0; }
+.ai-hero-taxonomy-node--evaluation { top: 20%; left: 0; }
+.ai-hero-taxonomy-node--assistants:hover,
+.ai-hero-taxonomy-node--assistants:focus-visible { transform: translateX(-50%) translateY(-3px); }
+
+@media (max-width: 1100px) {
+  body.ai-hub-page .ai-hero-inner { grid-template-columns: minmax(0, 1fr) !important; gap: 32px !important; }
+  .ai-hero-taxonomy { justify-self: center; width: min(100%, 610px); }
+  body.ai-hub-page .ai-hero-copy { max-width: 760px; }
+}
+@media (max-width: 600px) {
+  body.ai-hub-page .ai-hero-inner { padding-block: 42px 58px !important; }
+  .ai-hero-taxonomy { display: grid; width: 100%; height: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .ai-hero-taxonomy-lines { display: none; }
+  .ai-hero-taxonomy-core,
+  .ai-hero-taxonomy-node { position: static; width: auto; min-height: 84px; padding: 12px; transform: none; }
+  .ai-hero-taxonomy-core { grid-column: 1 / -1; min-height: 88px; }
+  .ai-hero-taxonomy-core strong { font-size: 20px; }
+  .ai-hero-taxonomy-core span { font-size: 13px; }
+  .ai-hero-taxonomy-node strong { font-size: 15px; }
+  .ai-hero-taxonomy-node span { font-size: 12px; }
+  .ai-hero-taxonomy-node--evaluation { grid-column: 1 / -1; }
+  .ai-hero-taxonomy-node:hover,
+  .ai-hero-taxonomy-node:focus-visible,
+  .ai-hero-taxonomy-node--assistants:hover,
+  .ai-hero-taxonomy-node--assistants:focus-visible { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-hero-taxonomy-core,
+  .ai-hero-taxonomy-node { transition: none !important; }
+  .ai-hero-taxonomy-node:hover,
+  .ai-hero-taxonomy-node:focus-visible,
+  .ai-hero-taxonomy-node--assistants:hover,
+  .ai-hero-taxonomy-node--assistants:focus-visible { transform: none; }
 }

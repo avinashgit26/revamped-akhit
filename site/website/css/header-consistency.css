@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap");
+
 /* Shared ribbon and header geometry, aligned to the Services page reference. */
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-bar {
   position: relative !important;
   z-index: 12 !important;
   box-sizing: border-box !important;
+  height: 65px !important;
   min-height: 65px !important;
   border-bottom: 3px solid #C6F432 !important;
   background: #0B1F3A !important;
@@ -13,12 +16,13 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
   box-sizing: border-box !important;
   width: min(1380px, calc(100% - 9vw)) !important;
   max-width: none !important;
+  height: 62px !important;
   min-height: 62px !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 18px !important;
+  gap: 14px !important;
   margin: auto !important;
-  padding: 9px 0 !important;
+  padding: 0 !important;
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-mascot {
   width: 38px !important;
@@ -26,12 +30,16 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
   flex: none !important;
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy {
+  display: block !important;
   min-width: 0 !important;
   flex: 1 !important;
   margin: 0 !important;
   color: #F6F7FA !important;
   font-size: 13px !important;
-  line-height: 1.45 !important;
+  line-height: 1.35 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy strong {
   display: inline-block !important;
@@ -40,7 +48,9 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
   font-size: 12px !important;
   letter-spacing: .075em !important;
   text-transform: uppercase !important;
+  white-space: nowrap !important;
 }
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-description { white-space: nowrap !important; }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-button {
   min-height: 40px !important;
   flex: none !important;
@@ -70,6 +80,7 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
   background: rgb(246 247 250 / 96%) !important;
   color: #111827 !important;
   backdrop-filter: blur(10px) !important;
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease !important;
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .nav {
   display: flex !important;
@@ -158,17 +169,15 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
 
 @media (max-width: 900px) {
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-inner {
-    display: grid !important;
+    display: flex !important;
     width: calc(100% - 40px) !important;
-    grid-template-columns: 38px minmax(0, 1fr) !important;
     align-items: center !important;
-    gap: 6px 12px !important;
-    padding-block: 9px !important;
+    gap: 10px !important;
   }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-mascot { grid-column: 1; grid-row: 1 / span 2; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy { grid-column: 2; grid-row: 1; font-size: 12px !important; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy strong { display: block !important; margin: 0 0 2px !important; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-button { grid-column: 2; grid-row: 2; justify-self: start; min-height: 36px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-mascot { width: 32px !important; height: 32px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy { font-size: 11px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy strong { display: inline-block !important; margin: 0 7px 0 0 !important; font-size: 10px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-button { min-height: 36px !important; padding-inline: 12px !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header { height: 73px !important; min-height: 73px !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .nav { width: calc(100% - 40px) !important; height: 72px !important; min-height: 72px !important; gap: 12px !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .links { display: none !important; }
@@ -182,19 +191,91 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
   }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header.is-ribbon-gone .mobile-menu summary { border-color: #52708F; color: #F6F7FA; background: #142B4A; }
 }
-@media (max-width: 450px) {
+@media (max-width: 600px) {
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-bar { height: 50px !important; min-height: 50px !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-inner,
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .nav { width: calc(100% - 28px) !important; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-inner { grid-template-columns: 30px minmax(0, 1fr) !important; gap: 6px 9px !important; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-mascot { width: 30px !important; height: 30px !important; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy { font-size: 10px !important; line-height: 1.32 !important; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy strong { font-size: 10px !important; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-button { min-height: 34px !important; padding-inline: 10px !important; font-size: 10px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-inner { height: 47px !important; min-height: 47px !important; gap: 8px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-mascot,
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-description { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy { font-size: 9px !important; line-height: 1 !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy strong { margin: 0 !important; font-size: 9px !important; letter-spacing: .025em !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-button { min-height: 34px !important; padding-inline: 9px !important; font-size: 9px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header { height: 73px !important; min-height: 73px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .nav { height: 72px !important; min-height: 72px !important; gap: 10px !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .brand { font-size: 20px !important; }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .cta { min-height: 44px !important; padding-inline: 12px !important; gap: 8px !important; font-size: 12px !important; }
+}
+@media (max-width: 360px) {
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-copy strong { font-size: 7.6px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-button { padding-inline: 7px !important; font-size: 8px !important; }
+}
+@media (max-width: 450px) {
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header .nav { width: calc(100% - 28px) !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .launch-button,
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) header.header { transition: none !important; }
 }
+
+/* The same type, palette, and footer treatment carry across each primary page. */
+:root {
+  --akh-home-blue: #1F4FD8;
+  --akh-home-lime: #C6F432;
+  --akh-home-ground: #F6F7FA;
+  --akh-home-surface: #FFFFFF;
+  --akh-home-ink: #111827;
+  --akh-home-muted: #4B5563;
+  --akh-home-line: #D7DEE8;
+  --akh-home-font: "DM Sans", Arial, Helvetica, sans-serif;
+  --sans: "DM Sans", Arial, Helvetica, sans-serif;
+  --display: "DM Sans", Arial, Helvetica, sans-serif;
+  --font: "DM Sans", Arial, Helvetica, sans-serif;
+}
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif !important;
+}
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :not(code):not(pre):not(.proof-value):not(.lc-careers-metric-value) {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif !important;
+}
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.proof-value,.lc-careers-metric-value) {
+  font-family: Georgia, "Times New Roman", serif !important;
+}
+body.services-page .services-proof-item strong { font-family: Georgia, "Times New Roman", serif !important; }
+body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(pre,pre *,code,code *) {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace !important;
+}
+body.homepage-page .footer,
+body.ai-hub-page .ai-footer,
+body.learn-with-us-page .lc-footer,
+body.careers-page .lc-footer,
+body.services-page .lc-footer {
+  color: #F6F7FA !important;
+  background: #0B1F3A !important;
+}
+body.homepage-page .footer :is(.footer-cta,.footer-bottom),
+body.ai-hub-page .ai-footer :is(.ai-footer-top,.ai-footer-bottom),
+body.learn-with-us-page .lc-footer :is(.lc-footer-top,.lc-footer-bottom),
+body.careers-page .lc-footer :is(.lc-footer-top,.lc-footer-bottom),
+body.services-page .lc-footer :is(.lc-footer-top,.lc-footer-bottom) { border-color: rgb(246 247 250 / 24%) !important; }
+body.homepage-page .footer :is(h2,h3,.footer-brand .brand),
+body.ai-hub-page .ai-footer :is(h2,h3,.ai-footer-brand),
+body.learn-with-us-page .lc-footer :is(h2,h3,.lc-footer-brand),
+body.careers-page .lc-footer :is(h2,h3,.lc-footer-brand),
+body.services-page .lc-footer :is(h2,h3,.lc-footer-brand) { color: #F6F7FA !important; }
+body.homepage-page .footer :is(p,.footer-contact,.footer-nav,.footer-social,.footer-bottom),
+body.ai-hub-page .ai-footer :is(p,.ai-footer-contact,.ai-footer-nav,.ai-footer-social,.ai-footer-bottom),
+body.learn-with-us-page .lc-footer :is(p,.lc-footer-links,.lc-footer-bottom),
+body.careers-page .lc-footer :is(p,.lc-footer-links,.lc-footer-bottom),
+body.services-page .lc-footer :is(p,.lc-footer-links,.lc-footer-bottom) { color: #CFD8E5 !important; }
+body.homepage-page .footer :is(.footer-brand .brand b,.footer-cta .eyebrow),
+body.ai-hub-page .ai-footer :is(.ai-footer-brand b,.ai-footer-top .ai-eyebrow),
+body.learn-with-us-page .lc-footer :is(.lc-footer-brand b,.lc-footer-top .lc-eyebrow),
+body.careers-page .lc-footer :is(.lc-footer-brand b,.lc-footer-top .lc-eyebrow),
+body.services-page .lc-footer :is(.lc-footer-brand b,.lc-footer-top .lc-eyebrow) { color: #C6F432 !important; }
+body.homepage-page .footer a:hover,
+body.ai-hub-page .ai-footer a:hover,
+body.learn-with-us-page .lc-footer a:hover,
+body.careers-page .lc-footer a:hover,
+body.services-page .lc-footer a:hover { color: #C6F432 !important; }
