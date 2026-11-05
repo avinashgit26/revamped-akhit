@@ -1,0 +1,186 @@
+/* Responsive contract for AKHIT's five primary pages. Page-specific content stays in its own stylesheets. */
+:root { --akh-responsive-max: 1680px; }
+
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) {
+  min-width: 0;
+}
+body.homepage-page .wrap { width: min(1680px, 94vw); margin-inline: auto; }
+body.ai-hub-page .ai-wrap { width: min(1680px, 94vw); margin-inline: auto; }
+body:is(.services-page,.learn-with-us-page,.careers-page) .lc-wrap { width: min(1680px, 94vw); margin-inline: auto; }
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) :is(main,section,footer,.wrap,.ai-wrap,.lc-wrap) { min-width: 0; }
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) :is(img,svg,video) { max-width: 100%; }
+
+/* The announcement occupies a fixed row; only its colors change when the ribbon scrolls away. */
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-bar { min-height: 65px; }
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-inner {
+  display: flex !important;
+  width: min(1680px, 94vw) !important;
+  height: 62px;
+  min-height: 62px !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding-block: 0 !important;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy strong { flex: none; white-space: nowrap; }
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: 76px;
+  min-height: 76px;
+  transition: color .22s ease, background-color .22s ease, border-color .22s ease;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header.is-ribbon-gone { height: 76px; min-height: 76px; }
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .nav {
+  width: min(var(--akh-responsive-max), calc(100% - 64px));
+  height: 75px;
+  min-height: 75px;
+  margin-inline: auto;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .brand { flex: none; }
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .links { min-width: 0; flex: 1 1 auto; }
+
+@media (min-width: 1440px) {
+  body.homepage-page .wrap { width: min(1680px, 94vw); }
+  body.ai-hub-page .ai-wrap { width: min(1680px, 94vw); }
+  body:is(.services-page,.learn-with-us-page,.careers-page) .lc-wrap { width: min(1680px, 94vw); }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-inner,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .nav { width: min(1680px, 94vw) !important; }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description { display: none; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-inner,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .nav { width: min(1680px, 94vw) !important; }
+  body.homepage-page .home-service-panel#home-service-panel > .home-service-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+  body.homepage-page .footer-grid,
+  body.ai-hub-page .ai-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body.homepage-page .wrap,
+  body.ai-hub-page .ai-wrap,
+  body:is(.services-page,.learn-with-us-page,.careers-page) .lc-wrap { width: calc(100% - 48px); }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-bar { min-height: 56px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-inner {
+    width: calc(100% - 48px) !important; height: 53px; min-height: 53px !important; gap: 9px !important;
+  }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-mascot,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy { display: block; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy strong { font-size: 10px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-button { min-height: 34px; padding-inline: 10px; font-size: 10px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header.is-ribbon-gone { height: 73px !important; min-height: 73px !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .nav { width: calc(100% - 48px) !important; height: 72px; min-height: 72px; gap: 12px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .links { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .mobile-menu { display: block !important; position: relative; margin-left: auto; }
+  body.homepage-page .hero-grid { grid-template-columns: minmax(0,1fr); gap: 24px !important; }
+  body.homepage-page .hero-copy { max-width: 850px; }
+  body.homepage-page .hero-chat-stage { width: min(100%,820px); margin-inline: auto; }
+  body.homepage-page .home-service-panel#home-service-panel > .home-service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.homepage-page .footer-grid,
+  body.ai-hub-page .ai-footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body:is(.services-page,.learn-with-us-page,.careers-page) .lc-footer-main { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 431px) and (max-width: 767px) {
+  body.homepage-page .wrap,
+  body.ai-hub-page .ai-wrap,
+  body:is(.services-page,.learn-with-us-page,.careers-page) .lc-wrap { width: calc(100% - 36px); }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-bar { min-height: 56px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-inner {
+    width: calc(100% - 36px) !important; height: 53px; min-height: 53px !important; gap: 9px !important;
+  }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-mascot,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy { display: block; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy strong { font-size: clamp(9px,1.3vw,10px); }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-button { min-height: 34px; padding-inline: 10px; font-size: 10px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header.is-ribbon-gone { height: 73px !important; min-height: 73px !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .nav { width: calc(100% - 36px) !important; height: 72px; min-height: 72px; gap: 10px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .links { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .mobile-menu { display: block !important; position: relative; margin-left: auto; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .brand { font-size: 20px; }
+  body.homepage-page .hero-grid { grid-template-columns: 1fr; gap: 22px !important; }
+  body.homepage-page .home-service-panel#home-service-panel > .home-service-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.homepage-page .home-service-card > img { height: clamp(145px,28vw,185px); }
+  body:is(.services-page,.learn-with-us-page) .services-hero-grid,
+  body.learn-with-us-page .learn-hero-inner { grid-template-columns: 1fr; }
+  body:is(.services-page,.learn-with-us-page,.careers-page) .lc-footer-top { align-items: flex-start; flex-direction: column; }
+  body:is(.services-page,.learn-with-us-page,.careers-page) .lc-footer-main { grid-template-columns: 1fr; }
+  body:is(.homepage-page,.ai-hub-page) .footer-cta,
+  body:is(.homepage-page,.ai-hub-page) .ai-footer-top { align-items: flex-start; flex-direction: column; }
+}
+
+@media (max-width: 430px) {
+  body.homepage-page .wrap,
+  body.ai-hub-page .ai-wrap,
+  body:is(.services-page,.learn-with-us-page,.careers-page) .lc-wrap { width: calc(100% - 28px); }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-bar { min-height: 54px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-inner {
+    width: calc(100% - 28px) !important; height: 51px; min-height: 51px !important; gap: 7px !important;
+  }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-mascot,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy { display: block; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy strong { font-size: clamp(7.5px,2.15vw,9.2px); letter-spacing: .035em; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-button { min-height: 32px; padding-inline: 7px; font-size: 8.5px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-button span { display: none; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header.is-ribbon-gone { height: 73px !important; min-height: 73px !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .nav { width: calc(100% - 28px) !important; height: 72px; min-height: 72px; gap: 8px; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .links { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .mobile-menu { display: block !important; position: relative; margin-left: auto; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .brand { font-size: 18px; letter-spacing: -.06em; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .cta,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .ai-header-cta,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header .lc-cta { min-height: 42px; padding-inline: 10px; gap: 6px; font-size: 11px; }
+  body.homepage-page .hero-grid { grid-template-columns: 1fr; gap: 20px !important; }
+  body.homepage-page .hero h1 { font-size: clamp(39px,11.5vw,51px); }
+  body.homepage-page .hero-copy > p:not(.eyebrow) { font-size: 16px; }
+  body.homepage-page .home-service-panel#home-service-panel > .home-service-grid { grid-template-columns: 1fr; }
+  body.homepage-page .proof-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  body.homepage-page .proof-item { padding-inline: 6px; }
+  body.homepage-page .proof-value { font-size: clamp(16px,5.3vw,22px); white-space: nowrap; }
+  body.homepage-page .proof-label { font-size: 9px; line-height: 1.25; }
+  body.ai-hub-page .ai-footer-grid { grid-template-columns: 1fr 1fr; }
+  body:is(.services-page,.learn-with-us-page,.careers-page) .lc-footer-main { grid-template-columns: 1fr; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) :is(.assistant-panel,.lc-assistant-panel,.ai-assistant-panel) {
+    right: 12px; left: 12px; bottom: max(78px,calc(env(safe-area-inset-bottom) + 78px)); width: auto; max-height: min(620px,calc(100dvh - 100px));
+  }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher) {
+    right: 12px; bottom: max(12px,env(safe-area-inset-bottom)); min-height: 50px; padding-inline: 7px 12px; font-size: 12px;
+  }
+}
+
+/* Keep the ribbon copy on one line where tablet and compact desktop space allows it. */
+@media (min-width: 768px) and (max-width: 1279px) {
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy { display: flex; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description {
+    display: block !important;
+    flex: 1 1 auto;
+    font-size: clamp(9px,.95vw,11px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header { transition: none; }
+}

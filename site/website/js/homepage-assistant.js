@@ -65,7 +65,10 @@
   const closeAssistant = () => {
     panel.hidden = true;
     launcher.setAttribute('aria-expanded', 'false');
-    launcher.focus();
+    const focusTarget = launcher.hidden
+      ? document.querySelector('.homepage-page [data-ask-akh]')
+      : launcher;
+    focusTarget?.focus();
   };
   launcher.addEventListener('click', () => openAssistant(false));
   closeButton?.addEventListener('click', closeAssistant);
@@ -75,6 +78,7 @@
 
   const canGreet = () => {
     if (hasWelcomed() || !panel.hidden || !privacy?.hidden) return false;
+    if (document.body.classList.contains('homepage-page') && launcher.hidden) return false;
     if (document.querySelector('dialog[open]')) return false;
     return true;
   };

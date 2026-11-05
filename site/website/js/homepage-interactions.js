@@ -10,6 +10,27 @@
   const input = document.getElementById('assistant-input');
   const form = document.getElementById('assistant-form');
 
+  if (launcher && document.body.classList.contains('homepage-page')) {
+    const servicesSection = document.querySelector('.home-services');
+    const setLauncherVisible = visible => { launcher.hidden = !visible; };
+    setLauncherVisible(false);
+
+    if (servicesSection && 'IntersectionObserver' in window) {
+      const servicesObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => setLauncherVisible(entry.isIntersecting));
+      }, { threshold: 0.01 });
+      servicesObserver.observe(servicesSection);
+    } else if (servicesSection) {
+      const updateLauncherVisibility = () => {
+        const bounds = servicesSection.getBoundingClientRect();
+        setLauncherVisible(bounds.top < window.innerHeight && bounds.bottom > 0);
+      };
+      window.addEventListener('scroll', updateLauncherVisibility, { passive: true });
+      window.addEventListener('resize', updateLauncherVisibility);
+      updateLauncherVisibility();
+    }
+  }
+
   document.querySelectorAll('[data-ask-akh]').forEach(button => {
     button.addEventListener('click', () => {
       if (!launcher || !panel || !input || !form) return;
@@ -35,21 +56,25 @@
     else image.addEventListener('error', () => replaceFailedLogo(image), { once: true });
   });
 
-  const serviceTabs = [...document.querySelectorAll('[data-service-tab]')];
-  const servicePanels = [...document.querySelectorAll('.home-service-panel')];
-  const activateServiceTab = (activeTab, moveFocus = false) => {
-    const activePanelId = activeTab.dataset.serviceTab;
+  const serviceTabs = [...document.querySelectorAll('[data-service-filter]')];
+  const serviceCards = [...document.querySelectorAll('.home-service-card[data-service-category]')];
+  const servicePanel = document.getElementById('home-service-panel');
+  const selectServiceFilter = (activeTab, moveFocus = false) => {
+    const filter = activeTab.dataset.serviceFilter;
     serviceTabs.forEach(tab => {
       const selected = tab === activeTab;
       tab.setAttribute('aria-selected', String(selected));
       tab.tabIndex = selected ? 0 : -1;
     });
-    servicePanels.forEach(panel => { panel.hidden = panel.id !== activePanelId; });
+    serviceCards.forEach(card => {
+      card.hidden = filter !== 'all' && card.dataset.serviceCategory !== filter;
+    });
+    servicePanel?.setAttribute('aria-labelledby', activeTab.id);
     if (moveFocus) activeTab.focus();
   };
 
   serviceTabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => activateServiceTab(tab));
+    tab.addEventListener('click', () => selectServiceFilter(tab));
     tab.addEventListener('keydown', event => {
       let nextIndex = index;
       if (event.key === 'ArrowRight') nextIndex = (index + 1) % serviceTabs.length;
@@ -58,7 +83,7 @@
       else if (event.key === 'End') nextIndex = serviceTabs.length - 1;
       else return;
       event.preventDefault();
-      activateServiceTab(serviceTabs[nextIndex], true);
+      selectServiceFilter(serviceTabs[nextIndex], true);
     });
   });
 })();

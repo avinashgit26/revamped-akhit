@@ -142,8 +142,8 @@
   display: block;
   width: 100%;
   height: auto;
-  opacity: .9;
-  filter: saturate(.66) brightness(.82);
+  opacity: .94;
+  filter: saturate(.8) brightness(.93);
 }
 
 .services-page .services-drop-item--ai {
