@@ -705,3 +705,13 @@
 @media (prefers-reduced-motion: reduce) {
   .homepage-page .intake-thread { scroll-behavior: auto; }
 }
+
+/* Keep the canonical homepage footer text legible on its navy surface. */
+.homepage-page .site-footer .site-footer-eyebrow { color: #C6F432 !important; }
+.homepage-page .site-footer .site-footer-cta h2,
+.homepage-page .site-footer .site-footer-grid h3 { color: #F6F7FA !important; }
+.homepage-page .site-footer .site-footer-about > p,
+.homepage-page .site-footer .site-footer-contact,
+.homepage-page .site-footer .site-newsletter > p,
+.homepage-page .site-footer .site-footer-bottom { color: #CFD8E5 !important; }
+.homepage-page .site-footer :is(.site-footer-nav, .site-footer-social) { color: #E4EAF2 !important; }

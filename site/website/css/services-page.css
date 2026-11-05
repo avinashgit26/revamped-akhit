@@ -1430,6 +1430,11 @@
   .services-page .services-proof-item span { font-size: 10px; }
 }
 
+/* The shared sans-serif reset is intentionally overridden for service proof figures. */
+body.services-page .services-proof .services-proof-grid .services-proof-item strong.services-proof-value {
+  font-family: Georgia, "Times New Roman", serif !important;
+}
+
 /* Two-column service details use existing AKH service artwork, with cited context for AI and SEO. */
 .services-page .services-offering-card { display: block; }
 .services-page .services-offering-main {
