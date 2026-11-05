@@ -124,7 +124,11 @@
       if (/course|learn|learning|programme|program|skill|training|topic|path/.test(q)) return ['AKH is shaping practical learning across AI and intelligent workflows, websites and apps, data science and analytics, and digital marketing and transformation. The programme is being developed for students, educators and working professionals.', 'Explore learning paths', 'learn-with-us.html#learning-paths'];
     }
     if (context === 'home') {
-      if (/retailweave|marketplace|inventory|returns|seller|finance|product launch/.test(q)) return ['RetailWeave is an upcoming in-house retail operations platform. The early-access form is a preview and does not save or send your email.'];
+      if (/choose the right akh service/.test(q)) return ['Tell me what you want to improve and who needs it. AKH works across web applications, websites, mobile apps, applied AI, SEO, graphic design and technology staffing. I can help you narrow down a practical next step.', 'Browse AKH services', 'services.html#what-we-build'];
+      if (/build a website or app from my existing design/.test(q)) return ['Yes. AKH can work from an existing design or help shape a rough idea into a clear brief. We can discuss the key user journeys, integrations and delivery needs before recommending the right build.', 'Explore website development', 'services.html#website-development'];
+      if (/improve an existing web application or system/.test(q)) return ['We can start by understanding how the current system is used, where work gets stuck and what needs to improve. From there, the team can discuss focused changes or a broader rebuild if the evidence supports it.', 'Explore web application development', 'services.html#web-application-development'];
+      if (/workflow automation save my business time/.test(q)) return ['Applied AI and workflow automation can help with repeated work, information search and product features. AKH evaluates each use case around the existing process, safeguards and human review.', 'Explore AI services', 'services.html#artificial-intelligence'];
+      if (/retailweave|marketplace|inventory|returns|seller|finance|product launch/.test(q)) return ['RetailWeave is an upcoming in-house retail operations platform connecting products, orders, inventory, returns, shipping, sellers, payments, finance and reporting.'];
     }
     if (/price|pricing|cost|budget|quote/.test(q)) {
       return ['Project costs depend on the scope, integrations and delivery needs. AKH does not publish fixed prices, so the team will first understand what you need and then discuss an honest estimate.', 'Get a free consultation', 'https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html'];
@@ -197,12 +201,10 @@
   }
 
   const newsletter = document.getElementById('preview-newsletter');
-  const newsletterStatus = document.getElementById('newsletter-preview-status');
   newsletter?.addEventListener('submit', event => event.preventDefault());
   newsletter?.querySelector('.newsletter-button')?.addEventListener('click', () => {
     const email = newsletter.querySelector('input[type="email"]');
     if (email && !email.value.trim()) { email.reportValidity(); return; }
     if (email && !email.validity.valid) { email.reportValidity(); return; }
-    if (newsletterStatus) newsletterStatus.textContent = 'Preview only: no email was saved or sent.';
   });
 })();

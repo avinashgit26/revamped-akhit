@@ -76,7 +76,7 @@
     event.preventDefault();
     if (!form.reportValidity()) return;
     const name = String(new FormData(form).get('name') || '').trim();
-    formStatus.textContent = 'Thanks' + (name ? ', ' + name : '') + '. The preview acknowledgement is complete. No details were sent or saved.';
+    formStatus.textContent = 'Thanks' + (name ? ', ' + name : '') + '. Your scoping brief is ready. Contact AKH to continue the conversation.';
     formStatus.classList.add('is-visible');
   });
 

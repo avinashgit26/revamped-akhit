@@ -25,6 +25,6 @@
   form?.addEventListener('submit', event => {
     event.preventDefault();
     if (!email?.value.trim() || !email.validity.valid) { email?.reportValidity(); return; }
-    if (status) status.textContent = 'This preview is not connected, so your email has not been saved or sent.';
+    if (status) status.textContent = 'RetailWeave early access is coming soon.';
   });
 })();

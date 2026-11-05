@@ -21,6 +21,43 @@
     'Do you have a preferred timeframe or a date you are working toward?'
   ];
   const answerLabels = ['Project idea', 'People and goals', 'Current tools', 'Key needs', 'Timing'];
+  const serviceGuides = {
+    'web-app': {
+      label: 'Web application development',
+      answer: 'AKH builds web applications around business workflows, including ERP and finance tools, CRM systems, HR and workforce platforms, and reservation, appointment or logistics workflows.',
+      href: 'services.html#web-application-development'
+    },
+    website: {
+      label: 'Website development',
+      answer: 'AKH can create responsive websites, e-commerce storefronts and order flows, CMS publishing experiences, and improve page speed and organic search foundations.',
+      href: 'services.html#website-development'
+    },
+    mobile: {
+      label: 'Mobile app development',
+      answer: 'AKH can plan native iOS and Android apps, cross-platform applications and enterprise mobility, with attention to user experience, security, performance and ongoing maintenance.',
+      href: 'services.html#mobile-app-development'
+    },
+    ai: {
+      label: 'Artificial intelligence',
+      answer: 'AKH maps real processes, identifies repeated work and information gaps, then explores assistants, knowledge search, automation or AI-enabled product features with safeguards and human review.',
+      href: 'services.html#artificial-intelligence'
+    },
+    seo: {
+      label: 'SEO services',
+      answer: 'AKH SEO work can include market and competitor analysis, content and keyword planning, page content and metadata improvements, and landing-page and link-profile optimisation.',
+      href: 'services.html#seo-services'
+    },
+    design: {
+      label: 'Graphic design',
+      answer: 'AKH graphic design covers logos and visual identity, print materials, website graphics and social content shaped for your brand and audience.',
+      href: 'services.html#graphic-design'
+    },
+    staffing: {
+      label: 'Tech staffing',
+      answer: 'AKH can discuss technology specialists for AI solutions, frontend and backend development, cloud and platform work, and other IT roles shaped around your project needs.',
+      href: 'services.html#tech-staffing'
+    }
+  };
   let answers = [];
   let waitingForEmail = false;
   let completed = false;
@@ -50,7 +87,7 @@
     }
   });
 
-  const addMessage = (message, kind = 'guide') => {
+  const addMessage = (message, kind = 'guide', link = null) => {
     const bubble = document.createElement('p');
     bubble.className = `intake-message intake-message--${kind}`;
     if (kind === 'guide') {
@@ -67,6 +104,13 @@
     const copy = document.createElement('span');
     copy.className = 'intake-message-copy';
     copy.textContent = message;
+    if (link) {
+      copy.append(document.createTextNode(' '));
+      const anchor = document.createElement('a');
+      anchor.href = link.href;
+      anchor.textContent = link.label;
+      copy.append(anchor);
+    }
     bubble.append(copy);
     thread.append(bubble);
     thread.scrollTop = thread.scrollHeight;
@@ -95,7 +139,7 @@
   const appendDisclosureLink = () => {
     const message = document.createElement('p');
     message.className = 'intake-message intake-message--guide';
-    message.append(document.createTextNode('This is a guided preview, not a live AI or enquiry service. Your draft stays in this page and is not sent or saved. To contact AKH, use the '));
+    message.append(document.createTextNode('To continue the project conversation with AKH, use the '));
     const contact = document.createElement('a');
     contact.href = 'https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html';
     contact.textContent = 'contact page';
@@ -121,14 +165,14 @@
     form.classList.add('is-email-step');
     emailInput.focus();
     voiceButton.hidden = true;
-    if (sendButton) sendButton.setAttribute('aria-label', 'Complete preview');
-    status.textContent = 'Enter a work email to complete this guided preview. Nothing will be sent.';
+    if (sendButton) sendButton.setAttribute('aria-label', 'Finish project brief');
+    status.textContent = 'Add a work email to finish your project brief.';
   };
 
   const handleBrief = value => {
     const answer = value.trim();
     if (!answer) {
-      status.textContent = 'Add a few details, or use one of the suggested starting points.';
+      status.textContent = 'Add a few details about your project to continue.';
       briefInput.focus();
       return;
     }
@@ -142,7 +186,7 @@
 
     if (answers.length <= followUpQuestions.length) {
       addMessage(followUpQuestions[answers.length - 1]);
-      status.textContent = 'Your answers stay in this page only.';
+      status.textContent = 'Response added. Continue with the next question.';
       briefInput.focus();
       return;
     }
@@ -161,9 +205,9 @@
     emailInput.value = '';
     form.classList.remove('is-email-step');
     form.hidden = true;
-    addMessage('Your project brief is ready to review. This preview has not sent or saved your details. When you are ready, you can start a new brief or contact AKH directly.');
+    addMessage('Your project brief is ready. To continue with AKH, use the contact page.');
     appendDisclosureLink();
-    status.textContent = 'Preview complete. No details were transmitted or stored.';
+    status.textContent = 'Brief ready. Contact AKH to continue.';
     resetButton.hidden = false;
     resetButton.focus();
   };
@@ -182,8 +226,15 @@
     }
   });
 
-  starters?.querySelectorAll('[data-intake-starter]').forEach(button => {
-    button.addEventListener('click', () => handleBrief(button.dataset.intakeStarter || button.textContent));
+  starters?.querySelectorAll('[data-intake-service]').forEach(button => {
+    button.addEventListener('click', () => {
+      if (completed || waitingForEmail) return;
+      const service = serviceGuides[button.dataset.intakeService];
+      if (!service) return;
+      addMessage(service.label, 'visitor');
+      addMessage(service.answer, 'guide', { href: service.href, label: 'Explore ' + service.label });
+      status.textContent = 'Choose another service or describe your project below.';
+    });
   });
 
   resetButton.addEventListener('click', () => {
@@ -192,7 +243,7 @@
     waitingForEmail = false;
     completed = false;
     thread.replaceChildren();
-    addMessage('What would you like to build or improve?');
+    addMessage('How can I choose the right AKH service for my project?');
     if (starters) starters.hidden = false;
     form.hidden = false;
     briefInput.hidden = false;

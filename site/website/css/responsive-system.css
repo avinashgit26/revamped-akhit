@@ -184,3 +184,86 @@ body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-
 @media (prefers-reduced-motion: reduce) {
   body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) header.header { transition: none; }
 }
+
+/* Keep the RetailWeave announcement in one stable row and keep its mark out of the copy flow. */
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-inner {
+  box-sizing: border-box;
+  flex-wrap: nowrap !important;
+  padding-inline: 0 !important;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-mascot {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  display: block !important;
+  width: 36px !important;
+  height: 36px !important;
+  flex: 0 0 36px !important;
+  margin: 0 !important;
+  object-fit: contain;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy {
+  display: flex !important;
+  min-width: 0 !important;
+  flex: 1 1 0 !important;
+  flex-flow: row nowrap !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy strong {
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description {
+  display: block !important;
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-button {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-mascot { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy { gap: 7px !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy strong { font-size: 9px !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description { font-size: clamp(8px,1vw,10px) !important; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description { font-size: clamp(9px,.9vw,11px) !important; }
+}
+@media (max-width: 767px) {
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-inner { gap: 7px !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-mascot,
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-description { display: none !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy { flex: 1 1 auto !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy strong {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-size: clamp(8px,1.65vw,10px) !important;
+  }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-button { padding-inline: 8px !important; font-size: 9px !important; }
+}
+@media (max-width: 430px) {
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-copy strong { font-size: clamp(7.2px,2.05vw,8.8px) !important; letter-spacing: .02em !important; }
+  body:is(.homepage-page,.ai-hub-page,.services-page,.learn-with-us-page,.careers-page) .launch-button { padding-inline: 7px !important; font-size: 8px !important; }
+}
+
+/* Slightly reduce only the homepage hero copy to give the project guide more air. */
+body.homepage-page .hero-copy h1 { font-size: clamp(45px,5.1vw,71px) !important; }
+body.homepage-page .hero-copy > p:not(.eyebrow) { font-size: clamp(17px,1.85vw,19.5px) !important; }
+@media (max-width: 767px) {
+  body.homepage-page .hero-copy h1 { font-size: clamp(36px,10.5vw,46px) !important; }
+  body.homepage-page .hero-copy > p:not(.eyebrow) { font-size: 15px !important; }
+}
