@@ -715,3 +715,123 @@
 .homepage-page .site-footer .site-newsletter > p,
 .homepage-page .site-footer .site-footer-bottom { color: #CFD8E5 !important; }
 .homepage-page .site-footer :is(.site-footer-nav, .site-footer-social) { color: #E4EAF2 !important; }
+
+/* Keep the chat matched to the hero copy, with a compact, internally scrolling log. */
+.homepage-page .hero-chat-stage {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+  min-height: 0 !important;
+  align-self: stretch !important;
+}
+.homepage-page .hero-intake {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  width: 100%;
+  height: 100% !important;
+  min-height: 0 !important;
+  flex-direction: column !important;
+  box-sizing: border-box;
+}
+.homepage-page .project-guide-person,
+.homepage-page .project-guide-cue { display: none !important; }
+.homepage-page .hero-intake-heading { padding-bottom: 8px !important; margin-bottom: 7px !important; }
+.homepage-page .hero-intake-heading h2 { font-size: clamp(21px, 1.8vw, 25px) !important; }
+.homepage-page .hero-intake-intro { margin-bottom: 8px !important; font-size: 14px !important; line-height: 1.4 !important; }
+.homepage-page .intake-thread {
+  flex: 1 1 0 !important;
+  width: 100%;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: auto !important;
+  overscroll-behavior: contain;
+}
+.homepage-page .intake-composer {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+  margin-top: 8px !important;
+}
+.homepage-page .intake-composer-field { position: relative !important; min-width: 0; }
+.homepage-page .intake-composer-field textarea,
+.homepage-page .intake-composer-field input {
+  display: block;
+  width: 100%;
+  min-height: 46px !important;
+  max-height: 132px !important;
+  padding: 10px 92px 10px 13px !important;
+  border-radius: 9px !important;
+  font: 14px/1.45 var(--sans) !important;
+  resize: none;
+  overflow-y: hidden;
+}
+.homepage-page .intake-composer-field textarea[hidden],
+.homepage-page .intake-composer-field input[hidden] { display: none !important; }
+.homepage-page .intake-composer .intake-voice,
+.homepage-page .intake-composer .intake-send {
+  position: absolute !important;
+  z-index: 2;
+  bottom: 5px;
+  display: grid !important;
+  width: 34px !important;
+  min-width: 34px !important;
+  height: 34px !important;
+  min-height: 34px !important;
+  padding: 0 !important;
+  place-items: center;
+  border-radius: 7px !important;
+}
+.homepage-page .intake-composer .intake-voice { right: 43px !important; }
+.homepage-page .intake-composer .intake-send { right: 5px !important; }
+.homepage-page .intake-composer .intake-voice[hidden] { display: none !important; }
+.homepage-page .intake-composer .intake-voice svg,
+.homepage-page .intake-composer .intake-send svg { width: 17px; height: 17px; }
+.homepage-page .intake-status,
+.homepage-page .intake-privacy { margin-top: 6px !important; font-size: 11px !important; line-height: 1.4 !important; }
+@media (min-width: 1024px) {
+  .homepage-page .hero-grid { align-items: stretch !important; }
+  .homepage-page .hero-chat-stage { height: 100%; }
+}
+@media (max-width: 1023px) {
+  .homepage-page .hero-chat-stage { min-height: 350px !important; }
+  .homepage-page .hero-intake { height: 350px !important; }
+  .homepage-page .intake-thread { flex: 1 1 0 !important; min-height: 110px !important; max-height: none !important; }
+}
+@media (max-width: 430px) {
+  .homepage-page .hero-chat-stage { min-height: 330px !important; }
+  .homepage-page .hero-intake { height: 330px !important; padding: 15px 13px !important; }
+}
+
+/* Let testimonial copy use the full available quote-card width. */
+.homepage-page .quote-card > p { width: 100%; max-width: none !important; padding-right: 0 !important; }
+
+/* Three brief, noninteractive steps balance the homepage hero's chat column. */
+.homepage-page .hero-process {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  margin: auto 0 0;
+  padding: 18px 0 0;
+  list-style: none;
+}
+.homepage-page .hero-process li {
+  display: flex;
+  min-width: 0;
+  min-height: 82px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 12px 13px;
+  border-radius: 9px;
+  background: rgb(246 247 250 / 8%);
+}
+.homepage-page .hero-process strong { color: #F6F7FA; font-size: 13px; font-weight: 750; line-height: 1.3; }
+.homepage-page .hero-process span { color: #C7D3E3; font-size: 12px; line-height: 1.45; }
+@media (max-width: 640px) {
+  .homepage-page .hero-process { grid-template-columns: 1fr; gap: 6px; margin-top: 19px; padding-top: 13px; }
+  .homepage-page .hero-process li { min-height: 0; display: grid; grid-template-columns: minmax(105px, .7fr) minmax(0, 1.3fr); align-items: center; gap: 9px; padding: 9px 11px; }
+  .homepage-page .hero-process strong { font-size: 12px; }
+  .homepage-page .hero-process span { font-size: 11.5px; }
+}

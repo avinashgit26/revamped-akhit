@@ -1480,3 +1480,31 @@ body.services-page .services-proof .services-proof-grid .services-proof-item str
 .services-page .services-scoping .lc-eyebrow { color: var(--akh-cobalt); }
 .services-page .services-scoping-copy > p:not(.lc-eyebrow) { color: #43536A; }
 .services-page .services-scoping :focus-visible { outline-color: var(--akh-cobalt); }
+
+/* One original ecosystem visual replaces the service-by-service hero collage. */
+.services-page .services-drop-item--generic {
+  top: 2%;
+  right: 1%;
+  bottom: 3%;
+  left: 1%;
+  display: grid;
+  width: auto;
+  height: auto;
+  place-items: center;
+  --land-rotate: 0deg;
+  --drop-rotate: 0deg;
+  --drop-delay: 100ms;
+}
+.services-page .services-drop-item--generic img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 1;
+  filter: saturate(1) brightness(1);
+}
+.services-page .services-hero-art.is-animated .services-drop-item--generic {
+  animation: services-fall-in 920ms cubic-bezier(.16, .82, .2, 1.05) var(--drop-delay) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .services-page .services-hero-art.is-animated .services-drop-item--generic { animation: none !important; }
+}

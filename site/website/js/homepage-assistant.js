@@ -1,4 +1,23 @@
 (() => {
+  const orbLauncher = document.getElementById('assistant-launcher');
+  if (orbLauncher) {
+    orbLauncher.setAttribute('aria-label', 'Ask AKH');
+    const firstTouchReveal = new WeakSet();
+    orbLauncher.addEventListener('pointerdown', event => {
+      if (event.pointerType !== 'touch' || orbLauncher.classList.contains('is-label-visible')) return;
+      firstTouchReveal.add(orbLauncher);
+      orbLauncher.classList.add('is-label-visible');
+    }, { passive: true });
+    orbLauncher.addEventListener('pointercancel', () => firstTouchReveal.delete(orbLauncher), { passive: true });
+    document.addEventListener('click', event => {
+      const target = event.target instanceof Element ? event.target.closest('#assistant-launcher') : null;
+      if (target !== orbLauncher || !firstTouchReveal.has(orbLauncher)) return;
+      firstTouchReveal.delete(orbLauncher);
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }, true);
+  }
+
   const proofValues = [...document.querySelectorAll('.proof-value[data-count], .services-proof-value[data-count]')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const setProofValue = (element, value) => {

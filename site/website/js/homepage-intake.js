@@ -7,11 +7,17 @@
   const sendButton = form?.querySelector('.intake-send');
   const status = document.getElementById('project-intake-status');
   const resetButton = document.getElementById('project-intake-reset');
-  const guideAvatar = document.getElementById('project-guide-avatar');
-  const guideCue = document.getElementById('project-guide-cue');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   if (!form || !thread || !briefInput || !emailInput || !voiceButton || !status || !resetButton) return;
+
+  const resizeBriefInput = () => {
+    briefInput.style.height = 'auto';
+    const nextHeight = Math.min(briefInput.scrollHeight, 132);
+    briefInput.style.height = `${nextHeight}px`;
+    briefInput.style.overflowY = briefInput.scrollHeight > 132 ? 'auto' : 'hidden';
+  };
+  briefInput.addEventListener('input', resizeBriefInput);
+  resizeBriefInput();
 
   const followUpQuestions = [
     'Who will use it, and what would a better outcome look like for them?',
@@ -47,29 +53,6 @@
   let completed = false;
   let recognition = null;
   let voiceAvailable = false;
-  let guideReplyTimer = 0;
-
-  const dismissGuideCue = () => {
-    if (guideCue) guideCue.hidden = true;
-  };
-
-  briefInput.addEventListener('input', dismissGuideCue, { once: true });
-
-  const animateGuideReply = () => {
-    if (!guideAvatar || reducedMotion.matches) return;
-    window.clearTimeout(guideReplyTimer);
-    guideAvatar.classList.remove('is-responding');
-    void guideAvatar.offsetWidth;
-    guideAvatar.classList.add('is-responding');
-    guideReplyTimer = window.setTimeout(() => guideAvatar.classList.remove('is-responding'), 760);
-  };
-
-  reducedMotion.addEventListener?.('change', event => {
-    if (event.matches) {
-      window.clearTimeout(guideReplyTimer);
-      guideAvatar?.classList.remove('is-responding');
-    }
-  });
 
   const addMessage = (message, kind = 'guide', link = null) => {
     const bubble = document.createElement('p');
@@ -98,7 +81,6 @@
     bubble.append(copy);
     thread.append(bubble);
     thread.scrollTop = thread.scrollHeight;
-    if (kind === 'guide') animateGuideReply();
     return bubble;
   };
 
@@ -107,7 +89,6 @@
       const question = button.dataset.askAkh || '';
       const response = heroPromptAnswers[question];
       if (!response) return;
-      dismissGuideCue();
       addMessage(question, 'visitor');
       addMessage(response.answer, 'guide', { href: response.href, label: response.label });
       status.textContent = 'Choose another prompt or describe your project below.';
@@ -173,10 +154,10 @@
       return;
     }
 
-    dismissGuideCue();
     answers.push(answer);
     addMessage(answer, 'visitor');
     briefInput.value = '';
+    resizeBriefInput();
     resetButton.hidden = false;
 
     if (answers.length <= followUpQuestions.length) {
@@ -235,6 +216,7 @@
     emailInput.required = false;
     emailInput.value = '';
     briefInput.value = '';
+    resizeBriefInput();
     voiceButton.hidden = false;
     if (sendButton) sendButton.setAttribute('aria-label', 'Send answer');
     resetButton.hidden = true;

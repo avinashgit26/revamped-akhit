@@ -1,4 +1,23 @@
 (() => {
+  const orbLauncher = document.getElementById('assistant-launcher');
+  if (orbLauncher) {
+    orbLauncher.setAttribute('aria-label', 'Ask AKH');
+    const firstTouchReveal = new WeakSet();
+    orbLauncher.addEventListener('pointerdown', event => {
+      if (event.pointerType !== 'touch' || orbLauncher.classList.contains('is-label-visible')) return;
+      firstTouchReveal.add(orbLauncher);
+      orbLauncher.classList.add('is-label-visible');
+    }, { passive: true });
+    orbLauncher.addEventListener('pointercancel', () => firstTouchReveal.delete(orbLauncher), { passive: true });
+    document.addEventListener('click', event => {
+      const target = event.target instanceof Element ? event.target.closest('#assistant-launcher') : null;
+      if (target !== orbLauncher || !firstTouchReveal.has(orbLauncher)) return;
+      firstTouchReveal.delete(orbLauncher);
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }, true);
+  }
+
   document.documentElement.classList.remove("no-js");
   document.documentElement.classList.add("ai-js-enabled");
   const script = document.currentScript;
@@ -175,10 +194,6 @@
   const status = document.getElementById("assistant-status");
   const voiceButton = document.getElementById("assistant-voice");
   const privacy = document.getElementById("privacy-policy-panel");
-  const robotIntro = document.getElementById("robot-intro");
-  const robotBackdrop = document.getElementById("robot-backdrop");
-  const robotSkip = document.getElementById("robot-intro-skip");
-  const robotAsk = document.getElementById("robot-intro-ask");
 
   if (launcher && panel && form && messages) {
     const openAssistant = () => {
@@ -196,83 +211,6 @@
     document.addEventListener("keydown", event => {
       if (event.key === "Escape" && !panel.hidden) closeAssistant();
     });
-    if (robotIntro) {
-      const seenKey = "akhRobotIntroSeen";
-      let introTimer = 0;
-      let collapseTimer = 0;
-      let hasSeenIntro = false;
-      let introClosing = false;
-      let inertSnapshot = [];
-      try { hasSeenIntro = sessionStorage.getItem(seenKey) === "1"; } catch (_) {}
-      const markSeen = () => {
-        hasSeenIntro = true;
-        try { sessionStorage.setItem(seenKey, "1"); } catch (_) {}
-      };
-      const releaseBackground = () => {
-        inertSnapshot.forEach(([node, wasInert]) => { node.inert = wasInert; });
-        inertSnapshot = [];
-        document.body.classList.remove("ai-robot-modal-open");
-      };
-      const finishIntro = (openChat = false) => {
-        if (robotIntro.hidden || introClosing) return;
-        introClosing = true;
-        window.clearTimeout(collapseTimer);
-        robotIntro.classList.add("is-collapsing");
-        robotBackdrop?.classList.add("is-fading");
-        window.setTimeout(() => {
-          robotIntro.hidden = true;
-          robotIntro.classList.remove("is-visible", "is-collapsing");
-          if (robotBackdrop) {
-            robotBackdrop.hidden = true;
-            robotBackdrop.classList.remove("is-visible", "is-fading");
-          }
-          launcher.hidden = false;
-          releaseBackground();
-          introClosing = false;
-          markSeen();
-          if (openChat) openAssistant();
-          else launcher.focus();
-        }, window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 820);
-      };
-      const showIntro = () => {
-        if (hasSeenIntro || !privacy?.hidden || !panel.hidden || !robotBackdrop) return;
-        inertSnapshot = [...document.body.children]
-          .filter(node => node !== robotIntro && node !== robotBackdrop && node.tagName !== "SCRIPT")
-          .map(node => [node, node.inert]);
-        inertSnapshot.forEach(([node]) => { node.inert = true; });
-        document.body.classList.add("ai-robot-modal-open");
-        launcher.hidden = true;
-        robotBackdrop.hidden = false;
-        robotIntro.hidden = false;
-        window.requestAnimationFrame(() => {
-          robotBackdrop.classList.add("is-visible");
-          robotIntro.classList.add("is-visible");
-          robotAsk?.focus();
-        });
-        collapseTimer = window.setTimeout(finishIntro, 6500);
-      };
-      const queueIntro = () => {
-        if (hasSeenIntro || !privacy?.hidden) return;
-        window.clearTimeout(introTimer);
-        introTimer = window.setTimeout(showIntro, 650);
-      };
-      queueIntro();
-      ["policy-accept-btn", "policy-reject-btn"].forEach(id => document.getElementById(id)?.addEventListener("click", queueIntro));
-      robotSkip?.addEventListener("click", finishIntro);
-      robotIntro.addEventListener("keydown", event => {
-        if (event.key === "Escape") { event.preventDefault(); finishIntro(); return; }
-        if (event.key !== "Tab") return;
-        const controls = [...robotIntro.querySelectorAll("button:not(:disabled)")];
-        const first = controls[0], last = controls[controls.length - 1];
-        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-      });
-      robotAsk?.addEventListener("click", () => finishIntro(true));
-      document.addEventListener("focusin", event => {
-        if (!robotIntro.hidden && !robotIntro.contains(event.target) && event.target !== robotSkip) robotSkip?.focus();
-      });
-    }
-
     const addMessage = (text, who = "assistant", linkLabel = "", href = "") => {
       const bubble = document.createElement("p");
       bubble.className = `ai-assistant-message${who === "user" ? " user" : ""}`;

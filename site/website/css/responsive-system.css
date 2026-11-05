@@ -267,3 +267,43 @@ body.homepage-page .hero-copy > p:not(.eyebrow) { font-size: clamp(17px,1.85vw,1
   body.homepage-page .hero-copy h1 { font-size: clamp(36px,10.5vw,46px) !important; }
   body.homepage-page .hero-copy > p:not(.eyebrow) { font-size: 15px !important; }
 }
+
+/* Keep the original page-specific hero scales; card readability stays shared below. */
+body.ai-hub-page .ai-hero-note { font-size: 12px !important; }
+body.homepage-page .home-service-card > p:not(.eyebrow),
+body.homepage-page .home-service-copy > p:not(.eyebrow),
+body.homepage-page .work-copy > p:not(.eyebrow),
+body.homepage-page .quote-card > p,
+body.ai-hub-page .ai-promise-card p,
+body.ai-hub-page .ai-capability-card p,
+body.ai-hub-page .ai-taxonomy-details p,
+body.ai-hub-page .ai-control-item p,
+body.services-page .services-offering-copy > p:not(.services-outcome),
+body.services-page .services-offering-copy .services-outcome,
+body.services-page .services-offering-visual .services-impact-source,
+body.learn-with-us-page .lc-card p,
+body.careers-page .lc-card p,
+body.careers-page .lc-job > p:not(.lc-job-meta) {
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+}
+body.ai-hub-page .ai-promise-card h3,
+body.ai-hub-page .ai-capability-card h3,
+body.ai-hub-page .ai-taxonomy-details h3 { font-size: 18px !important; }
+body.ai-hub-page .ai-control { background: #E3EAF3 !important; }
+body.services-page .services-offering-visual .services-impact-source { font-size: 11px !important; }
+@media (max-width: 767px) {
+  body.homepage-page .home-service-card > p:not(.eyebrow),
+  body.homepage-page .home-service-copy > p:not(.eyebrow),
+  body.homepage-page .work-copy > p:not(.eyebrow),
+  body.homepage-page .quote-card > p,
+  body.ai-hub-page .ai-promise-card p,
+  body.ai-hub-page .ai-capability-card p,
+  body.ai-hub-page .ai-taxonomy-details p,
+  body.ai-hub-page .ai-control-item p,
+  body.services-page .services-offering-copy > p:not(.services-outcome),
+  body.services-page .services-offering-copy .services-outcome,
+  body.learn-with-us-page .lc-card p,
+  body.careers-page .lc-card p,
+  body.careers-page .lc-job > p:not(.lc-job-meta) { font-size: 14px !important; }
+}
