@@ -381,14 +381,14 @@ body.ai-hub-page .ai-scroll-cue { z-index: 1; }
 
 /* Applied AI capability constellation in the hero. */
 body.ai-hub-page .ai-hero-inner {
-  grid-template-columns: minmax(0, .95fr) minmax(500px, 1.05fr) !important;
-  gap: clamp(24px, 3vw, 52px) !important;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr) !important;
+  gap: clamp(18px, 2vw, 32px) !important;
 }
 body.ai-hub-page .ai-hero-copy { max-width: 690px; }
 .ai-hero-taxonomy {
   position: relative;
   z-index: 2;
-  justify-self: end;
+  justify-self: start;
   width: min(100%, 610px);
   height: 490px;
   color: #F6F7FA;
@@ -458,3 +458,14 @@ body.ai-hub-page .ai-hero-copy { max-width: 690px; }
   .ai-hero-taxonomy-node--assistants:hover,
   .ai-hero-taxonomy-node--assistants:focus-visible { transform: none; }
 }
+
+/* Visually separate the final AI fit-session prompt from the dark site footer. */
+body.ai-hub-page .ai-final-cta {
+  color: #0B1F3A !important;
+  background: #E6EDF5 !important;
+}
+body.ai-hub-page .ai-final-cta .ai-eyebrow { color: #1F4FD8 !important; }
+body.ai-hub-page .ai-final-cta .ai-section-heading > h2,
+body.ai-hub-page .ai-final-cta .ai-section-heading > p:last-child { color: #0B1F3A !important; }
+body.ai-hub-page .ai-final-cta .ai-section-heading > p:last-child { opacity: .78; }
+body.ai-hub-page .ai-final-cta .ai-hero-secondary { border-color: #0B1F3A !important; color: #0B1F3A !important; }

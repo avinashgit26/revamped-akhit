@@ -10,63 +10,58 @@
     }
   }
 
-  const tabs = Array.from(document.querySelectorAll('.services-process-tab'));
-  const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls'))).filter(Boolean);
-  const tablist = document.querySelector('[role="tablist"][aria-label="How AKH works"]');
+  const bindTabset = (tabSelector, tablistSelector, { vertical = false, onActivate } = {}) => {
+    const tabs = Array.from(document.querySelectorAll(tabSelector));
+    const panels = tabs.map(tab => document.getElementById(tab.getAttribute('aria-controls')));
+    const tablist = document.querySelector(tablistSelector);
+    if (!tabs.length || !tablist) return { tabs, activate: () => {} };
 
-  const activateTab = (selected, moveFocus = false) => {
-    tabs.forEach((tab, index) => {
-      const active = tab === selected;
-      tab.setAttribute('aria-selected', String(active));
-      tab.tabIndex = active ? 0 : -1;
-      if (panels[index]) panels[index].hidden = !active;
+    const activate = (selected, moveFocus = false) => {
+      tabs.forEach((tab, index) => {
+        const active = tab === selected;
+        tab.setAttribute('aria-selected', String(active));
+        tab.tabIndex = active ? 0 : -1;
+        if (panels[index]) panels[index].hidden = !active;
+      });
+      onActivate?.(selected);
+      if (moveFocus) selected.focus();
+    };
+
+    tabs.forEach(tab => tab.addEventListener('click', () => activate(tab)));
+    tablist.addEventListener('keydown', event => {
+      const current = tabs.indexOf(document.activeElement);
+      if (current < 0) return;
+      const forward = vertical ? 'ArrowDown' : 'ArrowRight';
+      const backward = vertical ? 'ArrowUp' : 'ArrowLeft';
+      let next = null;
+      if (event.key === forward) next = (current + 1) % tabs.length;
+      if (event.key === backward) next = (current - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
+      if (next !== null) {
+        event.preventDefault();
+        activate(tabs[next], true);
+      }
     });
-    const stage = selected.id.replace('process-tab-', '');
-    document.querySelector('.services-process')?.setAttribute('data-process-stage', stage);
-    if (moveFocus) selected.focus();
+    return { tabs, activate };
   };
 
-  tabs.forEach(tab => tab.addEventListener('click', () => activateTab(tab)));
-  tablist?.addEventListener('keydown', event => {
-    const current = tabs.indexOf(document.activeElement);
-    if (current < 0) return;
-    let next = null;
-    if (event.key === 'ArrowRight') next = (current + 1) % tabs.length;
-    if (event.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
-    if (event.key === 'Home') next = 0;
-    if (event.key === 'End') next = tabs.length - 1;
-    if (next !== null) {
-      event.preventDefault();
-      activateTab(tabs[next], true);
-    }
-  });
-
-  const engineeringTabs = Array.from(document.querySelectorAll('.services-engineering-tab'));
-  const engineeringPanels = engineeringTabs.map(tab => document.getElementById(tab.getAttribute('aria-controls'))).filter(Boolean);
-  const engineeringTablist = document.querySelector('[role="tablist"][aria-label="Engineering approaches"]');
-
-  const activateEngineeringTab = (selected, moveFocus = false) => {
-    engineeringTabs.forEach((tab, index) => {
-      const active = tab === selected;
-      tab.setAttribute('aria-selected', String(active));
-      tab.tabIndex = active ? 0 : -1;
-      if (engineeringPanels[index]) engineeringPanels[index].hidden = !active;
-    });
-    if (moveFocus) selected.focus();
+  const offerings = bindTabset('.services-offering-tab', '[role="tablist"][aria-label="Choose a service"]', { vertical: true });
+  const activateOfferingFromHash = () => {
+    let targetId = window.location.hash.slice(1);
+    try { targetId = decodeURIComponent(targetId); } catch (_) {}
+    const selected = offerings.tabs.find(tab => tab.getAttribute('aria-controls') === targetId);
+    if (!selected) return;
+    offerings.activate(selected);
+    window.requestAnimationFrame(() => document.getElementById('what-we-build')?.scrollIntoView({ block: 'start' }));
   };
+  activateOfferingFromHash();
+  window.addEventListener('hashchange', activateOfferingFromHash);
 
-  engineeringTabs.forEach(tab => tab.addEventListener('click', () => activateEngineeringTab(tab)));
-  engineeringTablist?.addEventListener('keydown', event => {
-    const current = engineeringTabs.indexOf(document.activeElement);
-    if (current < 0) return;
-    let next = null;
-    if (event.key === 'ArrowRight') next = (current + 1) % engineeringTabs.length;
-    if (event.key === 'ArrowLeft') next = (current - 1 + engineeringTabs.length) % engineeringTabs.length;
-    if (event.key === 'Home') next = 0;
-    if (event.key === 'End') next = engineeringTabs.length - 1;
-    if (next !== null) {
-      event.preventDefault();
-      activateEngineeringTab(engineeringTabs[next], true);
+  const engineering = bindTabset('.services-engineering-tab', '[role="tablist"][aria-label="Engineering approaches"]');
+  const process = bindTabset('.services-process-tab', '[role="tablist"][aria-label="How AKH works"]', {
+    onActivate(selected) {
+      document.querySelector('.services-process')?.setAttribute('data-process-stage', selected.id.replace('process-tab-', ''));
     }
   });
 

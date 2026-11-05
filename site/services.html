@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explore AKH IT Solutions services across software development, applied AI, search, design and technology staffing.">
+  <meta name="description" content="Explore AKH IT Solutions services across software development, applied AI, search, design and staffing.">
   <meta name="theme-color" content="#0B1F3A">
   <title>Services | AKH IT Solutions</title>
   <link rel="stylesheet" href="website/css/learning-careers.css">
   <link rel="stylesheet" href="website/css/interior-home-theme.css">
   <link rel="stylesheet" href="website/css/shared-shell.css">
   <link rel="stylesheet" href="website/css/akhit-unified.css?v=20261020-shell-metrics-assistant">
-  <link rel="stylesheet" href="website/css/services-page.css?v=20261104-artwork-balance">
+  <link rel="stylesheet" href="website/css/services-page.css?v=20261105-service-directory">
   <link rel="stylesheet" href="website/css/assistant-consistency.css?v=20261104-mic-clear">
   <link rel="stylesheet" href="website/css/header-consistency.css?v=20261104-five-page-consistency">
   <link rel="stylesheet" href="website/css/responsive-system.css?v=20261105-breakpoints">
@@ -91,76 +91,87 @@
           <div><p class="lc-eyebrow">What we build</p><h2 id="services-offerings-title">What we build,<br>and what you get.</h2></div>
           <p>Explore the work each service can cover, the capabilities behind it, and the next step for your organisation.</p>
         </header>
-        <div class="services-offering-grid">
-          <article class="services-offering-card services-offering-card--lime" id="artificial-intelligence">
-            <div class="services-offering-top"><span>01</span><span>AI</span></div>
-            <h3>AI solutions</h3>
-            <p>Explore where applied AI can support real work, starting from your processes and the information your people need.</p>
-            <p class="services-outcome"><strong>Designed for:</strong> clearer next steps for practical AI use.</p>
-            <div class="services-tags" aria-label="AI capabilities"><span>Assistants</span><span>Knowledge search</span><span>Workflow automation</span><span>Image recognition</span></div>
-            <details class="services-card-details"><summary>See capabilities</summary><ul><li>Map processes and identify repeated work or information gaps</li><li>Assistants and knowledge search</li><li>Workflow automation and AI-enabled product features</li><li>Image recognition and language or text analysis</li><li>Evaluation with safeguards and human review</li></ul></details>
-            <a class="services-offering-link" href="service/artificial-intelligence.html">Explore AI Hub <span aria-hidden="true">↗</span></a>
-          </article>
+        <div class="services-offering-layout">
+          <div class="services-offering-tabs" role="tablist" aria-label="Choose a service" aria-orientation="vertical">
+            <button class="services-offering-tab" id="offering-tab-ai" type="button" role="tab" aria-selected="true" aria-controls="artificial-intelligence" tabindex="0"><span>AI solutions</span><small>AI</small></button>
+            <button class="services-offering-tab" id="offering-tab-design" type="button" role="tab" aria-selected="false" aria-controls="graphic-design" tabindex="-1"><span>Graphic design</span><small>IDENTITY</small></button>
+            <button class="services-offering-tab" id="offering-tab-mobile" type="button" role="tab" aria-selected="false" aria-controls="mobile-app-development" tabindex="-1"><span>Mobile apps</span><small>MOBILE</small></button>
+            <button class="services-offering-tab" id="offering-tab-seo" type="button" role="tab" aria-selected="false" aria-controls="seo-services" tabindex="-1"><span>SEO and growth</span><small>DISCOVERY</small></button>
+            <button class="services-offering-tab" id="offering-tab-staffing" type="button" role="tab" aria-selected="false" aria-controls="tech-staffing" tabindex="-1"><span>Staffing</span><small>TEAM</small></button>
+            <button class="services-offering-tab" id="offering-tab-webapp" type="button" role="tab" aria-selected="false" aria-controls="web-application-development" tabindex="-1"><span>Web application development</span><small>PLATFORMS</small></button>
+            <button class="services-offering-tab" id="offering-tab-website" type="button" role="tab" aria-selected="false" aria-controls="website-development" tabindex="-1"><span>Website development</span><small>WEB</small></button>
+          </div>
+          <div class="services-offering-grid">
+            <article class="services-offering-card services-offering-card--lime" id="artificial-intelligence" role="tabpanel" aria-labelledby="offering-tab-ai" tabindex="0">
+              <div class="services-offering-top"><span>AI</span><span>Practical intelligence</span></div>
+              <h3>AI solutions</h3>
+              <p>Explore where applied AI can support real work, starting from your processes and the information your people need.</p>
+              <p class="services-outcome"><strong>Designed for:</strong> clearer next steps for practical AI use.</p>
+              <div class="services-tags" aria-label="AI capabilities"><span>Assistants</span><span>Knowledge search</span><span>Workflow automation</span><span>Image recognition</span></div>
+              <details class="services-card-details"><summary>See capabilities</summary><ul><li>Map processes and identify repeated work or information gaps</li><li>Assistants and knowledge search</li><li>Workflow automation and AI-enabled product features</li><li>Image recognition and language or text analysis</li><li>Evaluation with safeguards and human review</li></ul></details>
+              <a class="services-offering-link" href="service/artificial-intelligence.html">Explore AI Hub <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="services-offering-card services-offering-card--navy" id="website-development">
-            <div class="services-offering-top"><span>02</span><span>WEB</span></div>
-            <h3>Website development</h3>
-            <p>Give your business a clear home online, with a site that works across screens and supports how you publish and sell.</p>
-            <p class="services-outcome"><strong>Designed for:</strong> responsive experiences that support your content and commerce.</p>
-            <div class="services-tags" aria-label="Website capabilities"><span>Marketing sites</span><span>Web apps</span><span>E-commerce</span><span>CMS</span></div>
-            <details class="services-card-details"><summary>See capabilities</summary><ul><li>Responsive business websites</li><li>E-commerce storefronts and order flows</li><li>Content management systems</li><li>Page-speed and organic-search improvements</li></ul></details>
-            <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Website%20development">Discuss a website <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="services-offering-card services-offering-card--white" id="graphic-design" role="tabpanel" aria-labelledby="offering-tab-design" tabindex="0" hidden>
+              <div class="services-offering-top"><span>IDENTITY</span><span>Brand expression</span></div>
+              <h3>Graphic design</h3>
+              <p>Make your message clear through visual work shaped around your brand, audience and channels.</p>
+              <p class="services-outcome"><strong>Designed for:</strong> recognisable visuals across digital and print.</p>
+              <div class="services-tags" aria-label="Graphic design capabilities"><span>Visual identity</span><span>Print</span><span>Website graphics</span><span>Social</span></div>
+              <details class="services-card-details"><summary>See capabilities</summary><ul><li>Logos and visual identity</li><li>Print and marketing materials</li><li>Website graphics</li><li>Social media content</li><li>Consistent visuals across digital and print</li></ul></details>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Graphic%20design">Discuss design work <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="services-offering-card services-offering-card--white" id="web-application-development">
-            <div class="services-offering-top"><span>03</span><span>PLATFORMS</span></div>
-            <h3>Web application development</h3>
-            <p>Purpose-built applications for the workflows, information and people at the heart of your organisation.</p>
-            <p class="services-outcome"><strong>Designed for:</strong> connected tools shaped around how your teams work.</p>
-            <div class="services-tags" aria-label="Web application capabilities"><span>ERP &amp; finance</span><span>CRM</span><span>HR platforms</span><span>Logistics</span></div>
-            <details class="services-card-details"><summary>See capabilities</summary><ul><li>ERP and finance tools</li><li>Customer relationship management systems</li><li>HR and workforce platforms</li><li>Reservation, appointment and logistics workflows</li></ul></details>
-            <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Web%20application%20development">Discuss an application <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="services-offering-card services-offering-card--pale" id="mobile-app-development" role="tabpanel" aria-labelledby="offering-tab-mobile" tabindex="0" hidden>
+              <div class="services-offering-top"><span>MOBILE</span><span>Customer and team experiences</span></div>
+              <h3>Mobile apps</h3>
+              <p>Build useful mobile experiences for customers and teams, with a considered approach to platform and support.</p>
+              <p class="services-outcome"><strong>Designed for:</strong> helpful experiences across the devices people use.</p>
+              <div class="services-tags" aria-label="Mobile app capabilities"><span>iOS</span><span>Android</span><span>Cross-platform</span><span>Enterprise mobility</span></div>
+              <details class="services-card-details"><summary>See capabilities</summary><ul><li>Native iOS and Android apps</li><li>Cross-platform applications</li><li>Enterprise mobility solutions</li><li>User experience, security, performance and maintenance</li></ul></details>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Mobile%20app%20development">Discuss a mobile app <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="services-offering-card services-offering-card--pale" id="mobile-app-development">
-            <div class="services-offering-top"><span>04</span><span>MOBILE</span></div>
-            <h3>Mobile apps</h3>
-            <p>Build useful mobile experiences for customers and teams, with a considered approach to platform and support.</p>
-            <p class="services-outcome"><strong>Designed for:</strong> helpful experiences across the devices people use.</p>
-            <div class="services-tags" aria-label="Mobile app capabilities"><span>iOS</span><span>Android</span><span>Cross-platform</span><span>Enterprise mobility</span></div>
-            <details class="services-card-details"><summary>See capabilities</summary><ul><li>Native iOS and Android apps</li><li>Cross-platform applications</li><li>Enterprise mobility solutions</li><li>User experience, security, performance and maintenance</li></ul></details>
-            <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Mobile%20app%20development">Discuss a mobile app <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="services-offering-card services-offering-card--pale" id="seo-services" role="tabpanel" aria-labelledby="offering-tab-seo" tabindex="0" hidden>
+              <div class="services-offering-top"><span>DISCOVERY</span><span>Search and growth</span></div>
+              <h3>SEO and growth</h3>
+              <p>Help the right people find your business through a search strategy informed by market demand and your channels.</p>
+              <p class="services-outcome"><strong>Designed for:</strong> useful content, clearer discovery and considered reporting.</p>
+              <div class="services-tags" aria-label="SEO capabilities"><span>Technical audit</span><span>Content strategy</span><span>Local SEO</span><span>Monthly reporting</span></div>
+              <details class="services-card-details"><summary>See capabilities</summary><ul><li>Market and competitor analysis</li><li>Content planning and keyword research</li><li>Page content, metadata and site structure</li><li>Landing pages and link profiles</li><li>Website speed and mobile experience</li></ul></details>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=SEO%20services">Discuss SEO support <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="services-offering-card services-offering-card--pale" id="seo-services">
-            <div class="services-offering-top"><span>05</span><span>DISCOVERY</span></div>
-            <h3>SEO and growth</h3>
-            <p>Help the right people find your business through a search strategy informed by market demand and your audience.</p>
-            <p class="services-outcome"><strong>Designed for:</strong> useful content, clearer discovery and considered reporting.</p>
-            <div class="services-tags" aria-label="SEO capabilities"><span>Technical audit</span><span>Content strategy</span><span>Local SEO</span><span>Monthly reporting</span></div>
-            <details class="services-card-details"><summary>See capabilities</summary><ul><li>Market and competitor analysis</li><li>Content planning and keyword research</li><li>Page content, metadata and site structure</li><li>Landing pages and link profiles</li><li>Website speed and mobile experience</li></ul></details>
-            <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=SEO%20services">Discuss SEO support <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="services-offering-card services-offering-card--navy" id="tech-staffing" role="tabpanel" aria-labelledby="offering-tab-staffing" tabindex="0" hidden>
+              <div class="services-offering-top"><span>TEAM</span><span>People and capability</span></div>
+              <h3>Staffing</h3>
+              <p>Strengthen your team with skilled professionals whose experience fits the role and the capability you need to add.</p>
+              <p class="services-outcome"><strong>Designed for:</strong> flexible access to skilled people across your business.</p>
+              <div class="services-tags" aria-label="Staffing capabilities"><span>Technology</span><span>Marketing</span><span>Administration</span><span>Operations</span></div>
+              <details class="services-card-details"><summary>See capabilities</summary><ul><li>Technology professionals matched to role needs</li><li>Marketing specialists</li><li>Administration professionals</li><li>Operations support shaped around your team</li></ul></details>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Staffing">Discuss team support <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="services-offering-card services-offering-card--white" id="graphic-design">
-            <div class="services-offering-top"><span>06</span><span>IDENTITY</span></div>
-            <h3>Graphic design</h3>
-            <p>Make your message clear through visual work shaped around your brand, audience and channels.</p>
-            <p class="services-outcome"><strong>Designed for:</strong> recognisable visuals across digital and print.</p>
-            <div class="services-tags" aria-label="Graphic design capabilities"><span>Visual identity</span><span>Print</span><span>Website graphics</span><span>Social</span></div>
-            <details class="services-card-details"><summary>See capabilities</summary><ul><li>Logos and visual identity</li><li>Print and marketing materials</li><li>Website graphics</li><li>Social media content</li><li>Consistent visuals across digital and print</li></ul></details>
-            <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Graphic%20design">Discuss design work <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="services-offering-card services-offering-card--white" id="web-application-development" role="tabpanel" aria-labelledby="offering-tab-webapp" tabindex="0" hidden>
+              <div class="services-offering-top"><span>PLATFORMS</span><span>Connected business tools</span></div>
+              <h3>Web application development</h3>
+              <p>Purpose-built applications for the workflows, information and people at the heart of your organisation.</p>
+              <p class="services-outcome"><strong>Designed for:</strong> connected tools shaped around how your teams work.</p>
+              <div class="services-tags" aria-label="Web application capabilities"><span>ERP &amp; finance</span><span>CRM</span><span>HR platforms</span><span>Logistics</span></div>
+              <details class="services-card-details"><summary>See capabilities</summary><ul><li>ERP and finance tools</li><li>Customer relationship management systems</li><li>HR and workforce platforms</li><li>Reservation, appointment and logistics workflows</li></ul></details>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Web%20application%20development">Discuss an application <span aria-hidden="true">↗</span></a>
+            </article>
 
-          <article class="services-offering-card services-offering-card--navy" id="tech-staffing">
-            <div class="services-offering-top"><span>07</span><span>TEAM</span></div>
-            <h3>Tech staffing</h3>
-            <p>Strengthen your team with technical specialists whose experience fits the work and capability you need to add.</p>
-            <p class="services-outcome"><strong>Designed for:</strong> flexible access to relevant technical expertise.</p>
-            <div class="services-tags" aria-label="Technology staffing capabilities"><span>AI solutions</span><span>Frontend</span><span>Backend</span><span>Cloud</span></div>
-            <details class="services-card-details"><summary>See capabilities</summary><ul><li>Applied AI solutions and workflow expertise</li><li>Frontend and backend development</li><li>Cloud and platform engineering</li><li>Broader IT roles shaped around project needs</li></ul></details>
-            <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Tech%20staffing">Discuss team support <span aria-hidden="true">↗</span></a>
-          </article>
+            <article class="services-offering-card services-offering-card--pale" id="website-development" role="tabpanel" aria-labelledby="offering-tab-website" tabindex="0" hidden>
+              <div class="services-offering-top"><span>WEB</span><span>Websites and commerce</span></div>
+              <h3>Website development</h3>
+              <p>Give your business a clear home online, with a site that works across screens and supports how you publish and sell.</p>
+              <p class="services-outcome"><strong>Designed for:</strong> responsive experiences that support your content and commerce.</p>
+              <div class="services-tags" aria-label="Website capabilities"><span>Marketing sites</span><span>Web apps</span><span>E-commerce</span><span>CMS</span></div>
+              <details class="services-card-details"><summary>See capabilities</summary><ul><li>Responsive business websites</li><li>E-commerce storefronts and order flows</li><li>Content management systems</li><li>Page-speed and organic-search improvements</li></ul></details>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Website%20development">Discuss a website <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -168,68 +179,66 @@
     <section class="services-engineering" aria-labelledby="services-engineering-title">
       <div class="lc-wrap">
         <header class="services-engineering-heading">
-          <p class="lc-eyebrow">Architecture deep-dive</p>
+          <p class="lc-eyebrow">How we deliver</p>
           <h2 id="services-engineering-title">Engineered Without Technical Debt</h2>
-          <p>Explore practical engineering patterns that make systems easier to understand, maintain and evolve.</p>
+          <p>Whatever we build, we keep it clear, tested and easy for your team to understand, maintain and take forward.</p>
         </header>
         <div class="services-engineering-tabs" role="tablist" aria-label="Engineering approaches">
-          <button id="engineering-tab-code" class="services-engineering-tab" type="button" role="tab" aria-selected="true" aria-controls="engineering-panel-code" tabindex="0">Code Scaffolding</button>
-          <button id="engineering-tab-cloud" class="services-engineering-tab" type="button" role="tab" aria-selected="false" aria-controls="engineering-panel-cloud" tabindex="-1">Cloud Topology</button>
-          <button id="engineering-tab-audit" class="services-engineering-tab" type="button" role="tab" aria-selected="false" aria-controls="engineering-panel-audit" tabindex="-1">Performance Audits</button>
+          <button id="engineering-tab-web" class="services-engineering-tab" type="button" role="tab" aria-selected="true" aria-controls="engineering-panel-web" tabindex="0">Web &amp; mobile</button>
+          <button id="engineering-tab-ai" class="services-engineering-tab" type="button" role="tab" aria-selected="false" aria-controls="engineering-panel-ai" tabindex="-1">AI solutions</button>
+          <button id="engineering-tab-seo" class="services-engineering-tab" type="button" role="tab" aria-selected="false" aria-controls="engineering-panel-seo" tabindex="-1">SEO &amp; growth</button>
+          <button id="engineering-tab-design" class="services-engineering-tab" type="button" role="tab" aria-selected="false" aria-controls="engineering-panel-design" tabindex="-1">Design &amp; staffing</button>
         </div>
-        <div class="services-engineering-panel" id="engineering-panel-code" role="tabpanel" aria-labelledby="engineering-tab-code" tabindex="0">
+        <div class="services-engineering-panel" id="engineering-panel-web" role="tabpanel" aria-labelledby="engineering-tab-web" tabindex="0">
           <div class="services-engineering-detail">
-            <p class="services-engineering-kicker">APPLICATION ARCHITECTURE</p>
-            <h3>Make boundaries clear from the first request.</h3>
-            <p>Validate incoming data, separate application rules from transport details, and keep each integration visible and testable.</p>
-            <ul><li>Explicit input validation</li><li>Reusable service boundaries</li><li>Reviewable tests and documentation</li></ul>
+            <p class="services-engineering-kicker">WEBSITES, WEB APPS AND MOBILE</p>
+            <h3>Build once, maintain easily.</h3>
+            <p>Clear scope, reusable components and a documented handover keep websites, web applications and mobile apps simple to extend after launch.</p>
+            <ul><li>Agreed scope and structure up front</li><li>Reusable design and code components</li><li>Tested and documented before release</li></ul>
           </div>
-          <div class="services-code-window" aria-label="Illustrative TypeScript request pattern">
-            <div class="services-visual-bar"><span class="services-window-lights" aria-hidden="true"><i></i><i></i><i></i></span><span>src / routes / project.ts</span><span>TypeScript</span></div>
-            <pre><code><span class="code-muted">// Validate at the boundary</span>
-<span class="code-keyword">const</span> brief = ProjectBrief.parse(payload);
-
-<span class="code-muted">// Keep application logic testable</span>
-<span class="code-keyword">const</span> result = <span class="code-keyword">await</span> projectService.create(brief);
-
-<span class="code-keyword">return</span> Response.json({ result });</code></pre>
-            <p class="services-code-foot"><span aria-hidden="true">●</span> Clear inputs · explicit outcomes · maintainable modules</p>
+          <div class="services-delivery-card">
+            <div class="services-delivery-head"><strong>Delivery pack</strong><span>Web &amp; mobile</span></div>
+            <ul><li>Design system and reusable components</li><li>Responsive layouts for every screen size</li><li>Release tested across browsers and devices</li><li>Handover notes for your team</li></ul>
+            <p class="services-delivery-foot">Clear scope · tested releases · easy handover</p>
           </div>
         </div>
-        <div class="services-engineering-panel" id="engineering-panel-cloud" role="tabpanel" aria-labelledby="engineering-tab-cloud" tabindex="0" hidden>
+        <div class="services-engineering-panel" id="engineering-panel-ai" role="tabpanel" aria-labelledby="engineering-tab-ai" tabindex="0" hidden>
           <div class="services-engineering-detail">
-            <p class="services-engineering-kicker">CLOUD FOUNDATIONS</p>
-            <h3>Design for the way the service needs to run.</h3>
-            <p>Map traffic, application services, data and observability together so teams can reason about dependencies and operational needs.</p>
-            <ul><li>Documented system boundaries</li><li>Appropriate resilience and access controls</li><li>Operational visibility from the outset</li></ul>
+            <p class="services-engineering-kicker">AI SOLUTIONS</p>
+            <h3>Practical AI, with people in control.</h3>
+            <p>Start from a real process, connect to the information your team already uses, and keep clear review steps around every outcome.</p>
+            <ul><li>A defined use case before any build</li><li>Connected to your existing tools and data</li><li>Review steps and usage monitoring</li></ul>
           </div>
-          <div class="services-topology" role="img" aria-label="Illustrative cloud flow from public entry through application services to data and monitoring">
-            <div class="services-visual-bar"><span>REFERENCE TOPOLOGY</span><span>REQUEST FLOW ↓</span></div>
-            <div class="services-topology-flow">
-              <div class="services-topology-node services-topology-node--edge"><span>01</span><strong>Public entry</strong><small>Routing · protection</small></div>
-              <span class="services-topology-link" aria-hidden="true">↓</span>
-              <div class="services-topology-node services-topology-node--app"><span>02</span><strong>Application services</strong><small>APIs · background work</small></div>
-              <span class="services-topology-link" aria-hidden="true">↓</span>
-              <div class="services-topology-bottom">
-                <div class="services-topology-node"><span>03</span><strong>Data</strong><small>Storage · cache</small></div>
-                <div class="services-topology-node"><span>04</span><strong>Operations</strong><small>Logs · monitoring</small></div>
-              </div>
-            </div>
+          <div class="services-delivery-card">
+            <div class="services-delivery-head"><strong>Project pack</strong><span>AI solutions</span></div>
+            <ul><li>Use case and measure of success</li><li>Review of data sources and access</li><li>Pilot with real users</li><li>Monitoring and review plan</li></ul>
+            <p class="services-delivery-foot">Defined use case · real data · human review</p>
           </div>
         </div>
-        <div class="services-engineering-panel" id="engineering-panel-audit" role="tabpanel" aria-labelledby="engineering-tab-audit" tabindex="0" hidden>
+        <div class="services-engineering-panel" id="engineering-panel-seo" role="tabpanel" aria-labelledby="engineering-tab-seo" tabindex="0" hidden>
           <div class="services-engineering-detail">
-            <p class="services-engineering-kicker">QUALITY &amp; PERFORMANCE REVIEW</p>
-            <h3>Find the friction before it compounds.</h3>
-            <p>Review loading behavior, accessibility, search basics and code health to turn findings into a prioritised improvement plan.</p>
-            <ul><li>Measure real user journeys</li><li>Check accessibility and technical SEO</li><li>Prioritise fixes by impact and effort</li></ul>
+            <p class="services-engineering-kicker">SEO AND GROWTH</p>
+            <h3>Growth you can trace.</h3>
+            <p>Technical fixes, useful content and monthly reporting tied to the goals you set, so you can see what is working and why.</p>
+            <ul><li>Technical audit before any content</li><li>Content planned around real demand</li><li>Reporting your whole team can read</li></ul>
           </div>
-          <div class="services-audit-visual" aria-label="Illustrative quality audit scores and performance indicators">
-            <div class="services-visual-bar"><span>QUALITY REVIEW</span><span>WEB VITALS</span></div>
-            <div class="services-audit-scores">
-              <div><strong>98</strong><span>Performance</span></div><div><strong>100</strong><span>Accessibility</span></div><div><strong>97</strong><span>Best practices</span></div><div><strong>96</strong><span>Search basics</span></div>
-            </div>
-            <div class="services-audit-readouts"><p><span>Largest contentful paint</span><strong>0.8s</strong></p><p><span>Cumulative layout shift</span><strong>0.02</strong></p><p><span>Input responsiveness</span><strong>120ms</strong></p></div>
+          <div class="services-delivery-card">
+            <div class="services-delivery-head"><strong>Monthly report</strong><span>SEO &amp; growth</span></div>
+            <ul><li>Search visibility against your goals</li><li>Technical issues found and fixed</li><li>Content published and its results</li><li>Priorities for the month ahead</li></ul>
+            <p class="services-delivery-foot">Audit first · content with purpose · clear reporting</p>
+          </div>
+        </div>
+        <div class="services-engineering-panel" id="engineering-panel-design" role="tabpanel" aria-labelledby="engineering-tab-design" tabindex="0" hidden>
+          <div class="services-engineering-detail">
+            <p class="services-engineering-kicker">GRAPHIC DESIGN AND STAFFING</p>
+            <h3>Work that fits how you work.</h3>
+            <p>Visual work built around your brand, and skilled professionals across marketing, administration, technology and more who join your team ready to follow your standards.</p>
+            <ul><li>Brand guidelines applied across channels</li><li>Professionals matched to the role</li><li>Regular check-ins and clear handover</li></ul>
+          </div>
+          <div class="services-delivery-card">
+            <div class="services-delivery-head"><strong>What to expect</strong><span>Design &amp; staffing</span></div>
+            <ul><li>Assets ready for digital and print</li><li>Professionals matched to your role and needs</li><li>Regular feedback and progress reviews</li><li>Flexibility to scale up or down</li></ul>
+            <p class="services-delivery-foot">Consistent brand · matched talent · flexible support</p>
           </div>
         </div>
       </div>
@@ -241,34 +250,32 @@
           <div><p class="lc-eyebrow">A practical path forward</p><h2 id="services-process-title">How we build, audit,<br>and scale.</h2></div>
           <p>Start with a new idea, understand an existing system, or extend the capability of a team already in motion.</p>
         </header>
-        <div class="services-double-diamond" role="img" aria-label="Double Diamond process: Discover and Define the problem, then Develop and Deliver a solution. Each diamond explores options and brings them into focus.">
-          <svg class="services-double-diamond-svg" viewBox="0 0 1000 200" aria-hidden="true" focusable="false">
-            <path class="services-diamond-outline" d="M40 100 C132 100 157 36 260 36 C363 36 392 100 500 100 C608 100 637 36 740 36 C843 36 868 100 960 100 M40 100 C132 100 157 164 260 164 C363 164 392 100 500 100 C608 100 637 164 740 164 C843 164 868 100 960 100" />
-            <path class="services-diamond-flow" d="M40 100 C132 100 157 36 260 36 C363 36 392 100 500 100 C608 100 637 36 740 36 C843 36 868 100 960 100 M40 100 C132 100 157 164 260 164 C363 164 392 100 500 100 C608 100 637 164 740 164 C843 164 868 100 960 100" />
-            <path class="services-diamond-midline" d="M40 100 H960" />
-            <circle class="services-diamond-node" data-process-phase="discover" cx="260" cy="36" r="7" />
-            <circle class="services-diamond-node services-diamond-node--two" data-process-phase="define" cx="500" cy="100" r="7" />
-            <circle class="services-diamond-node services-diamond-node--three" data-process-phase="develop" cx="740" cy="36" r="7" />
-            <circle class="services-diamond-node services-diamond-node--four" data-process-phase="deliver" cx="960" cy="100" r="7" />
-          </svg>
-          <div class="services-double-diamond-labels" aria-hidden="true"><span data-process-phase="discover">Discover</span><span data-process-phase="define">Define</span><span data-process-phase="develop">Develop</span><span data-process-phase="deliver">Deliver</span></div>
-        </div>
+        <p class="services-process-prompt">Where are you starting?</p>
         <div class="services-process-tabs" role="tablist" aria-label="How AKH works">
-          <button id="process-tab-build" class="services-process-tab" type="button" role="tab" aria-selected="true" aria-controls="process-panel-build" tabindex="0"><span>01</span>Build</button>
-          <button id="process-tab-audit" class="services-process-tab" type="button" role="tab" aria-selected="false" aria-controls="process-panel-audit" tabindex="-1"><span>02</span>Audit</button>
-          <button id="process-tab-scale" class="services-process-tab" type="button" role="tab" aria-selected="false" aria-controls="process-panel-scale" tabindex="-1"><span>03</span>Scale</button>
+          <button id="process-tab-build" class="services-process-tab" type="button" role="tab" aria-selected="true" aria-controls="process-panel-build" tabindex="0"><span class="services-process-tab-label">01 · BUILD</span><strong>I have a new idea</strong><small>Shape it into a product that works.</small></button>
+          <button id="process-tab-audit" class="services-process-tab" type="button" role="tab" aria-selected="false" aria-controls="process-panel-audit" tabindex="-1"><span class="services-process-tab-label">02 · AUDIT</span><strong>I have something running</strong><small>Understand it before changing it.</small></button>
+          <button id="process-tab-scale" class="services-process-tab" type="button" role="tab" aria-selected="false" aria-controls="process-panel-scale" tabindex="-1"><span class="services-process-tab-label">03 · SCALE</span><strong>I have a team in motion</strong><small>Add the capability you are missing.</small></button>
         </div>
         <div class="services-process-panel" id="process-panel-build" role="tabpanel" aria-labelledby="process-tab-build" tabindex="0">
-          <div><p class="lc-eyebrow">01 · Build</p><h3>Turn a real need into a useful product.</h3><p>Align on the problem, map the people and workflows involved, then shape a practical plan for design, engineering and delivery.</p></div>
-          <ol><li><span>01</span>Understand goals and constraints</li><li><span>02</span>Agree scope and architecture</li><li><span>03</span>Design, build and review in steps</li></ol>
+          <div class="services-process-content">
+            <div><p class="lc-eyebrow">Build</p><h3>Turn a real need into a useful product.</h3><p>Align on the problem, map the people and workflows involved, then shape a practical plan for design, engineering and delivery.</p><a class="lc-cta services-process-cta" href="#scoping-call">Plan a build <span aria-hidden="true">→</span></a></div>
+            <div class="services-process-outcomes"><h4>You leave with</h4><ul><li>A scoped plan and estimate</li><li>A working product in your hands</li><li>Documentation for your team</li></ul></div>
+          </div>
+          <div class="services-process-steps-wrap"><h4>How we’ll move through it</h4><ol class="services-process-steps"><li><strong>Discover</strong><p>Talk through the problem, the people involved and what success looks like.</p></li><li><strong>Define</strong><p>Agree scope, priorities and structure before build work begins.</p></li><li><strong>Develop</strong><p>Design, build and review in short steps, with demos you can react to.</p></li><li><strong>Deliver</strong><p>Test, release and hand over, with support for what comes next.</p></li></ol></div>
         </div>
         <div class="services-process-panel" id="process-panel-audit" role="tabpanel" aria-labelledby="process-tab-audit" tabindex="0" hidden>
-          <div><p class="lc-eyebrow">02 · Audit</p><h3>Find what helps—and what gets in the way.</h3><p>Review an existing product or workflow to surface friction, dependencies and opportunities for improvement before deciding what to change.</p></div>
-          <ol><li><span>01</span>Review systems and user journeys</li><li><span>02</span>Identify risks and opportunities</li><li><span>03</span>Prioritise practical next steps</li></ol>
+          <div class="services-process-content">
+            <div><p class="lc-eyebrow">Audit</p><h3>Understand what you have before changing it.</h3><p>Review an existing website, application, search presence or AI workflow to see what is working, what is not and where to focus first.</p><a class="lc-cta services-process-cta" href="#scoping-call">Book an audit <span aria-hidden="true">→</span></a></div>
+            <div class="services-process-outcomes"><h4>You leave with</h4><ul><li>A clear written findings report</li><li>A prioritised list of fixes</li><li>A realistic roadmap</li></ul></div>
+          </div>
+          <div class="services-process-steps-wrap"><h4>How we’ll move through it</h4><ol class="services-process-steps"><li><strong>Discover</strong><p>Review the current site, app or system and how people actually use it.</p></li><li><strong>Define</strong><p>Rank findings by impact and effort, and agree what to fix first.</p></li><li><strong>Develop</strong><p>Fix and improve the priority areas in manageable, reviewed steps.</p></li><li><strong>Deliver</strong><p>Re-test, document the changes and set out a plan for ongoing care.</p></li></ol></div>
         </div>
         <div class="services-process-panel" id="process-panel-scale" role="tabpanel" aria-labelledby="process-tab-scale" tabindex="0" hidden>
-          <div><p class="lc-eyebrow">03 · Scale</p><h3>Add capability as your work grows.</h3><p>Extend platforms, cloud foundations or delivery capacity with a plan that accounts for the systems and teams already in place.</p></div>
-          <ol><li><span>01</span>Plan for changing demand</li><li><span>02</span>Extend platform and cloud capability</li><li><span>03</span>Bring in relevant specialist skills</li></ol>
+          <div class="services-process-content">
+            <div><p class="lc-eyebrow">Scale</p><h3>Add capability to a team already in motion.</h3><p>Extend what you have with skilled people in technology, marketing, administration and more, who fit into the way you already work.</p><a class="lc-cta services-process-cta" href="#scoping-call">Extend your team <span aria-hidden="true">→</span></a></div>
+            <div class="services-process-outcomes"><h4>You leave with</h4><ul><li>Professionals matched to the role</li><li>A smooth start alongside your team</li><li>Flexibility to scale up or down</li></ul></div>
+          </div>
+          <div class="services-process-steps-wrap"><h4>How we’ll move through it</h4><ol class="services-process-steps"><li><strong>Discover</strong><p>Understand your team, tools, workflow and the skills gap to fill.</p></li><li><strong>Define</strong><p>Agree roles, working methods and how success will be reviewed.</p></li><li><strong>Develop</strong><p>New team members join and work to your standards and cadence.</p></li><li><strong>Deliver</strong><p>Review progress regularly and grow or reduce the team as needs change.</p></li></ol></div>
         </div>
       </div>
     </section>
@@ -281,7 +288,7 @@
           <details><summary>Can you work with systems we already use?</summary><p>Yes. Existing workflows and platforms can be part of the discovery and scoping conversation. A new build is not assumed to be the right answer.</p></details>
           <details><summary>Can I combine more than one service?</summary><p>Yes. Software, AI, search, design and specialist staffing can be considered together when that fits the work.</p></details>
           <details><summary>How is a project scoped and priced?</summary><p>Costs depend on the goals, scope, integrations and delivery needs. The first step is to understand the work before discussing a tailored estimate.</p></details>
-          <details><summary>Can AKH provide technical specialists?</summary><p>Tech staffing can support needs across applied AI, frontend and backend development, cloud and platform engineering, and broader IT roles shaped around the project.</p></details>
+          <details><summary>Can AKH provide staffing?</summary><p>Staffing can support needs across technology, marketing, administration and operations, with professionals whose experience fits the role and capability you need to add.</p></details>
         </div>
       </div>
     </section>
@@ -320,9 +327,9 @@
 
   <aside class="ai-privacy" id="privacy-policy-panel" role="status" hidden><span>Your privacy matters. Please review our <a href="https://avinashgit26.github.io/akhit-solutions-redesign/privacy-policy.html">Privacy Policy</a>.</span><div><button type="button" id="policy-accept-btn">Agree</button><button type="button" class="decline" id="policy-reject-btn">Decline</button></div></aside>
   <button class="assistant-launcher" id="assistant-launcher" type="button" aria-controls="assistant-panel" aria-expanded="false"><img class="assistant-logo-mark assistant-logo-mark--launcher" src="website/images/home/akh-logo-mark.png" alt="" aria-hidden="true" width="48" height="48" draggable="false"><span>Ask AKH</span></button>
-  <aside class="assistant-panel" id="assistant-panel" hidden role="dialog" aria-labelledby="assistant-title"><div class="assistant-head"><img class="assistant-logo-mark assistant-logo-mark--panel" src="website/images/home/akh-logo-mark.png" alt="" aria-hidden="true" width="44" height="44" draggable="false"><div class="assistant-heading"><strong id="assistant-title">AKH Guide</strong><span>Services guide · here to help</span></div><button class="assistant-close" id="assistant-close" type="button" aria-label="Close assistant">×</button></div><p class="assistant-intro">Hi there. Looking for the right digital service?</p><p class="assistant-capability">Ask about software, AI, search, design or technical team support.</p><div class="assistant-messages" id="assistant-messages" role="log" aria-live="polite"><p class="assistant-message">What would you like to explore?</p></div><div class="assistant-prompts" id="assistant-prompts"><button type="button" data-prompt="What can AKH build for my business?">Software development</button><button type="button" data-prompt="How can AI support a workflow?">Applied AI</button><button type="button" data-prompt="Can AKH provide technology specialists?">Tech staffing</button></div><form class="assistant-form" id="assistant-form"><label class="sr-only" for="assistant-input">Ask AKH a question</label><input class="assistant-input" id="assistant-input" type="text" maxlength="500" placeholder="Ask a question…" autocomplete="off"><button class="assistant-voice" id="assistant-voice" type="button" aria-label="Use voice input" aria-describedby="assistant-disclosure" aria-pressed="false"><svg class="assistant-mic-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21m-4 0h8"></path></svg></button><button class="assistant-send" type="submit" aria-label="Send question">→</button></form><p class="assistant-disclosure" id="assistant-disclosure">Optional voice input: your browser may send audio to its speech service for transcription. Typing always works.</p><p class="assistant-status" id="assistant-status" role="status" aria-live="polite"></p></aside>
+  <aside class="assistant-panel" id="assistant-panel" hidden role="dialog" aria-labelledby="assistant-title"><div class="assistant-head"><img class="assistant-logo-mark assistant-logo-mark--panel" src="website/images/home/akh-logo-mark.png" alt="" aria-hidden="true" width="44" height="44" draggable="false"><div class="assistant-heading"><strong id="assistant-title">AKH Guide</strong><span>Services guide · here to help</span></div><button class="assistant-close" id="assistant-close" type="button" aria-label="Close assistant">×</button></div><p class="assistant-intro">Hi there. Looking for the right digital service?</p><p class="assistant-capability">Ask about software, AI, search, design or technical team support.</p><div class="assistant-messages" id="assistant-messages" role="log" aria-live="polite"><p class="assistant-message">What would you like to explore?</p></div><div class="assistant-prompts" id="assistant-prompts"><button type="button" data-prompt="What can AKH build for my business?">Software development</button><button type="button" data-prompt="How can AI support a workflow?">Applied AI</button><button type="button" data-prompt="Can AKH provide specialists for my team?">Staffing</button></div><form class="assistant-form" id="assistant-form"><label class="sr-only" for="assistant-input">Ask AKH a question</label><input class="assistant-input" id="assistant-input" type="text" maxlength="500" placeholder="Ask a question…" autocomplete="off"><button class="assistant-voice" id="assistant-voice" type="button" aria-label="Use voice input" aria-describedby="assistant-disclosure" aria-pressed="false"><svg class="assistant-mic-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21m-4 0h8"></path></svg></button><button class="assistant-send" type="submit" aria-label="Send question">→</button></form><p class="assistant-disclosure" id="assistant-disclosure">Optional voice input: your browser may send audio to its speech service for transcription. Typing always works.</p><p class="assistant-status" id="assistant-status" role="status" aria-live="polite"></p></aside>
   <script>(()=>{const panel=document.getElementById('privacy-policy-panel');try{panel.hidden=Boolean(localStorage.getItem('privacy-policy'))}catch(_){panel.hidden=false}['policy-accept-btn','policy-reject-btn'].forEach(id=>document.getElementById(id).addEventListener('click',()=>{try{localStorage.setItem('privacy-policy',id==='policy-accept-btn'?'T':'F')}catch(_){}panel.hidden=true}))})();</script>
-  <script defer src="website/js/services-page.js"></script>
+  <script defer src="website/js/services-page.js?v=20261105-service-tabs"></script>
   <script defer src="website/js/homepage-assistant.js"></script>
   <script defer src="website/js/shared-shell.js"></script>
 </body>

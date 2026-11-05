@@ -1,7 +1,6 @@
 (() => {
   const form = document.getElementById('project-intake-form');
   const thread = document.getElementById('project-intake-thread');
-  const starters = document.getElementById('project-intake-starters');
   const briefInput = document.getElementById('project-intake-input');
   const emailInput = document.getElementById('project-intake-email');
   const voiceButton = document.getElementById('project-intake-voice');
@@ -21,41 +20,26 @@
     'Do you have a preferred timeframe or a date you are working toward?'
   ];
   const answerLabels = ['Project idea', 'People and goals', 'Current tools', 'Key needs', 'Timing'];
-  const serviceGuides = {
-    'web-app': {
-      label: 'Web application development',
-      answer: 'AKH builds web applications around business workflows, including ERP and finance tools, CRM systems, HR and workforce platforms, and reservation, appointment or logistics workflows.',
-      href: 'services.html#web-application-development'
+  const heroPromptAnswers = {
+    'How can I choose the right AKH service for my project?': {
+      answer: 'Start with what you want to improve and who needs it. AKH works across web applications, websites, mobile apps, applied AI, SEO, graphic design and staffing. I can help you narrow down a practical next step.',
+      href: 'services.html#what-we-build',
+      label: 'Browse AKH services'
     },
-    website: {
-      label: 'Website development',
-      answer: 'AKH can create responsive websites, e-commerce storefronts and order flows, CMS publishing experiences, and improve page speed and organic search foundations.',
-      href: 'services.html#website-development'
+    'Can AKH build a website or app from my existing design?': {
+      answer: 'Yes. AKH can work from an existing design or help shape a rough idea into a clear brief. We can discuss the user journeys, integrations and delivery needs before recommending the right build.',
+      href: 'services.html#what-we-build',
+      label: 'Explore website and app services'
     },
-    mobile: {
-      label: 'Mobile app development',
-      answer: 'AKH can plan native iOS and Android apps, cross-platform applications and enterprise mobility, with attention to user experience, security, performance and ongoing maintenance.',
-      href: 'services.html#mobile-app-development'
+    'Can AKH improve an existing web application or system?': {
+      answer: 'We can start by understanding how the current system is used, where work gets stuck and what needs to improve. From there, the team can discuss focused changes or a broader rebuild if the evidence supports it.',
+      href: 'services.html#web-application-development',
+      label: 'Explore web application development'
     },
-    ai: {
-      label: 'Artificial intelligence',
-      answer: 'AKH maps real processes, identifies repeated work and information gaps, then explores assistants, knowledge search, automation or AI-enabled product features with safeguards and human review.',
-      href: 'services.html#artificial-intelligence'
-    },
-    seo: {
-      label: 'SEO services',
-      answer: 'AKH SEO work can include market and competitor analysis, content and keyword planning, page content and metadata improvements, and landing-page and link-profile optimisation.',
-      href: 'services.html#seo-services'
-    },
-    design: {
-      label: 'Graphic design',
-      answer: 'AKH graphic design covers logos and visual identity, print materials, website graphics and social content shaped for your brand and audience.',
-      href: 'services.html#graphic-design'
-    },
-    staffing: {
-      label: 'Tech staffing',
-      answer: 'AKH can discuss technology specialists for AI solutions, frontend and backend development, cloud and platform work, and other IT roles shaped around your project needs.',
-      href: 'services.html#tech-staffing'
+    'How can AI and workflow automation save my business time or money?': {
+      answer: 'Applied AI and workflow automation can help with repeated work, information search and product features. AKH evaluates each use case around the existing process, safeguards and human review.',
+      href: 'services.html#artificial-intelligence',
+      label: 'Explore AI services'
     }
   };
   let answers = [];
@@ -117,6 +101,17 @@
     if (kind === 'guide') animateGuideReply();
     return bubble;
   };
+
+  document.querySelectorAll('.hero-answer[data-ask-akh]').forEach(button => {
+    button.addEventListener('click', () => {
+      const question = button.dataset.askAkh || '';
+      const response = heroPromptAnswers[question];
+      if (!response) return;
+      addMessage(question, 'visitor');
+      addMessage(response.answer, 'guide', { href: response.href, label: response.label });
+      status.textContent = 'Choose another prompt or describe your project below.';
+    });
+  });
 
   const addSummary = () => {
     const card = document.createElement('section');
@@ -181,7 +176,6 @@
     answers.push(answer);
     addMessage(answer, 'visitor');
     briefInput.value = '';
-    if (starters) starters.hidden = true;
     resetButton.hidden = false;
 
     if (answers.length <= followUpQuestions.length) {
@@ -226,17 +220,6 @@
     }
   });
 
-  starters?.querySelectorAll('[data-intake-service]').forEach(button => {
-    button.addEventListener('click', () => {
-      if (completed || waitingForEmail) return;
-      const service = serviceGuides[button.dataset.intakeService];
-      if (!service) return;
-      addMessage(service.label, 'visitor');
-      addMessage(service.answer, 'guide', { href: service.href, label: 'Explore ' + service.label });
-      status.textContent = 'Choose another service or describe your project below.';
-    });
-  });
-
   resetButton.addEventListener('click', () => {
     stopRecognition();
     answers = [];
@@ -244,7 +227,6 @@
     completed = false;
     thread.replaceChildren();
     addMessage('How can I choose the right AKH service for my project?');
-    if (starters) starters.hidden = false;
     form.hidden = false;
     briefInput.hidden = false;
     briefInput.required = true;

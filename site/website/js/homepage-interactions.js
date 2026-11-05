@@ -6,9 +6,6 @@
   });
 
   const launcher = document.getElementById('assistant-launcher');
-  const panel = document.getElementById('assistant-panel');
-  const input = document.getElementById('assistant-input');
-  const form = document.getElementById('assistant-form');
 
   if (launcher && document.body.classList.contains('homepage-page')) {
     const servicesSection = document.querySelector('.home-services');
@@ -30,17 +27,6 @@
       updateLauncherVisibility();
     }
   }
-
-  document.querySelectorAll('[data-ask-akh]').forEach(button => {
-    button.addEventListener('click', () => {
-      if (!launcher || !panel || !input || !form) return;
-
-      if (panel.hidden) launcher.click();
-      input.value = button.dataset.askAkh || '';
-      if (typeof form.requestSubmit === 'function') form.requestSubmit();
-      else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-    });
-  });
 
   const replaceFailedLogo = image => {
     if (!image.isConnected) return;
