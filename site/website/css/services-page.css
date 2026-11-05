@@ -1398,3 +1398,80 @@
   .services-page .services-offering-tab,
   .services-page .services-process-tab { transition: none; }
 }
+
+
+/* Match the homepage proof band and animate values through the shared count-up script. */
+.services-page .services-proof {
+  padding: clamp(25px, 3.4vw, 44px) 0;
+  border-top: 1px solid rgb(255 255 255 / 25%);
+  background: var(--akh-navy);
+}
+.services-page .services-proof-item strong {
+  color: var(--akh-lime);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 5vw, 84px);
+  font-weight: 700;
+  letter-spacing: -.06em;
+  line-height: 1;
+  white-space: nowrap;
+}
+.services-page .services-proof-item span { color: #F6F7FA; font-size: clamp(10px, 1.05vw, 13px); font-weight: 700; }
+.services-page .services-proof-item { border-color: rgb(255 255 255 / 25%); }
+@media (max-width: 760px) {
+  .services-page .services-proof { padding-block: 23px; }
+  .services-page .services-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 15px; }
+  .services-page .services-proof-item:nth-child(2) { border-right: 0; }
+  .services-page .services-proof-item strong { font-size: clamp(38px, 8vw, 62px); }
+  .services-page .services-proof-item span { font-size: 11px; }
+}
+@media (max-width: 430px) {
+  .services-page .services-proof-item { padding-inline: 7px; }
+  .services-page .services-proof-item strong { font-size: clamp(34px, 9vw, 42px); }
+  .services-page .services-proof-item span { font-size: 10px; }
+}
+
+/* Two-column service details use existing AKH service artwork, with cited context for AI and SEO. */
+.services-page .services-offering-card { display: block; }
+.services-page .services-offering-main {
+  display: grid;
+  min-height: clamp(360px, 31vw, 460px);
+  grid-template-columns: minmax(0, 1.05fr) minmax(260px, .95fr);
+  align-items: stretch;
+  gap: clamp(24px, 4vw, 58px);
+}
+.services-page .services-offering-copy { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; }
+.services-page .services-offering-copy .services-offering-link { margin-top: auto; }
+.services-page .services-offering-visual { display: flex; min-width: 0; flex-direction: column; justify-content: center; align-items: center; }
+.services-page .services-offering-visual > img {
+  display: block;
+  width: 100%;
+  max-height: 365px;
+  aspect-ratio: 1.14;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgb(11 31 58 / 13%));
+}
+.services-page .services-offering-card--navy .services-offering-visual > img { filter: drop-shadow(0 12px 24px rgb(0 0 0 / 28%)); }
+.services-page .services-impact-stats { display: grid; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 2px; }
+.services-page .services-impact-stats > div { display: flex; min-width: 0; flex-direction: column; gap: 4px; padding: 11px 12px; border: 1px solid rgb(11 31 58 / 16%); border-radius: 9px; background: rgb(255 255 255 / 68%); color: var(--akh-navy); }
+.services-page .services-impact-stats strong { font-family: Georgia, "Times New Roman", serif; font-size: clamp(24px, 2.4vw, 34px); line-height: 1; }
+.services-page .services-impact-stats span { font-size: 11px; line-height: 1.35; }
+.services-page .services-impact-source { width: 100%; margin: 9px 0 0; color: #42536A; font-size: 10px; line-height: 1.4; }
+.services-page .services-impact-source a { color: var(--akh-cobalt); font-weight: 750; text-decoration: underline; text-underline-offset: 2px; }
+.services-page .services-offering-card--navy .services-impact-source { color: #D5E0EE; }
+.services-page .services-offering-card--navy .services-impact-source a { color: var(--akh-lime); }
+.services-page .services-offering-card--navy .services-impact-stats > div { border-color: rgb(255 255 255 / 20%); background: rgb(255 255 255 / 8%); color: #fff; }
+.services-page .services-offering-card--navy .services-impact-stats span { color: #D5E0EE; }
+@media (max-width: 900px) {
+  .services-page .services-offering-main { grid-template-columns: minmax(0, 1.05fr) minmax(220px, .95fr); gap: 20px; }
+}
+@media (max-width: 600px) {
+  .services-page .services-offering-main { min-height: 0; grid-template-columns: 1fr; gap: 18px; }
+  .services-page .services-offering-copy .services-offering-link { margin-top: 22px; }
+  .services-page .services-offering-visual > img { max-height: 300px; aspect-ratio: 1.2; }
+}
+
+/* A lighter scoping-call surface separates it from the navy footer CTA. */
+.services-page .services-scoping { color: var(--akh-ink); background: #E6EDEF; }
+.services-page .services-scoping .lc-eyebrow { color: var(--akh-cobalt); }
+.services-page .services-scoping-copy > p:not(.lc-eyebrow) { color: #43536A; }
+.services-page .services-scoping :focus-visible { outline-color: var(--akh-cobalt); }

@@ -398,3 +398,47 @@ body :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher):hove
   .header,
   body :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher) { transition: none !important; }
 }
+
+
+/* Canonical footer shared by the Homepage, AI Hub, Services, Learn and Careers. */
+.site-footer { padding: 46px 0 20px; color: var(--akh-white); background: var(--akh-navy); }
+.site-footer-wrap { width: min(94%, 1440px); margin-inline: auto; }
+.site-footer-cta { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding: 0 0 30px; border-bottom: 1px solid rgb(255 255 255 / 22%); }
+.site-footer-eyebrow { margin: 0 0 9px; color: var(--akh-lime); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.site-footer-cta h2 { max-width: 760px; margin: 0; color: #fff; font-size: clamp(30px, 4vw, 48px); font-weight: 760; line-height: 1.05; letter-spacing: -.055em; }
+.site-footer-button { display: inline-flex; min-height: 48px; flex: 0 0 auto; align-items: center; justify-content: center; gap: 13px; padding: 0 20px; border: 1px solid var(--akh-lime); border-radius: 6px; color: var(--akh-navy); background: var(--akh-lime); font-size: 13px; font-weight: 750; transition: background .18s ease, transform .18s ease; }
+.site-footer-button:hover { background: #D6F878; transform: translateY(-1px); }
+.site-footer-grid { display: grid; grid-template-columns: minmax(200px, 1.2fr) minmax(150px, .9fr) minmax(125px, .75fr) minmax(230px, 1.25fr); gap: clamp(20px, 3vw, 40px); padding: 27px 0 25px; }
+.site-footer-grid h3 { margin: 2px 0 12px; color: #fff; font-size: 13px; font-weight: 750; }
+.site-footer-brand { display: inline-block; color: #fff; font-size: 21px; font-weight: 800; letter-spacing: -.055em; white-space: nowrap; }
+.site-footer-brand b { color: var(--akh-lime); }
+.site-footer-about > p, .site-footer-contact, .site-newsletter > p { margin: 11px 0 0; color: #CFD8E5; font-size: 12px; line-height: 1.55; }
+.site-footer-contact a:hover, .site-footer-nav a:hover, .site-footer-social a:hover, .site-footer-bottom a:hover, .site-newsletter-resource:hover { color: var(--akh-lime); }
+.site-footer-nav, .site-footer-social { display: grid; justify-items: start; gap: 8px; color: #E4EAF2; font-size: 12px; }
+.site-footer-nav a, .site-footer-social a { max-width: 100%; }
+.site-footer-social span, .site-newsletter-resource span { color: var(--akh-lime); }
+.site-newsletter > p { margin-top: 0; }
+.site-newsletter-resource { display: inline-block; margin-top: 10px; color: #E4EAF2; font-size: 11px; font-weight: 650; line-height: 1.45; }
+.site-newsletter form { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: 14px; }
+.site-newsletter-control input { width: 100%; min-width: 0; min-height: 42px; padding: 0 11px; border: 1px solid #6B7A8E; border-radius: 5px; color: var(--akh-ink); background: #fff; font: inherit; font-size: 12px; }
+.site-newsletter-control input:focus-visible { outline: 3px solid var(--akh-lime); outline-offset: 2px; }
+.site-newsletter .newsletter-button { min-height: 42px; margin: 0; padding: 0 14px; border: 1px solid var(--akh-lime); border-radius: 5px; color: var(--akh-navy); background: var(--akh-lime); font-size: 12px; font-weight: 750; cursor: pointer; }
+.site-newsletter .newsletter-button:hover { background: #D6F878; }
+.site-footer-bottom { display: flex; justify-content: space-between; gap: 15px; padding-top: 15px; border-top: 1px solid rgb(255 255 255 / 22%); color: #CFD8E5; font-size: 11px; }
+.site-footer-bottom a { text-decoration: underline; text-underline-offset: 2px; }
+@media (max-width: 980px) {
+  .site-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .site-footer { padding: 34px 0 17px; }
+  .site-footer-wrap { width: calc(100% - 36px); }
+  .site-footer-cta { display: block; padding-bottom: 23px; }
+  .site-footer-cta h2 { font-size: clamp(29px, 8vw, 37px); }
+  .site-footer-button { margin-top: 17px; }
+  .site-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 16px; padding-block: 23px; }
+  .site-footer-grid h3 { font-size: 12px; }
+  .site-footer-about > p, .site-footer-contact, .site-newsletter > p, .site-footer-nav, .site-footer-social { font-size: 11px; }
+  .site-newsletter form { grid-template-columns: 1fr; }
+  .site-newsletter .newsletter-button { width: 100%; }
+  .site-footer-bottom { flex-direction: column; gap: 6px; }
+}

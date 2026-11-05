@@ -107,6 +107,7 @@
       const question = button.dataset.askAkh || '';
       const response = heroPromptAnswers[question];
       if (!response) return;
+      dismissGuideCue();
       addMessage(question, 'visitor');
       addMessage(response.answer, 'guide', { href: response.href, label: response.label });
       status.textContent = 'Choose another prompt or describe your project below.';

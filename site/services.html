@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="website/css/learning-careers.css">
   <link rel="stylesheet" href="website/css/interior-home-theme.css">
   <link rel="stylesheet" href="website/css/shared-shell.css">
-  <link rel="stylesheet" href="website/css/akhit-unified.css?v=20261020-shell-metrics-assistant">
-  <link rel="stylesheet" href="website/css/services-page.css?v=20261105-service-directory">
+  <link rel="stylesheet" href="website/css/akhit-unified.css?v=20261105-shared-footer">
+  <link rel="stylesheet" href="website/css/services-page.css?v=20261105-service-detail-visuals">
   <link rel="stylesheet" href="website/css/assistant-consistency.css?v=20261104-mic-clear">
   <link rel="stylesheet" href="website/css/header-consistency.css?v=20261104-five-page-consistency">
   <link rel="stylesheet" href="website/css/responsive-system.css?v=20261105-breakpoints">
@@ -76,10 +76,10 @@
       <div class="services-proof" role="region" aria-label="Service delivery metrics">
         <div class="lc-wrap">
           <div class="services-proof-grid">
-            <article class="services-proof-item"><strong>120+</strong><span>Projects delivered</span></article>
-            <article class="services-proof-item"><strong>96%</strong><span>Client satisfaction</span></article>
-            <article class="services-proof-item"><strong>14</strong><span>Markets reached</span></article>
-            <article class="services-proof-item"><strong>4.8/5</strong><span>Client rating</span></article>
+            <article class="services-proof-item"><strong class="services-proof-value" data-count="120" data-suffix="+">120+</strong><span>Projects delivered</span></article>
+            <article class="services-proof-item"><strong class="services-proof-value" data-count="96" data-suffix="%">96%</strong><span>Client satisfaction</span></article>
+            <article class="services-proof-item"><strong class="services-proof-value" data-count="14">14</strong><span>Markets reached</span></article>
+            <article class="services-proof-item"><strong class="services-proof-value" data-count="4.8" data-decimals="1" data-suffix="/5">4.8/5</strong><span>Client rating</span></article>
           </div>
         </div>
       </div>
@@ -102,75 +102,61 @@
             <button class="services-offering-tab" id="offering-tab-website" type="button" role="tab" aria-selected="false" aria-controls="website-development" tabindex="-1"><span>Website development</span><small>WEB</small></button>
           </div>
           <div class="services-offering-grid">
-            <article class="services-offering-card services-offering-card--lime" id="artificial-intelligence" role="tabpanel" aria-labelledby="offering-tab-ai" tabindex="0">
-              <div class="services-offering-top"><span>AI</span><span>Practical intelligence</span></div>
+            <article class="services-offering-card services-offering-card--lime" id="artificial-intelligence" role="tabpanel" aria-labelledby="offering-tab-ai" tabindex="0"><div class="services-offering-main"><div class="services-offering-copy"><div class="services-offering-top"><span>AI</span><span>Practical intelligence</span></div>
               <h3>AI solutions</h3>
               <p>Explore where applied AI can support real work, starting from your processes and the information your people need.</p>
               <p class="services-outcome"><strong>Designed for:</strong> clearer next steps for practical AI use.</p>
               <div class="services-tags" aria-label="AI capabilities"><span>Assistants</span><span>Knowledge search</span><span>Workflow automation</span><span>Image recognition</span></div>
               <details class="services-card-details"><summary>See capabilities</summary><ul><li>Map processes and identify repeated work or information gaps</li><li>Assistants and knowledge search</li><li>Workflow automation and AI-enabled product features</li><li>Image recognition and language or text analysis</li><li>Evaluation with safeguards and human review</li></ul></details>
-              <a class="services-offering-link" href="service/artificial-intelligence.html">Explore AI Hub <span aria-hidden="true">↗</span></a>
-            </article>
+              <a class="services-offering-link" href="service/artificial-intelligence.html">Explore AI Hub <span aria-hidden="true">↗</span></a></div><aside class="services-offering-visual"><img src="website/images/home/services/service-ai-cutout.png" alt="Applied AI service illustration" loading="lazy"><div class="services-impact-stats" aria-label="AI survey context"><div><strong>80%</strong><span>of respondents say AI improved their individual productivity</span></div><div><strong>37%</strong><span>report any positive impact on organisational EBIT</span></div></div><p class="services-impact-source">McKinsey Global Survey, <em>The State of AI</em>, 2026. <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer">Read the source</a></p></aside></div></article>
 
-            <article class="services-offering-card services-offering-card--white" id="graphic-design" role="tabpanel" aria-labelledby="offering-tab-design" tabindex="0" hidden>
-              <div class="services-offering-top"><span>IDENTITY</span><span>Brand expression</span></div>
+            <article class="services-offering-card services-offering-card--white" id="graphic-design" role="tabpanel" aria-labelledby="offering-tab-design" tabindex="0" hidden><div class="services-offering-main"><div class="services-offering-copy"><div class="services-offering-top"><span>IDENTITY</span><span>Brand expression</span></div>
               <h3>Graphic design</h3>
               <p>Make your message clear through visual work shaped around your brand, audience and channels.</p>
               <p class="services-outcome"><strong>Designed for:</strong> recognisable visuals across digital and print.</p>
               <div class="services-tags" aria-label="Graphic design capabilities"><span>Visual identity</span><span>Print</span><span>Website graphics</span><span>Social</span></div>
               <details class="services-card-details"><summary>See capabilities</summary><ul><li>Logos and visual identity</li><li>Print and marketing materials</li><li>Website graphics</li><li>Social media content</li><li>Consistent visuals across digital and print</li></ul></details>
-              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Graphic%20design">Discuss design work <span aria-hidden="true">↗</span></a>
-            </article>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Graphic%20design">Discuss design work <span aria-hidden="true">↗</span></a></div><aside class="services-offering-visual"><img src="website/images/home/services/service-graphic-design-cutout.png" alt="Graphic design service illustration" loading="lazy"></aside></div></article>
 
-            <article class="services-offering-card services-offering-card--pale" id="mobile-app-development" role="tabpanel" aria-labelledby="offering-tab-mobile" tabindex="0" hidden>
-              <div class="services-offering-top"><span>MOBILE</span><span>Customer and team experiences</span></div>
+            <article class="services-offering-card services-offering-card--pale" id="mobile-app-development" role="tabpanel" aria-labelledby="offering-tab-mobile" tabindex="0" hidden><div class="services-offering-main"><div class="services-offering-copy"><div class="services-offering-top"><span>MOBILE</span><span>Customer and team experiences</span></div>
               <h3>Mobile apps</h3>
               <p>Build useful mobile experiences for customers and teams, with a considered approach to platform and support.</p>
               <p class="services-outcome"><strong>Designed for:</strong> helpful experiences across the devices people use.</p>
               <div class="services-tags" aria-label="Mobile app capabilities"><span>iOS</span><span>Android</span><span>Cross-platform</span><span>Enterprise mobility</span></div>
               <details class="services-card-details"><summary>See capabilities</summary><ul><li>Native iOS and Android apps</li><li>Cross-platform applications</li><li>Enterprise mobility solutions</li><li>User experience, security, performance and maintenance</li></ul></details>
-              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Mobile%20app%20development">Discuss a mobile app <span aria-hidden="true">↗</span></a>
-            </article>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Mobile%20app%20development">Discuss a mobile app <span aria-hidden="true">↗</span></a></div><aside class="services-offering-visual"><img src="website/images/home/services/service-mobile-app-cutout.png" alt="Mobile app development service illustration" loading="lazy"></aside></div></article>
 
-            <article class="services-offering-card services-offering-card--pale" id="seo-services" role="tabpanel" aria-labelledby="offering-tab-seo" tabindex="0" hidden>
-              <div class="services-offering-top"><span>DISCOVERY</span><span>Search and growth</span></div>
+            <article class="services-offering-card services-offering-card--pale" id="seo-services" role="tabpanel" aria-labelledby="offering-tab-seo" tabindex="0" hidden><div class="services-offering-main"><div class="services-offering-copy"><div class="services-offering-top"><span>DISCOVERY</span><span>Search and growth</span></div>
               <h3>SEO and growth</h3>
               <p>Help the right people find your business through a search strategy informed by market demand and your channels.</p>
               <p class="services-outcome"><strong>Designed for:</strong> useful content, clearer discovery and considered reporting.</p>
               <div class="services-tags" aria-label="SEO capabilities"><span>Technical audit</span><span>Content strategy</span><span>Local SEO</span><span>Monthly reporting</span></div>
               <details class="services-card-details"><summary>See capabilities</summary><ul><li>Market and competitor analysis</li><li>Content planning and keyword research</li><li>Page content, metadata and site structure</li><li>Landing pages and link profiles</li><li>Website speed and mobile experience</li></ul></details>
-              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=SEO%20services">Discuss SEO support <span aria-hidden="true">↗</span></a>
-            </article>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=SEO%20services">Discuss SEO support <span aria-hidden="true">↗</span></a></div><aside class="services-offering-visual"><img src="website/images/home/services/service-seo-cutout.png" alt="SEO service illustration" loading="lazy"><div class="services-impact-stats" aria-label="Monster India case study context"><div><strong>+94%</strong><span>organic traffic to job-detail pages</span></div><div><strong>+10%</strong><span>applications after structured data</span></div></div><p class="services-impact-source">Monster India · Google Search Central case study, 2019. <a href="https://developers.google.com/search/case-studies/monster-india-case-study" target="_blank" rel="noopener noreferrer">Read the case study</a></p></aside></div></article>
 
-            <article class="services-offering-card services-offering-card--navy" id="tech-staffing" role="tabpanel" aria-labelledby="offering-tab-staffing" tabindex="0" hidden>
-              <div class="services-offering-top"><span>TEAM</span><span>People and capability</span></div>
+            <article class="services-offering-card services-offering-card--navy" id="tech-staffing" role="tabpanel" aria-labelledby="offering-tab-staffing" tabindex="0" hidden><div class="services-offering-main"><div class="services-offering-copy"><div class="services-offering-top"><span>TEAM</span><span>People and capability</span></div>
               <h3>Staffing</h3>
               <p>Strengthen your team with skilled professionals whose experience fits the role and the capability you need to add.</p>
               <p class="services-outcome"><strong>Designed for:</strong> flexible access to skilled people across your business.</p>
               <div class="services-tags" aria-label="Staffing capabilities"><span>Technology</span><span>Marketing</span><span>Administration</span><span>Operations</span></div>
               <details class="services-card-details"><summary>See capabilities</summary><ul><li>Technology professionals matched to role needs</li><li>Marketing specialists</li><li>Administration professionals</li><li>Operations support shaped around your team</li></ul></details>
-              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Staffing">Discuss team support <span aria-hidden="true">↗</span></a>
-            </article>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Staffing">Discuss team support <span aria-hidden="true">↗</span></a></div><aside class="services-offering-visual"><img src="website/images/home/services/service-tech-staffing-cutout.png" alt="Staffing service illustration" loading="lazy"></aside></div></article>
 
-            <article class="services-offering-card services-offering-card--white" id="web-application-development" role="tabpanel" aria-labelledby="offering-tab-webapp" tabindex="0" hidden>
-              <div class="services-offering-top"><span>PLATFORMS</span><span>Connected business tools</span></div>
+            <article class="services-offering-card services-offering-card--white" id="web-application-development" role="tabpanel" aria-labelledby="offering-tab-webapp" tabindex="0" hidden><div class="services-offering-main"><div class="services-offering-copy"><div class="services-offering-top"><span>PLATFORMS</span><span>Connected business tools</span></div>
               <h3>Web application development</h3>
               <p>Purpose-built applications for the workflows, information and people at the heart of your organisation.</p>
               <p class="services-outcome"><strong>Designed for:</strong> connected tools shaped around how your teams work.</p>
               <div class="services-tags" aria-label="Web application capabilities"><span>ERP &amp; finance</span><span>CRM</span><span>HR platforms</span><span>Logistics</span></div>
               <details class="services-card-details"><summary>See capabilities</summary><ul><li>ERP and finance tools</li><li>Customer relationship management systems</li><li>HR and workforce platforms</li><li>Reservation, appointment and logistics workflows</li></ul></details>
-              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Web%20application%20development">Discuss an application <span aria-hidden="true">↗</span></a>
-            </article>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Web%20application%20development">Discuss an application <span aria-hidden="true">↗</span></a></div><aside class="services-offering-visual"><img src="website/images/home/services/service-web-app-cutout.png" alt="Web application development service illustration" loading="lazy"></aside></div></article>
 
-            <article class="services-offering-card services-offering-card--pale" id="website-development" role="tabpanel" aria-labelledby="offering-tab-website" tabindex="0" hidden>
-              <div class="services-offering-top"><span>WEB</span><span>Websites and commerce</span></div>
+            <article class="services-offering-card services-offering-card--pale" id="website-development" role="tabpanel" aria-labelledby="offering-tab-website" tabindex="0" hidden><div class="services-offering-main"><div class="services-offering-copy"><div class="services-offering-top"><span>WEB</span><span>Websites and commerce</span></div>
               <h3>Website development</h3>
               <p>Give your business a clear home online, with a site that works across screens and supports how you publish and sell.</p>
               <p class="services-outcome"><strong>Designed for:</strong> responsive experiences that support your content and commerce.</p>
               <div class="services-tags" aria-label="Website capabilities"><span>Marketing sites</span><span>Web apps</span><span>E-commerce</span><span>CMS</span></div>
               <details class="services-card-details"><summary>See capabilities</summary><ul><li>Responsive business websites</li><li>E-commerce storefronts and order flows</li><li>Content management systems</li><li>Page-speed and organic-search improvements</li></ul></details>
-              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Website%20development">Discuss a website <span aria-hidden="true">↗</span></a>
-            </article>
+              <a class="services-offering-link" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html?subject=Website%20development">Discuss a website <span aria-hidden="true">↗</span></a></div><aside class="services-offering-visual"><img src="website/images/home/services/service-website-cutout.png" alt="Website development service illustration" loading="lazy"></aside></div></article>
           </div>
         </div>
       </div>
@@ -315,11 +301,16 @@
     </section>
   </main>
 
-  <footer class="lc-footer">
-    <div class="lc-wrap">
-      <div class="lc-footer-top"><div><p class="lc-eyebrow">Build what comes next</p><h2>Bring us the challenge.<br>We’ll help shape a way forward.</h2></div><a class="lc-cta" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html">Start a conversation <span aria-hidden="true">→</span></a></div>
-      <div class="lc-footer-main"><div><a class="lc-footer-brand" href="index.html"><b>AKH</b> IT Solutions</a><p>Digital products and practical technology, built around real business needs.</p></div><nav class="lc-footer-links" aria-label="Footer navigation"><a href="index.html">Homepage</a><a href="service/artificial-intelligence.html">AI Hub</a><a href="services.html" aria-current="page">Services</a><a href="learn-with-us.html">Learn with us</a><a href="careers.html">Careers</a><a href="mailto:info@akhitsolutions.com">Contact</a></nav></div>
-      <div class="lc-footer-bottom"><span>© 2026 AKH IT Solutions</span><span>Romford, United Kingdom · <a href="https://avinashgit26.github.io/akhit-solutions-redesign/privacy-policy.html">Privacy policy</a></span></div>
+  <footer class="site-footer">
+    <div class="site-footer-wrap">
+      <div class="site-footer-cta"><div><p class="site-footer-eyebrow">Have an idea in mind?</p><h2>You’ve got the ambition.<br>We’ll build the technology to match.</h2></div><a class="site-footer-button" href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html">Let’s build together <span aria-hidden="true">→</span></a></div>
+      <div class="site-footer-grid">
+        <div class="site-footer-about"><a class="site-footer-brand" href="index.html#top"><b>AKH</b> IT Solutions</a><p>Digital products and practical technology, built around real business needs.</p><p class="site-footer-contact"><a href="mailto:info@akhitsolutions.com">info@akhitsolutions.com</a><br><a href="tel:+442045290790">+44 20 4529 0790</a></p></div>
+        <div><h3>Useful links</h3><nav class="site-footer-nav" aria-label="Useful links"><a href="index.html">Homepage</a><a href="service/artificial-intelligence.html">AI Hub</a><a href="services.html">Services</a><a href="learn-with-us.html">Learn with us</a><a href="careers.html">Careers</a><a href="https://avinashgit26.github.io/akhit-solutions-redesign/portfolio.html">Our work</a><a href="https://avinashgit26.github.io/akhit-solutions-redesign/about-us.html">About AKH</a><a href="https://avinashgit26.github.io/akhit-solutions-redesign/contact-us.html">Contact us</a></nav></div>
+        <div><h3>Follow us</h3><nav class="site-footer-social" aria-label="AKH social accounts"><a href="https://www.facebook.com/people/AKHIT-Solutions-Pvt-Ltd/100086494841632/" target="_blank" rel="noopener noreferrer">Facebook <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/company/a-k-h-it-solutions/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a><a href="https://instagram.com/akh_it_solutions?igshid=YmMyMTA2M2Y=" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">↗</span></a></nav></div>
+        <div class="site-newsletter"><h3>Subscribe our newsletter</h3><p>Get practical product and AI insights, plus a free guide to scoping your next digital project.</p><a class="site-newsletter-resource" href="https://avinashgit26.github.io/akhit-solutions-redesign/website/downloads/digital-project-scoping-checklist.pdf" download>Download the project scoping checklist <span aria-hidden="true">↓</span></a><form id="preview-newsletter"><label class="site-newsletter-control"><span class="sr-only">Your email address</span><input id="newsletter-email" type="email" placeholder="Your email address" autocomplete="email" required></label><button type="submit" class="newsletter-button">Subscribe</button></form></div>
+      </div>
+      <div class="site-footer-bottom"><span>© 2026 AKH IT Solutions</span><span>Romford, United Kingdom · <a href="https://avinashgit26.github.io/akhit-solutions-redesign/privacy-policy.html">Privacy policy</a></span></div>
     </div>
   </footer>
 

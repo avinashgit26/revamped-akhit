@@ -1,5 +1,5 @@
 (() => {
-  const proofValues = [...document.querySelectorAll('.proof-value[data-count]')];
+  const proofValues = [...document.querySelectorAll('.proof-value[data-count], .services-proof-value[data-count]')];
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const setProofValue = (element, value) => {
     const decimals = Number(element.dataset.decimals || 0);

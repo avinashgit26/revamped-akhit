@@ -469,3 +469,10 @@ body.ai-hub-page .ai-final-cta .ai-section-heading > h2,
 body.ai-hub-page .ai-final-cta .ai-section-heading > p:last-child { color: #0B1F3A !important; }
 body.ai-hub-page .ai-final-cta .ai-section-heading > p:last-child { opacity: .78; }
 body.ai-hub-page .ai-final-cta .ai-hero-secondary { border-color: #0B1F3A !important; color: #0B1F3A !important; }
+
+
+/* Balance the AI Hub hero columns and let the constellation use the available width. */
+@media (min-width: 761px) {
+  body.ai-hub-page .ai-hero-inner { gap: clamp(10px, 1.15vw, 20px) !important; }
+  body.ai-hub-page .ai-hero-taxonomy { justify-self: stretch; width: 100%; max-width: 760px; }
+}
