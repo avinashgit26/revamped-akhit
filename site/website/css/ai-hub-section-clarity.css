@@ -31,3 +31,14 @@ body.ai-hub-page .ai-process .ai-step p {
   font-size: clamp(14px, .9vw, 16px) !important;
   line-height: 1.6;
 }
+
+/* Match the Designed with care list to the same readable type scale. */
+body.ai-hub-page .ai-control .ai-control-item h3 {
+  font-size: clamp(18px, 1.1vw, 20px) !important;
+  line-height: 1.3;
+}
+
+body.ai-hub-page .ai-control .ai-control-item p {
+  font-size: clamp(15px, .9vw, 16px) !important;
+  line-height: 1.6 !important;
+}
