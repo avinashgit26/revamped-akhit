@@ -30,7 +30,22 @@ body.learn-with-us-page .learn-hero h1 {
   line-height: .99;
   letter-spacing: -.075em;
 }
-body.learn-with-us-page .learn-hero h1 span { color: var(--akh-cobalt); }
+body.learn-with-us-page .learn-hero h1 .learn-headline-line { display: block; color: var(--akh-navy); }
+body.learn-with-us-page .learn-hero h1 .learn-headline-line--accent { color: var(--akh-cobalt); }
+body.learn-with-us-page .learn-trust-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  margin: 0 0 21px;
+  padding: 7px 13px;
+  border: 1px solid #C9D7EC;
+  border-radius: 999px;
+  color: var(--akh-navy);
+  background: #F6F7FA;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .015em;
+}
 body.learn-with-us-page .learn-hero .lc-hero-copy {
   max-width: 540px;
   margin: 0;
@@ -66,6 +81,10 @@ body.learn-with-us-page .learn-hero .lc-secondary {
   background: transparent;
 }
 body.learn-with-us-page .learn-hero .lc-secondary:hover { border-color: var(--akh-cobalt); background: #F6F7FA; }
+
+@media (max-width: 700px) {
+  body.learn-with-us-page .learn-trust-badge { margin-bottom: 17px; font-size: 11px; }
+}
 
 body.learn-with-us-page .learn-hero-art {
   position: relative;

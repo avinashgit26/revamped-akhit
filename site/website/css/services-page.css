@@ -8,24 +8,76 @@
 
 .services-page .services-hero {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   padding: clamp(48px, 6vw, 82px) 0 0;
   color: #fff;
   background: var(--akh-navy);
 }
 
+.services-page .services-hero-wave-stage {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 132px;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 72% 52%, rgb(31 79 216 / 28%), transparent 44%),
+    radial-gradient(ellipse at 28% 70%, rgb(23 167 223 / 10%), transparent 45%),
+    #0B1F3A;
+}
+
+.services-page .services-hero-wave-stage::before,
+.services-page .services-hero-wave-stage::after {
+  position: absolute;
+  inset: -28% -14%;
+  content: "";
+  pointer-events: none;
+}
+
+.services-page .services-hero-wave-stage::before {
+  background:
+    radial-gradient(ellipse at 61% 42%, transparent 0 27%, rgb(31 79 216 / 28%) 27.2% 28%, transparent 28.2% 40%, rgb(23 167 223 / 16%) 40.2% 40.8%, transparent 41%),
+    radial-gradient(ellipse at 78% 74%, transparent 0 34%, rgb(31 79 216 / 20%) 34.2% 35%, transparent 35.2%);
+  opacity: .8;
+}
+
+.services-page .services-hero-wave-stage::after {
+  background: linear-gradient(90deg, rgb(11 31 58 / 78%) 0%, rgb(11 31 58 / 46%) 42%, transparent 82%);
+}
+
+.services-page .services-hero-wave {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: .76;
+}
+
+.services-page .services-hero-wave-stage.is-static-fallback .services-hero-wave { display: none; }
+
 .services-page .services-hero-grid {
+  position: relative;
+  z-index: 2;
   display: grid;
-  min-height: 500px;
-  grid-template-columns: minmax(0, .92fr) minmax(390px, 1.08fr);
+  width: min(100%, 1120px);
+  min-height: clamp(500px, 48vw, 620px);
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  gap: clamp(20px, 3vw, 42px);
+  justify-items: center;
+  gap: 0;
 }
 
 .services-page .services-hero-copy {
   position: relative;
   z-index: 2;
-  padding: 10px 0 42px;
+  display: flex;
+  width: min(100%, 940px);
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0 48px;
+  text-align: center;
 }
 
 .services-page .services-hero-copy .lc-eyebrow,
@@ -35,23 +87,25 @@
 }
 
 .services-page .services-hero h1 {
-  max-width: 690px;
+  max-width: 940px;
   margin: 0;
   color: #fff;
   font-size: clamp(48px, 6.1vw, 78px);
   font-weight: 780;
   line-height: .98;
   letter-spacing: -.075em;
+  text-wrap: balance;
 }
 
 .services-page .services-hero h1 span { color: var(--akh-lime); }
 
 .services-page .services-hero-intro {
-  max-width: 620px;
+  max-width: 760px;
   margin: 22px 0 0;
   color: #D7E1EF;
   font-size: clamp(17px, 1.55vw, 19px);
   line-height: 1.62;
+  text-wrap: pretty;
 }
 
 .services-page .services-hero-actions {
@@ -60,6 +114,7 @@
   align-items: center;
   gap: 16px 22px;
   margin-top: 26px;
+  justify-content: center;
 }
 
 .services-page .services-hero .lc-cta,
@@ -1071,8 +1126,7 @@
 }
 
 @media (max-width: 1050px) {
-  .services-page .services-hero-grid { min-height: 450px; grid-template-columns: minmax(0, .9fr) minmax(340px, 1.1fr); }
-  .services-page .services-hero-art { min-height: 420px; }
+  .services-page .services-hero-grid { min-height: clamp(500px, 62vw, 590px); grid-template-columns: minmax(0, 1fr); }
   .services-page .services-offering-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .services-page .services-offering-card:nth-child(n) { min-height: 320px; grid-column: span 1; }
   .services-page .services-offering-card:nth-child(n + 5) { min-height: 280px; }
@@ -1087,7 +1141,7 @@
 @media (max-width: 700px) {
   .services-page .services-hero { padding-top: 36px; }
   .services-page .services-hero-grid { min-height: 0; grid-template-columns: 1fr; gap: 4px; }
-  .services-page .services-hero-copy { padding: 12px 0 2px; }
+  .services-page .services-hero-copy { padding: 12px 0 36px; }
   .services-page .services-hero h1 { max-width: 620px; font-size: clamp(43px, 10.5vw, 62px); }
   .services-page .services-hero-intro { margin-top: 16px; font-size: 16px; }
   .services-page .services-hero-actions { gap: 14px; margin-top: 19px; }
@@ -1125,6 +1179,12 @@
   .services-page .services-scoping-form { padding: 18px; }
 }
 
+@media (max-width: 700px) {
+  .services-page .services-hero-wave-stage { inset: 0 0 170px; }
+  .services-page .services-hero-copy { width: 100%; }
+  .services-page .services-hero-intro { margin-inline: auto; }
+}
+
 @media (max-width: 420px) {
   .services-page .services-hero-art { min-height: 290px; }
   .services-page .services-drop-item--web { width: 53%; }
@@ -1152,18 +1212,38 @@
   .services-page .services-process-tab:hover { transform: none; }
 }
 
-/* Give the hero message more room while retaining the falling artwork. */
-@media (min-width: 1051px) {
-  .services-page .services-hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(16px, 2vw, 30px); }
-  .services-page .services-hero-art { width: 85%; min-height: 404px; justify-self: start; }
+/* Full-width Services hero wave with the copy centered above it. */
+.services-page .services-hero-grid {
+  width: min(calc(100% - 48px), 1120px);
+  min-height: clamp(500px, 48vw, 620px);
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  gap: 0;
 }
-@media (min-width: 701px) and (max-width: 1050px) {
-  .services-page .services-hero-grid { grid-template-columns: minmax(0, .95fr) minmax(280px, 1.05fr); gap: clamp(14px, 2vw, 24px); }
-  .services-page .services-hero-art { width: 86%; min-height: 360px; justify-self: start; }
+
+.services-page .services-hero-copy {
+  width: min(100%, 940px);
+  align-items: center;
+  margin-inline: auto;
+  text-align: center;
 }
+
+.services-page .services-hero h1 { max-width: 940px; text-wrap: balance; }
+.services-page .services-hero-intro { max-width: 760px; margin-inline: auto; text-wrap: pretty; }
+.services-page .services-hero-actions { justify-content: center; }
+.services-page .services-proof { position: relative; z-index: 2; }
+
+@media (max-width: 1050px) {
+  .services-page .services-hero-grid { width: min(calc(100% - 40px), 900px); min-height: clamp(500px, 62vw, 590px); grid-template-columns: 1fr; }
+}
+
 @media (max-width: 700px) {
-  .services-page .services-hero-art { width: min(94%, 620px); min-height: 300px; margin-inline: auto; }
+  .services-page .services-hero-grid { width: min(calc(100% - 36px), 620px); min-height: 0; }
+  .services-page .services-hero-copy { width: 100%; padding-bottom: 36px; }
+  .services-page .services-hero-wave-stage { inset: 0 0 170px; }
 }
+
+/* Keep the Services wave hero as a centered single-column composition at every width. */
 
 /* Bring back a touch of colour and light without overpowering the Services copy. */
 .services-page .services-drop-item img { opacity: .98; filter: saturate(1.02) brightness(1.03); }
