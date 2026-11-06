@@ -1472,7 +1472,7 @@
 .services-page .services-proof-item strong {
   color: var(--akh-lime);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 5vw, 84px);
+  font-size: clamp(36px, 5vw, 56px);
   font-weight: 700;
   letter-spacing: -.06em;
   line-height: 1;
@@ -1484,12 +1484,12 @@
   .services-page .services-proof { padding-block: 23px; }
   .services-page .services-proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 15px; }
   .services-page .services-proof-item:nth-child(2) { border-right: 0; }
-  .services-page .services-proof-item strong { font-size: clamp(38px, 8vw, 62px); }
+  .services-page .services-proof-item strong { font-size: clamp(36px, 8vw, 56px); }
   .services-page .services-proof-item span { font-size: 11px; }
 }
 @media (max-width: 430px) {
   .services-page .services-proof-item { padding-inline: 7px; }
-  .services-page .services-proof-item strong { font-size: clamp(34px, 9vw, 42px); }
+  .services-page .services-proof-item strong { font-size: clamp(36px, 9vw, 56px); }
   .services-page .services-proof-item span { font-size: 10px; }
 }
 
