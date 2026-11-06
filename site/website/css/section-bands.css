@@ -6,7 +6,7 @@ body.homepage-page #main-content > .clients { background: #E6EDEF; }
 body.homepage-page #main-content > .testimonials { background: #F6F7FA; }
 
 body.ai-hub-page #main-content > .ai-promise { background: #F6F7FA; }
-body.ai-hub-page #main-content > .ai-capabilities { background: linear-gradient(125deg, #0B1F3A, #11172E 58%, #0D2935); }
+body.ai-hub-page #main-content > .ai-capabilities { background: #FFFFFF; }
 body.ai-hub-page #main-content > .ai-process { background: #E6EDEF; }
 body.ai-hub-page #main-content > .ai-control { background: #FFFFFF; }
 

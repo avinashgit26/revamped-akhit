@@ -212,19 +212,19 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
   overflow: hidden;
   opacity: 0;
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 750;
   white-space: nowrap;
   transition: width .24s ease, max-width .24s ease, margin .24s ease, opacity .18s ease;
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher):is(:hover,:focus-visible,.is-label-visible) {
-  width: 156px !important;
-  min-width: 156px !important;
+  width: 218px !important;
+  min-width: 218px !important;
   box-shadow: 0 14px 38px rgb(11 31 58 / 36%), 0 0 0 4px rgb(198 244 50 / 32%) !important;
 }
 body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher):is(:hover,:focus-visible,.is-label-visible) .assistant-launcher-orb + span {
-  width: 76px;
-  max-width: 76px;
+  width: 136px;
+  max-width: 136px;
   margin-left: 10px;
   opacity: 1;
 }
@@ -236,7 +236,7 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
     min-height: 60px !important;
   }
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .assistant-launcher-orb { width: 52px !important; height: 52px !important; flex-basis: 52px !important; }
-  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher):is(:hover,:focus-visible,.is-label-visible) { width: 145px !important; min-width: 145px !important; }
+  body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher):is(:hover,:focus-visible,.is-label-visible) { width: 210px !important; min-width: 210px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) :is(.assistant-launcher,.lc-assistant-launcher,.ai-assistant-launcher),

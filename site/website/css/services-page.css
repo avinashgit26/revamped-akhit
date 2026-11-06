@@ -1578,7 +1578,7 @@ body.services-page .services-proof .services-proof-grid .services-proof-item str
 }
 
 .services-page .services-proof {
-  padding-block: clamp(18px, 2.5vw, 34px);
+  padding-block: clamp(11px, calc(2.5vw - 7px), 27px);
 }
 
 @media (max-width: 1050px) {
@@ -1588,7 +1588,7 @@ body.services-page .services-proof .services-proof-grid .services-proof-item str
 }
 
 @media (max-width: 760px) {
-  .services-page .services-proof { padding-block: 18px; }
+  .services-page .services-proof { padding-block: 11px; }
 }
 
 @media (max-width: 700px) {
