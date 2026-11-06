@@ -1,0 +1,188 @@
+/* Focused refinements for the current Homepage, AI Hub, and Services annotations. */
+
+/* Homepage: remove obsolete guide-column space and balance the chat against the copy. */
+.homepage-page .hero-grid {
+  align-items: stretch !important;
+}
+.homepage-page .hero-chat-stage {
+  display: flex !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  flex-direction: column !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-template-rows: minmax(0, 1fr) !important;
+  align-self: stretch !important;
+}
+.homepage-page .hero-intake {
+  display: flex !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+}
+.homepage-page .intake-thread {
+  min-height: 0 !important;
+  max-height: none !important;
+  flex: 1 1 auto !important;
+}
+.homepage-page .hero-copy h1 {
+  font-size: clamp(46px, 5.2vw, 72px) !important;
+  line-height: 1 !important;
+}
+.homepage-page .hero-copy > p:not(.eyebrow) {
+  font-size: clamp(18px, 1.9vw, 20px) !important;
+}
+@media (max-width: 1023px) {
+  .homepage-page .hero-chat-stage {
+    height: auto !important;
+    min-height: 350px !important;
+  }
+  .homepage-page .hero-intake {
+    height: 350px !important;
+  }
+  .homepage-page .intake-thread {
+    min-height: 110px !important;
+  }
+}
+@media (max-width: 767px) {
+  .homepage-page .hero-copy h1 {
+    font-size: clamp(40px, 10vw, 58px) !important;
+  }
+  .homepage-page .hero-copy > p:not(.eyebrow) { font-size: 17px !important; }
+}
+@media (max-width: 430px) {
+  .homepage-page .hero-chat-stage,
+  .homepage-page .hero-intake { min-height: 330px !important; height: 330px !important; }
+}
+
+/* AI Hub: small type reduction, readable cards, aligned section introductions. */
+.ai-hub-page .ai-hero h1 {
+  font-size: clamp(46px, 5.15vw, 72px) !important;
+}
+.ai-hub-page .ai-hero-copy > p:not(.ai-kicker) {
+  font-size: clamp(16px, 1.62vw, 19px) !important;
+}
+.ai-hub-page .ai-case-study-link {
+  color: #8ab8ff !important;
+  text-decoration: underline !important;
+  text-decoration-color: currentColor !important;
+  text-underline-offset: 4px;
+}
+.ai-hub-page .ai-case-study-link:hover,
+.ai-hub-page .ai-case-study-link:focus-visible { color: #c0d9ff !important; }
+.ai-hub-page .ai-taxonomy-details article > span { font-size: 10px; }
+.ai-hub-page .ai-taxonomy-details h3 { font-size: 18px !important; }
+.ai-hub-page .ai-taxonomy-details p { font-size: 14px !important; line-height: 1.55; }
+.ai-hub-page #ai-opportunities .ai-section-heading,
+.ai-hub-page .ai-process .ai-section-heading {
+  display: grid;
+  max-width: none;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  grid-template-areas: "eyebrow eyebrow" "title copy";
+  align-items: end;
+  column-gap: clamp(28px, 5vw, 76px);
+}
+.ai-hub-page #ai-opportunities .ai-section-heading > .ai-eyebrow,
+.ai-hub-page .ai-process .ai-section-heading > .ai-eyebrow { grid-area: eyebrow; }
+.ai-hub-page #ai-opportunities .ai-section-heading > h2,
+.ai-hub-page .ai-process .ai-section-heading > h2 { grid-area: title; }
+.ai-hub-page #ai-opportunities .ai-section-heading > p:last-child,
+.ai-hub-page .ai-process .ai-section-heading > p:last-child {
+  grid-area: copy;
+  max-width: 560px;
+  margin: 0 0 3px;
+}
+.ai-hub-page .ai-control {
+  border-block: 1px solid #ccd8e8;
+  background: #dce7f4;
+}
+.ai-hub-page .ai-fit-title {
+  font-size: clamp(36px, 4.8vw, 58px) !important;
+}
+.ai-hub-page .ai-fit-static-panel {
+  max-width: 1260px;
+  margin-inline: auto;
+  padding: clamp(19px, 2.4vw, 28px);
+}
+.ai-hub-page .ai-fit-step-card { padding: clamp(14px, 1.4vw, 20px); }
+@media (max-width: 767px) {
+  .ai-hub-page .ai-hero h1 { font-size: clamp(37px, 9.5vw, 52px) !important; }
+  .ai-hub-page #ai-opportunities .ai-section-heading,
+  .ai-hub-page .ai-process .ai-section-heading {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "eyebrow" "title" "copy";
+    row-gap: 0;
+  }
+  .ai-hub-page #ai-opportunities .ai-section-heading > p:last-child,
+  .ai-hub-page .ai-process .ai-section-heading > p:last-child {
+    margin-top: 14px;
+  }
+}
+
+/* Services: centered message over restrained, looping technical wave lines. */
+.services-page .services-hero {
+  isolation: isolate;
+}
+.services-page .services-hero::before,
+.services-page .services-hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: -26% -12% -30%;
+  border: 1px solid rgb(116 164 255 / 22%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+  transform-origin: center;
+}
+.services-page .services-hero::before {
+  box-shadow: 0 0 0 32px rgb(31 79 216 / 10%), 0 0 0 66px rgb(31 79 216 / 7%);
+  animation: services-hero-wave 24s ease-in-out infinite alternate;
+}
+.services-page .services-hero::after {
+  inset: -18% -5% -38%;
+  border-color: rgb(198 244 50 / 15%);
+  box-shadow: 0 0 0 45px rgb(198 244 50 / 4%);
+  animation: services-hero-wave-back 30s ease-in-out infinite alternate;
+}
+.services-page .services-hero-grid {
+  display: block !important;
+  min-height: 0 !important;
+}
+.services-page .services-hero-copy {
+  max-width: 1000px;
+  margin-inline: auto;
+  padding: 18px 0 clamp(62px, 8vw, 104px);
+  text-align: center;
+}
+.services-page .services-hero h1 {
+  max-width: 950px;
+  margin-inline: auto;
+  font-size: clamp(46px, 5.85vw, 74px) !important;
+  line-height: 1 !important;
+}
+.services-page .services-hero-intro {
+  max-width: 760px;
+  margin: 20px auto 0;
+  font-size: clamp(16px, 1.45vw, 18px) !important;
+}
+.services-page .services-hero-actions { justify-content: center; }
+.services-page .services-proof { position: relative; z-index: 1; }
+@keyframes services-hero-wave {
+  from { transform: translate3d(-2%, 0, 0) rotate(-2deg) scale(1); }
+  to { transform: translate3d(2%, 1%, 0) rotate(2deg) scale(1.035); }
+}
+@keyframes services-hero-wave-back {
+  from { transform: translate3d(1%, 1%, 0) rotate(2deg) scale(1.02); }
+  to { transform: translate3d(-1%, -1%, 0) rotate(-2deg) scale(1); }
+}
+@media (max-width: 767px) {
+  .services-page .services-hero-copy { padding: 12px 0 54px; }
+  .services-page .services-hero h1 { font-size: clamp(41px, 9vw, 58px) !important; }
+  .services-page .services-hero-intro { font-size: 16px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .services-page .services-hero::before,
+  .services-page .services-hero::after { animation: none !important; }
+}
