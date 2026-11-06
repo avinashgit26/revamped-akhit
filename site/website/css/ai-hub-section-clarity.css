@@ -1,0 +1,22 @@
+/* AI Hub only: separate adjacent sections and keep the AI-step label legible. */
+body.ai-hub-page #main-content > .ai-process {
+  border-block: 1px solid #d7e1ec;
+  background: #f6f7fa !important;
+}
+
+body.ai-hub-page #main-content > .ai-control {
+  border-block: 1px solid #cbd9e8;
+  background: #e6edef !important;
+}
+
+body.ai-hub-page .ai-fit-tag--ai {
+  padding: 5px 10px;
+  border: 1px solid #a4cf16 !important;
+  border-radius: 999px;
+  color: #0b1f3a !important;
+  background: #c6f432 !important;
+  font-size: 12px !important;
+  font-weight: 800;
+  letter-spacing: .02em;
+  line-height: 1.3;
+}
