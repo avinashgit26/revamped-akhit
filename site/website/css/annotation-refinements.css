@@ -27,8 +27,8 @@
   max-height: none !important;
   flex: 1 1 auto !important;
 }
-.homepage-page .hero-copy h1 {
-  font-size: clamp(46px, 5.2vw, 72px) !important;
+body.homepage-page .hero-copy h1 {
+  font-size: clamp(40px, 5.2vw, 60px) !important;
   line-height: 1 !important;
 }
 .homepage-page .hero-copy > p:not(.eyebrow) {
@@ -47,7 +47,7 @@
   }
 }
 @media (max-width: 767px) {
-  .homepage-page .hero-copy h1 {
+  body.homepage-page .hero-copy h1 {
     font-size: clamp(40px, 10vw, 58px) !important;
   }
   .homepage-page .hero-copy > p:not(.eyebrow) { font-size: 17px !important; }
@@ -58,8 +58,8 @@
 }
 
 /* AI Hub: small type reduction, readable cards, aligned section introductions. */
-.ai-hub-page .ai-hero h1 {
-  font-size: clamp(46px, 5.15vw, 72px) !important;
+body.ai-hub-page .ai-hero h1 {
+  font-size: clamp(40px, 5.15vw, 60px) !important;
 }
 .ai-hub-page .ai-hero-copy > p:not(.ai-kicker) {
   font-size: clamp(16px, 1.62vw, 19px) !important;
@@ -108,7 +108,7 @@
 }
 .ai-hub-page .ai-fit-step-card { padding: clamp(14px, 1.4vw, 20px); }
 @media (max-width: 767px) {
-  .ai-hub-page .ai-hero h1 { font-size: clamp(37px, 9.5vw, 52px) !important; }
+  body.ai-hub-page .ai-hero h1 { font-size: clamp(37px, 9.5vw, 52px) !important; }
   .ai-hub-page #ai-opportunities .ai-section-heading,
   .ai-hub-page .ai-process .ai-section-heading {
     grid-template-columns: minmax(0, 1fr);
@@ -156,10 +156,10 @@
   padding: 18px 0 clamp(62px, 8vw, 104px);
   text-align: center;
 }
-.services-page .services-hero h1 {
+body.services-page .services-hero h1 {
   max-width: 950px;
   margin-inline: auto;
-  font-size: clamp(46px, 5.85vw, 74px) !important;
+  font-size: clamp(40px, 5.85vw, 60px) !important;
   line-height: 1 !important;
 }
 .services-page .services-hero-intro {
@@ -179,7 +179,7 @@
 }
 @media (max-width: 767px) {
   .services-page .services-hero-copy { padding: 12px 0 54px; }
-  .services-page .services-hero h1 { font-size: clamp(41px, 9vw, 58px) !important; }
+  body.services-page .services-hero h1 { font-size: clamp(41px, 9vw, 58px) !important; }
   .services-page .services-hero-intro { font-size: 16px !important; }
 }
 @media (prefers-reduced-motion: reduce) {

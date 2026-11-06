@@ -1,0 +1,29 @@
+/* Small spacing refinements for the five primary pages. */
+.homepage-page .home-service-panel#home-service-panel > .home-service-grid {
+  gap: clamp(16px, 1.3vw, 20px);
+}
+.ai-hub-page .ai-promise-grid { gap: clamp(14px, 1.2vw, 18px); }
+.ai-hub-page .ai-taxonomy-details { gap: clamp(12px, 1.05vw, 16px); }
+.services-page .services-section-head { margin-bottom: clamp(30px, 2.2vw, 36px); }
+.services-page .services-offering-grid { gap: clamp(14px, 1.2vw, 18px); }
+.learn-with-us-page .learn-path-grid { gap: clamp(14px, 1.2vw, 18px); }
+.careers-page .lc-section-heading { margin-bottom: clamp(34px, 2.5vw, 40px); }
+.careers-page .lc-job-grid { gap: clamp(16px, 1.35vw, 20px); }
+
+/* Give the AI Hub copy and taxonomy a little more separation at every width. */
+@media (min-width: 1101px) {
+  body.ai-hub-page .ai-hero-inner { gap: clamp(28px, 2.8vw, 42px) !important; }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  body.ai-hub-page .ai-hero-inner { gap: clamp(30px, 3.4vw, 36px) !important; }
+}
+@media (max-width: 760px) {
+  body.ai-hub-page .ai-hero-inner { gap: 28px !important; }
+}
+
+/* A modestly taller desktop conversation keeps the composer at the bottom. */
+@media (min-width: 1024px) {
+  .homepage-page .intake-thread {
+    min-height: clamp(250px, 19vw, 290px) !important;
+  }
+}
