@@ -319,3 +319,60 @@ body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-
 @media (prefers-reduced-motion: reduce) {
   body:is(.homepage-page,.ai-hub-page,.learn-with-us-page,.careers-page,.services-page) .assistant-composer { transition: none !important; }
 }
+
+/* Keep the floating assistant composer identical even when page CSS differs. */
+#assistant-panel .assistant-composer {
+  display: flex !important;
+  min-width: 0 !important;
+  min-height: 54px !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 5px 6px 5px 12px !important;
+  border: 1px solid #C8D3E2 !important;
+  border-radius: 13px !important;
+  background: #F6F7FA !important;
+}
+#assistant-panel .assistant-composer:focus-within {
+  border-color: #1F4FD8 !important;
+  outline: 0 !important;
+  box-shadow: 0 0 0 3px rgb(31 79 216 / 18%) !important;
+}
+#assistant-panel #assistant-input {
+  width: 0 !important;
+  min-width: 0 !important;
+  min-height: 40px !important;
+  height: 40px !important;
+  flex: 1 1 auto !important;
+  padding: 8px 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  color: #111827 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font: 400 14px/1.4 "DM Sans", Arial, sans-serif !important;
+}
+#assistant-panel #assistant-input:focus,
+#assistant-panel #assistant-input:focus-visible {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+#assistant-panel #assistant-voice,
+#assistant-panel .assistant-send {
+  display: grid !important;
+  width: 36px !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  height: 36px !important;
+  flex: 0 0 36px !important;
+  align-items: center !important;
+  justify-items: center !important;
+  padding: 0 !important;
+  border: 1px solid #1F4FD8 !important;
+  border-radius: 9px !important;
+  color: #fff !important;
+  background: #1F4FD8 !important;
+  font-size: 17px !important;
+  line-height: 1 !important;
+}
