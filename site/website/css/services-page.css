@@ -1364,6 +1364,11 @@
 .services-page .services-process-steps li strong { display: block; margin-bottom: 5px; color: var(--akh-cobalt); font-size: 13px; font-weight: 800; }
 .services-page .services-process-steps li p { margin: 0; color: #5B6D84; font-size: 12px; line-height: 1.5; }
 
+/* Improve readability in the four delivery-step cards across each process tab. */
+.services-page .services-process-steps-wrap > h4 { font-size: 15px; }
+.services-page .services-process-steps li strong { font-size: 15px; }
+.services-page .services-process-steps li p { font-size: 14px; }
+
 @media (max-width: 900px) {
   .services-page .services-offering-layout { grid-template-columns: minmax(210px, .76fr) minmax(0, 1.24fr); gap: 20px; }
   .services-page .services-offering-card,
